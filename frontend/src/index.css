@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+    /* Font */
+    --font-default: 'Inter';
+
+    /* Common */
+    --color-background: #020617;
+    --color-navbar: #0F172A;
+    
+    /* Auth */
+    --color-auth-border: #3B82F6;
+    --color-auth-background: #1E293B;
+    --color-auth-btn: #D9D9D9;
+}
