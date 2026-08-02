@@ -1,5 +1,7 @@
 import React from "react";
 import RegisterPage from "./RegisterPage";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 export const Register = () => {
     const [auth, setAuth] = React.useState({
@@ -9,10 +11,77 @@ export const Register = () => {
         confirmPassword: ""
     })
 
-    const handleRegister = (e: React.SubmitEvent<HTMLFormElement>) : void => {
+    const backend_Url = import.meta.env.VITE_BACKEND_URL;
+
+    const validateForm = (): boolean => {
+        if (!auth.username || !auth.email || !auth.password || !auth.confirmPassword) {
+            toast.error("Please fill all the fields");
+            return false;
+        }
+
+        if (auth.username.length < 3 || auth.username.length > 15) {
+            toast.error("Username must be between 3 and 15 characters");
+            return false;
+        }
+
+        if (!/^[a-zA-Z0-9]+$/.test(auth.username)) {
+            toast.error("Username can only contain letters and numbers");
+            return false;
+        }
+
+        if(!/^[0-9]+$/.test(auth.password)) {
+            toast.error("Password can only contain numbers");
+            return false;
+        }
+
+        if (!/\S+@\S+\.\S+/.test(auth.email)) {
+            toast.error("Please enter a valid email address");
+            return false;
+        }
+
+        if (auth.password.length < 6 || auth.password.length > 10) {
+            toast.error("Password must be between 6 and 10 characters");
+            return false;
+        }
+
+        if ((auth.password !== auth.confirmPassword) && (auth.password.length === auth.confirmPassword.length)) {
+            toast.error("Passwords do not match");
+            return false;
+        }
+
+        return true;
+    }
+
+    const handleRegister = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
+        if (!validateForm()) {
+            return;
+        }
         // Handle register logic here
-        console.log("Register submitted with username:", auth.username, "email:", auth.email, "password:", auth.password, "confirmPassword:", auth.confirmPassword);
+        try {
+            const response =  await axios.post(`${backend_Url}/api/auth/signup`, {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: auth.username,
+                    email: auth.email,
+                    password: auth.password,
+                    confirmPassword: auth.confirmPassword
+                })
+            });
+            const data = response.data;
+            console.log("Registration successful:", data);
+
+        } catch (error: unknown) {
+            if (axios.isAxiosError(error)) {
+                console.error("Axios Error:", error.response?.data);
+            } else if (error instanceof Error) {
+                console.error("Error:", error.message);
+            } else {
+                console.error("Unknown Error:", error);
+            }
+        }
     }
 
     return (

@@ -79,7 +79,7 @@ You need to built a software named as HabStreak. It is basically a Habit & Daily
 1. Express JS
 2. Rest APIs
 3. JWT
-4. MongoDB
+4. SQL
 5. Nodemon
 
 ## Architecture
