@@ -127,6 +127,163 @@ MongoDB
 11. /tasks/assigned → get ⇒ Fetch assigned tasks
 12. /tasks/:taskId/completion → patch ⇒ Mark the tasks with specific taskId as completed
 
+## Middleware
+
+The backend should use middleware to handle cross-cutting concerns before requests reach controllers.
+
+### Request Flow
+
+Client
+↓
+Logger Middleware
+↓
+Rate Limit Middleware
+↓
+Authentication Middleware
+↓
+Authorization Middleware
+↓
+Validation Middleware
+↓
+Controller
+↓
+Service
+↓
+Database
+↓
+Response
+
+### auth.middleware.ts
+
+Purpose:
+
+- Verify JWT tokens.
+- Authenticate users.
+- Extract and attach user information to the request object.
+- Block unauthenticated access to protected routes.
+
+Protected Routes:
+
+- GET /auth/me
+- POST /tasks
+- GET /tasks
+- GET /tasks/:taskId
+- PATCH /tasks/:taskId
+- DELETE /tasks/:taskId
+- POST /tasks/assigned
+- GET /tasks/assigned
+
+### authorization.middleware.ts
+
+Purpose:
+
+- Verify that a user has permission to perform the requested action.
+- Prevent users from accessing or modifying resources owned by other users.
+
+Examples:
+
+- Editing another user's task.
+- Deleting another user's task.
+- Viewing another user's analytics.
+- Accessing another user's profile.
+
+### validation.middleware.ts
+
+Purpose:
+
+- Validate all incoming request payloads.
+- Reject malformed or invalid requests before they reach controllers.
+
+Validate:
+
+- Authentication requests.
+- Task creation requests.
+- Task update requests.
+- Task assignment requests.
+
+Examples:
+
+- Missing required fields.
+- Invalid email format.
+- Invalid priority values.
+- Empty task names.
+
+### logger.middleware.ts
+
+Purpose:
+
+- Log incoming requests and system events.
+- Assist with debugging and monitoring.
+
+Log Events:
+
+- Login
+- Signup
+- Logout
+- Task Creation
+- Task Updates
+- Task Deletion
+- Task Completion
+- System Errors
+
+Do Not Log:
+
+- Passwords
+- JWT tokens
+- Sensitive user information
+
+Preferred Libraries:
+
+- Winston
+- Pino
+
+### error.middleware.ts
+
+Purpose:
+
+- Provide centralized error handling.
+- Prevent unhandled exceptions from crashing the application.
+- Return standardized error responses.
+
+Example Response:
+
+{
+  "success": false,
+  "message": "Internal Server Error"
+}
+
+### rateLimit.middleware.ts
+
+Purpose:
+
+- Prevent brute-force attacks.
+- Prevent API abuse.
+- Protect authentication endpoints.
+
+Recommended Usage:
+
+- POST /auth/login
+- POST /auth/signup
+- POST /auth/logout
+
+Suggested Response:
+
+HTTP 429 Too Many Requests
+
+### notFound.middleware.ts
+
+Purpose:
+
+- Handle requests for routes that do not exist.
+- Provide consistent API responses.
+
+Example Response:
+
+{
+  "success": false,
+  "message": "Route Not Found"
+}
+
 # What should be avoided?
 
 1. Do not use third-party paid services.

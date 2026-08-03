@@ -4,6 +4,20 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  ARCHIVED
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
 }
 
 model User {
@@ -11,7 +25,41 @@ model User {
     username String
     email String @unique
     password String
-    confirmPassword String
+    tasks Task[]
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+}
+
+model Task {
+    id String @id @default(cuid())
+    title String
+    description String?
+    status TaskStatus @default(PENDING)
+    priority TaskPriority @default(MEDIUM)
+    dueDate DateTime?
+    userId String
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+    currentStreak Int @default(0)
+    longestStreak Int @default(0)
+    completionRate Float @default(0)
+    totalFocusTime Int @default(0)
+    completeSessions Int @default(0)
+    averageSessionTime Int @default(0)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    completions TaskCompletion[]
+    
+    @@index([userId])
+    @@index([status])
+    @@index([priority])
+}
+
+model TaskCompletion {
+  id String @id @default(cuid())
+  taskId String
+  task   Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  completedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+  @@index([taskId])
+  @@unique([taskId, completedAt])
 }
