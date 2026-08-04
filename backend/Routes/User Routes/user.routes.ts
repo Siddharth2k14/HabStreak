@@ -1,4 +1,7 @@
 import express from "express";
+import { loginSchema, registerSchema } from "../../validators/auth.validator";
+import validate from "../../Middlewares/validation.middleware.ts";
+import { registerUser } from "../../Controllers/auth.controller.ts";
 
 const router = express.Router();
 
@@ -9,4 +12,11 @@ const router = express.Router();
  * password -> string
  * confirmPassword -> string
  */
-router.post("/register", )
+router.post("/register", validate(registerSchema), registerUser);
+
+/**
+ * Login
+ * email -> string
+ * password -> string
+ */
+router.post("/login", validate(loginSchema), loginUser);
