@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { success } from "zod";
 import bcrypt from "bcrypt";
 import prisma from "../config/prisma";
 import { generateToken } from "../utils/jwt";

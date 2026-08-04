@@ -3,6 +3,7 @@ import authenticateUser from "../../Middlewares/auth.middlewares";
 import validate from "../../Middlewares/validation.middleware";
 import { createTaskSchema, taskIdSchema, updateTaskSchema } from "../../validators/task.validator";
 import authorizeTaskOwner from "../../Middlewares/authorization.middleware";
+import { createTask, deleteTask, updateTask } from "../../Controllers/task.controller";
 
 const router = express.Router();
 
