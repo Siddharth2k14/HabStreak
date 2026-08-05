@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import prisma from "../config/prisma";
 import { generateToken } from "../utils/jwt";
+import logger from "../utils/logger";
 
 export const registerUser = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -66,7 +67,7 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
         });
 
     } catch (error) {
-        console.error("Register Error:", error);
+        logger.error("Register Error:", error);
 
         res.status(500).json({
             success: false,
@@ -128,7 +129,7 @@ export const loginUser = async ( req: Request, res: Response): Promise<void> => 
             },
         });
     } catch (error) {
-        console.error("Login Error:", error);
+        logger.error("Login Error:", error);
 
         res.status(500).json({
             success: false,

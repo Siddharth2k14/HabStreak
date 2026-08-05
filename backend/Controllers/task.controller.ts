@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import prisma from "../config/prisma";
 import { Prisma } from "@prisma/client";
+import logger from "../utils/logger";
 
 export const createTask = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -30,7 +31,7 @@ export const createTask = async (req: Request, res: Response): Promise<void> => 
             task,
         });
     } catch (error) {
-        console.error("Create Task Error:", error);
+        logger.error("Create Task Error:", error);
 
         res.status(500).json({
             success: false,
@@ -72,7 +73,7 @@ export const updateTask = async (req: Request, res: Response): Promise<void> => 
             task: updatedTask,
         });
     } catch (error) {
-        console.error("Update Task Error:", error);
+        logger.error("Update Task Error:", error);
 
         res.status(500).json({
             success: false,
@@ -96,7 +97,7 @@ export const deleteTask = async (req: Request, res: Response): Promise<void> => 
             message: "Task deleted successfully.",
         });
     } catch (error) {
-        console.error("Delete Task Error:", error);
+        logger.error("Delete Task Error:", error);
 
         if (
             error instanceof Prisma.PrismaClientKnownRequestError &&

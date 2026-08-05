@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import prisma from "../config/prisma";
+import logger from "../utils/logger";
 
 const authorizeTaskOwner = async (
     req: Request,
@@ -54,7 +55,7 @@ const authorizeTaskOwner = async (
 
         next();
     } catch (error) {
-        console.error("Authorization Middleware Error:", error);
+        logger.error("Authorization Middleware Error:", error);
 
         res.status(500).json({
             success: false,
