@@ -2,117 +2,78 @@ import { Request, Response } from "express";
 import prisma from "../config/prisma";
 import { Prisma } from "@prisma/client";
 import logger from "../utils/logger";
+import ApiError from "../utils/ApiError";
+import asyncHandler from "../utils/asyncHandler";
 
-export const createTask = async (req: Request, res: Response): Promise<void> => {
-    try {
-        if (!req.user) {
-            res.status(401).json({
-                success: false,
-                message: "Unauthorized.",
-            });
-            return;
-        }
-
-        const { title, description, priority, dueDate } = req.body;
-
-        const task = await (prisma as any).task.create({
-            data: {
-                title,
-                description,
-                priority,
-                dueDate: dueDate ? new Date(dueDate) : null,
-                userId: req.user.id,
-            },
-        });
-
-        res.status(201).json({
-            success: true,
-            message: "Task created successfully.",
-            task,
-        });
-    } catch (error) {
-        logger.error("Create Task Error:", error);
-
-        res.status(500).json({
-            success: false,
-            message: "Internal Server Error.",
-        });
+export const createTask = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+    if (!req.user) {
+        throw new ApiError(401, "Unauthorized.");
     }
-};
 
-export const updateTask = async (req: Request, res: Response): Promise<void> => {
-    try {
-        const { taskId } = req.params;
+    const { title, description, priority, dueDate } = req.body;
 
-        const {
+    const task = await (prisma as any).task.create({
+        data: {
             title,
             description,
-            status,
             priority,
-            dueDate,
-        } = req.body;
+            dueDate: dueDate ? new Date(dueDate) : null,
+            userId: req.user.id,
+        },
+    });
 
-        const updatedTask = await (prisma as any).task.update({
-            where: {
-                id: taskId,
-            },
-            data: {
-                ...(title !== undefined && { title }),
-                ...(description !== undefined && { description }),
-                ...(status !== undefined && { status }),
-                ...(priority !== undefined && { priority }),
-                ...(dueDate !== undefined && {
-                    dueDate: dueDate ? new Date(dueDate) : null,
-                }),
-            },
-        });
+    res.status(201).json({
+        success: true,
+        message: "Task created successfully.",
+        task,
+    });
+});
 
-        res.status(200).json({
-            success: true,
-            message: "Task updated successfully.",
-            task: updatedTask,
-        });
-    } catch (error) {
-        logger.error("Update Task Error:", error);
+export const updateTask = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+    const { taskId } = req.params;
 
-        res.status(500).json({
-            success: false,
-            message: "Internal Server Error.",
-        });
-    }
-};
+    const {
+        title,
+        description,
+        status,
+        priority,
+        dueDate,
+    } = req.body;
 
-export const deleteTask = async (req: Request, res: Response): Promise<void> => {
-    try {
-        const { taskId } = req.params;
+    const updatedTask = await (prisma as any).task.update({
+        where: {
+            id: taskId,
+        },
+        data: {
+            ...(title !== undefined && { title }),
+            ...(description !== undefined && { description }),
+            ...(status !== undefined && { status }),
+            ...(priority !== undefined && { priority }),
+            ...(dueDate !== undefined && {
+                dueDate: dueDate ? new Date(dueDate) : null,
+            }),
+        },
+    });
 
-        await (prisma as any).task.delete({
-            where: {
-                id: taskId,
-            },
-        });
+    res.status(200).json({
+        success: true,
+        message: "Task updated successfully.",
+        task: updatedTask,
+    });
+});
 
-        res.status(200).json({
-            success: true,
-            message: "Task deleted successfully.",
-        });
-    } catch (error) {
-        logger.error("Delete Task Error:", error);
+export const deleteTask = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+    const { taskId } = req.params;
 
-        if (
-            error instanceof Prisma.PrismaClientKnownRequestError &&
-            error.code === "P2025"
-        ) {
-            res.status(404).json({
-                success: false,
-                message: "Task not found.",
-            });
-            return;
-        }
+    await (prisma as any).task.delete({
+        where: {
+            id: taskId,
+        },
+    });
 
-        res.status(500).json({
-            success: false,
-            message: "Internal Server Error.",
-        });
-    }
-};
+    res.status(200).json({
+        success: true,
+        message: "Task deleted successfully.",
+    });
+
+});

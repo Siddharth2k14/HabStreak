@@ -3,6 +3,7 @@ import { loginSchema, registerSchema } from "../../validators/auth.validator";
 import validate from "../../Middlewares/validation.middleware.ts";
 import authenticateUser from "../../Middlewares/auth.middlewares.ts";
 import { loginUser, logoutUser, refreshAccessToken, registerUser, verifyEmail } from "../../Controllers/auth.controller.ts";
+import { loginRateLimiter, logoutRateLimiter, refreshRateLimiter, signupRateLimiter } from "../../Middlewares/rateLimit.middleware.ts";
 
 const router = express.Router();
 
@@ -13,19 +14,19 @@ const router = express.Router();
  * password -> string
  * confirmPassword -> string
  */
-router.post("/register", validate(registerSchema), registerUser);
+router.post("/register", signupRateLimiter, validate(registerSchema), registerUser);
 
 /**
  * Login
  * email -> string
  * password -> string
  */
-router.post("/login", validate(loginSchema), loginUser);
+router.post("/login", loginRateLimiter, validate(loginSchema), loginUser);
 
 /**
  * Refresh
  */
-router.post("/refresh", refreshAccessToken);
+router.post("/refresh", refreshRateLimiter, refreshAccessToken);
 
 /**
  * Verify Token
@@ -35,4 +36,4 @@ router.get("/verify/:token", verifyEmail);
 /**
  * Logout
  */
-router.post("/logout", authenticateUser, logoutUser)
+router.post("/logout", logoutRateLimiter, authenticateUser, logoutUser)

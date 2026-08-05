@@ -2,6 +2,8 @@ import { NextFunction, Request, Response } from "express";
 import prisma from "../config/prisma.ts";
 import { verifyAccessToken } from "../utils/jwt.ts";
 import jwt from "jsonwebtoken";
+import ApiError from "../utils/ApiError.ts";
+import logger from "../utils/logger.ts";
 
 declare global {
     namespace Express {
@@ -29,18 +31,12 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
 
         // If the authHeader is missing from the request, then throw the 401 error.
         if (!authHeader) {
-            return res.status(401).json({
-                success: false,
-                message: "Authorization token missing",
-            });
+            throw new ApiError(401, "Authorization token missing.");
         }
 
         // Checks whether the authHeader is starting with "Bearer" or not.
         if (!authHeader.startsWith("Bearer ")) {
-            return res.status(401).json({
-                success: false,
-                message: "Invalid authorization format",
-            });
+            throw new ApiError(401, "Invalid authorization format.");
         }
 
         // Splits the authHeader after the space and starting with index 1.
@@ -63,26 +59,17 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
         });
 
         if (!user) {
-            return res.status(401).json({
-                success: false,
-                message: "User not found",
-            });
+            throw new ApiError(401, "User not found.");
         }
 
         // Is user active or not.
         if (!user.isActive) {
-            return res.status(403).json({
-                success: false,
-                message: "Your account has been disabled.",
-            });
+            throw new ApiError(403, "Accunt has been disabled.");
         }
 
         // Is user verified or not.
         if (!user.isVerified) {
-            return res.status(403).json({
-                success: false,
-                message: "Please verify your email.",
-            });
+            throw new ApiError(403, "Please verify your email first.");
         }
 
         // Check Blacklisted Token
@@ -93,10 +80,7 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
         });
 
         if (blacklisted) {
-            return res.status(401).json({
-                success: false,
-                message: "Token has been revoked.",
-            });
+            throw new ApiError(401, "Token has been revoked.");
         }
 
         // Check Session
@@ -108,35 +92,22 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
         });
 
         if (!session) {
-            return res.status(401).json({
-                success: false,
-                message: "Session expired.",
-            });
+            throw new ApiError(401, "Session expired.");
         }
 
         req.user = user;
         next();
     } catch (error) {
         if (error instanceof jwt.TokenExpiredError) {
-            return res.status(401).json({
-                success: false,
-                message: "Token expired.",
-            });
+            throw new ApiError(401, "Token expired");
         }
 
         if (error instanceof jwt.JsonWebTokenError) {
-            return res.status(401).json({
-                success: false,
-                message: "Invalid token.",
-            });
+            throw new ApiError(401, "Invalid token.");
         }
 
-        console.error(error);
-
-        return res.status(401).json({
-            success: false,
-            message: "Invalid or expired token",
-        });
+        logger.error(error);
+        throw new ApiError(401, "Invalid or expired token");
     }
 };
 
