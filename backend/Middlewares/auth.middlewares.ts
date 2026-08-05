@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import prisma from "../config/prisma.ts";
-import { verifyToken } from "../utils/jwt.ts";
+import { verifyAccessToken } from "../utils/jwt.ts";
+import jwt from "jsonwebtoken";
 
 declare global {
     namespace Express {
@@ -11,6 +12,8 @@ declare global {
                 email: string;
                 createdAt: Date;
                 updatedAt: Date;
+                isActive: Boolean;
+                isVerified: Boolean;
             };
         }
     }
@@ -42,12 +45,11 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
 
         // Splits the authHeader after the space and starting with index 1.
         const token = authHeader.split(" ")[1];
-        const decoded = verifyToken(token);
+        const decoded = verifyAccessToken(token);
 
         const user = await prisma.user.findUnique({
             where: {
                 id: decoded.userId,
-                username: decoded.username,
             },
             select: {
                 id: true,
@@ -55,6 +57,8 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
                 email: true,
                 createdAt: true,
                 updatedAt: true,
+                isActive: true,
+                isVerified: true,
             },
         });
 
@@ -65,9 +69,70 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
             });
         }
 
+        // Is user active or not.
+        if (!user.isActive) {
+            return res.status(403).json({
+                success: false,
+                message: "Your account has been disabled.",
+            });
+        }
+
+        // Is user verified or not.
+        if (!user.isVerified) {
+            return res.status(403).json({
+                success: false,
+                message: "Please verify your email.",
+            });
+        }
+
+        // Check Blacklisted Token
+        const blacklisted = await prisma.blacklistedToken.findUnique({
+            where: {
+                token,
+            },
+        });
+
+        if (blacklisted) {
+            return res.status(401).json({
+                success: false,
+                message: "Token has been revoked.",
+            });
+        }
+
+        // Check Session
+        const session = await prisma.session.findFirst({
+            where: {
+                userId: decoded.userId,
+                revoked: false,
+            },
+        });
+
+        if (!session) {
+            return res.status(401).json({
+                success: false,
+                message: "Session expired.",
+            });
+        }
+
         req.user = user;
         next();
     } catch (error) {
+        if (error instanceof jwt.TokenExpiredError) {
+            return res.status(401).json({
+                success: false,
+                message: "Token expired.",
+            });
+        }
+
+        if (error instanceof jwt.JsonWebTokenError) {
+            return res.status(401).json({
+                success: false,
+                message: "Invalid token.",
+            });
+        }
+
+        console.error(error);
+
         return res.status(401).json({
             success: false,
             message: "Invalid or expired token",
