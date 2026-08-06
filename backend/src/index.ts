@@ -1,5 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
+import cors from "cors";
 import loggerMiddleware from "../Middlewares/logger.middleware.ts";
 import errorMiddleware from "../Middlewares/error.middleware.ts";
 import logger from "../utils/logger.ts";
@@ -13,6 +14,9 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(cors({
+    origin: "http://localhost:5173",
+}));
 app.use(loggerMiddleware);
 
 app.get("/", (req, res) => {
