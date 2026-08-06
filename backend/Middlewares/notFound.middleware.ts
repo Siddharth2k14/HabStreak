@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response } from "express";
-import ApiError from "../utils/ApiError";
+import type { NextFunction, Request, Response } from "express";
+import ApiError from "../utils/ApiError.ts";
 
 const notFoundMiddleware = (
     req: Request,

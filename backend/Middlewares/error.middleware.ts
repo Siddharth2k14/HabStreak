@@ -1,9 +1,9 @@
-import { Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from "express";
 import { Prisma } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import { ZodError } from "zod";
-import ApiError from "../utils/ApiError";
-import logger from "../utils/logger";
+import ApiError from "../utils/ApiError.ts";
+import logger from "../utils/logger.ts";
 
 const errorMiddleware = (err: Error, req: Request, res: Response, next: NextFunction): void => {
     logger.error(err);

@@ -1,9 +1,7 @@
-import { Request, Response } from "express";
-import prisma from "../config/prisma";
-import { Prisma } from "@prisma/client";
-import logger from "../utils/logger";
-import ApiError from "../utils/ApiError";
-import asyncHandler from "../utils/asyncHandler";
+import type { Request, Response } from "express";
+import prisma from "../config/prisma.ts";
+import ApiError from "../utils/ApiError.ts";
+import asyncHandler from "../utils/AsyncHandler.ts";
 
 export const createTask = asyncHandler(async (req: Request, res: Response): Promise<void> => {
     if (!req.user) {

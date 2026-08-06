@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import type { NextFunction, Request, Response } from "express";
 import prisma from "../config/prisma.ts";
 import { verifyAccessToken } from "../utils/jwt.ts";
 import jwt from "jsonwebtoken";

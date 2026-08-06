@@ -1,6 +1,6 @@
-import { NextFunction, Request, Response } from "express";
-import prisma from "../config/prisma";
-import logger from "../utils/logger";
+import type { NextFunction, Request, Response } from "express";
+import prisma from "../config/prisma.ts";
+import logger from "../utils/logger.ts";
 
 const authorizeTaskOwner = async (
     req: Request,

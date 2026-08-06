@@ -1,5 +1,5 @@
 import express from "express";
-import { loginSchema, registerSchema } from "../../validators/auth.validator";
+import { loginSchema, registerSchema } from "../../validators/auth.validator.ts";
 import validate from "../../Middlewares/validation.middleware.ts";
 import authenticateUser from "../../Middlewares/auth.middlewares.ts";
 import { loginUser, logoutUser, refreshAccessToken, registerUser, verifyEmail } from "../../Controllers/auth.controller.ts";

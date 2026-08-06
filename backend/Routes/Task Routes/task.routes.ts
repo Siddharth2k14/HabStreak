@@ -1,9 +1,9 @@
 import express from "express";
-import authenticateUser from "../../Middlewares/auth.middlewares";
-import validate from "../../Middlewares/validation.middleware";
-import { createTaskSchema, taskIdSchema, updateTaskSchema } from "../../validators/task.validator";
-import authorizeTaskOwner from "../../Middlewares/authorization.middleware";
-import { createTask, deleteTask, updateTask } from "../../Controllers/task.controller";
+import authenticateUser from "../../Middlewares/auth.middlewares.ts";
+import validate from "../../Middlewares/validation.middleware.ts";
+import { createTaskSchema, taskIdSchema, updateTaskSchema } from "../../validators/task.validator.ts";
+import authorizeTaskOwner from "../../Middlewares/authorization.middleware.ts";
+import { createTask, deleteTask, updateTask } from "../../Controllers/task.controller.ts";
 
 const router = express.Router();
 

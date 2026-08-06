@@ -1,12 +1,11 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import * as crypto from "crypto";
-import prisma from "../config/prisma";
+import prisma from "../config/prisma.ts";
 import jwt from "jsonwebtoken";
-import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from "../utils/jwt";
-import logger from "../utils/logger";
-import ApiError from "../utils/ApiError";
-import asyncHandler from "../utils/asyncHandler";
+import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from "../utils/jwt.ts";
+import ApiError from "../utils/ApiError.ts";
+import asyncHandler from "../utils/AsyncHandler.ts";
 
 type AuthRequest = Request & {
     user?: {

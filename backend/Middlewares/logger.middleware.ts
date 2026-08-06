@@ -1,10 +1,10 @@
-import { NextFunction, Request, Response } from "express";
+import type { Request, Response, NextFunction } from "express";
 import logger from "../utils/logger.ts";
 
 const loggerMiddleware = (
     req: Request,
     res: Response,
-    next: NextFunction
+    next: NextFunction,
 ): void => {
     const start = Date.now();
 
