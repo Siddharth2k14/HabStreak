@@ -4,6 +4,7 @@ import loggerMiddleware from "../Middlewares/logger.middleware.ts";
 import errorMiddleware from "../Middlewares/error.middleware.ts";
 import prisma from "../config/prisma.ts";
 import logger from "../utils/logger.ts";
+import notFoundMiddleware from "../Middlewares/notFound.middleware.ts";
 dotenv.config()
 
 const app = express();
@@ -44,6 +45,7 @@ app.get("/", (req, res) => {
 //     })();
 // });
 
+app.use(notFoundMiddleware);
 app.use(errorMiddleware);
 
 app.listen(PORT, () => {
