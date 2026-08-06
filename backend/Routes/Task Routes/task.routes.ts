@@ -21,3 +21,5 @@ router.patch("/tasks/:taskId", authenticateUser, authorizeTaskOwner, validate(up
  * Delete Task
  */
 router.delete("/tasks/:taskId", authenticateUser, authorizeTaskOwner, validate(taskIdSchema), deleteTask);
+
+export default router;

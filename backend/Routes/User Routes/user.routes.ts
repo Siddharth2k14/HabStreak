@@ -37,3 +37,5 @@ router.get("/verify/:token", verifyEmail);
  * Logout
  */
 router.post("/logout", logoutRateLimiter, authenticateUser, logoutUser)
+
+export default router;
