@@ -62,9 +62,15 @@ const LoginPage = ({
                         Log In
                     </button>
                 </form>
+                <p className="mt-4 text-center text-sm text-slate-400">
+                    Don't have an account?{" "}
+                    <a href="/auth/register" className="text-blue-400 hover:underline">
+                        Register
+                    </a>
+                </p>
             </div>
         </div>
     )
-}
+};
 
 export default LoginPage;

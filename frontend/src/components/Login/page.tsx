@@ -1,9 +1,11 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import LoginPage from "./LoginPage";
 
 export const Login = () => {
+    const navigate = useNavigate();
     const [auth, setAuth] = React.useState({
         email: "",
         password: ""
@@ -45,11 +47,14 @@ export const Login = () => {
                     },
                 }
             );
-
-            console.log("Login successful:", response.data);
+            toast.success("Login successful");
+            navigate("/home-page");
         } catch (error: unknown) {
             if (axios.isAxiosError(error)) {
-                console.error("Axios Error:", error.response?.data);
+                if (error.response?.data?.message === "Too many login attempts. Please try again later.") {
+                    toast.error("Too many login attempts. Please try again later.");
+                }
+                console.error("Axios Error:", error.response?.data || error.message);
             } else if (error instanceof Error) {
                 console.error("Error:", error.message);
             } else {

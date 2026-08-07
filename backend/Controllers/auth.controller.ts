@@ -46,7 +46,6 @@ export const registerUser = asyncHandler(async (req: Request, res: Response): Pr
             username,
             email,
             password: hashPassword,
-            confirmPassword,
             isActive: true,
             isVerified: false,
             verificationToken,
@@ -94,9 +93,9 @@ export const loginUser = asyncHandler(async (req: Request, res: Response): Promi
         throw new ApiError(403, "Accunt has been disabled.");
     }
 
-    if (!user.isVerified) {
-        throw new ApiError(403, "Please verify your email first.");
-    }
+    // if (!user.isVerified) {
+    //     throw new ApiError(403, "Please verify your email first.");
+    // }
 
     // Compare password
     const isPasswordValid = await bcrypt.compare(

@@ -87,9 +87,15 @@ const RegisterPage = ({
                         Register
                     </button>
                 </form>
+                <p className="mt-4 text-center text-sm text-slate-400">
+                    Already have an account?{" "}
+                    <a href="/auth/login" className="text-blue-400 hover:underline">
+                        Login
+                    </a>
+                </p>
             </div>
         </div>
     )
-}
+};
 
 export default RegisterPage

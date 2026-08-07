@@ -19,7 +19,7 @@ export const logoutRateLimiter = rateLimit({
 
 export const loginRateLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 5,
+    max: 20,
     standardHeaders: true,
     legacyHeaders: false,
     message: {
@@ -30,7 +30,7 @@ export const loginRateLimiter = rateLimit({
 
 export const signupRateLimiter = rateLimit({
     windowMs: 60 * 60 * 1000,
-    max: 3,
+    max: 10,
     standardHeaders: true,
     legacyHeaders: false,
     message: {

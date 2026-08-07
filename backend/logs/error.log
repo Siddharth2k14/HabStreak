@@ -1,0 +1,250 @@
+[2026-08-06 23:53:16] ERROR: Error: Route '/api/auth/signup' not found.
+    at notFoundMiddleware (file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Middlewares/notFound.middleware.ts:10:9)
+    at Layer.handleRequest (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:342:13)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:291:5)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:688:15
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:186:3)
+    at router (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:60:12)
+[2026-08-06 23:53:20] ERROR: Error: Route '/api/auth/signup' not found.
+    at notFoundMiddleware (file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Middlewares/notFound.middleware.ts:10:9)
+    at Layer.handleRequest (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:342:13)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:291:5)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:688:15
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:186:3)
+    at router (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:60:12)
+[2026-08-06 23:53:57] ERROR: Error: Route '/api/auth/signup' not found.
+    at notFoundMiddleware (file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Middlewares/notFound.middleware.ts:10:9)
+    at Layer.handleRequest (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:342:13)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:291:5)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:688:15
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:276:14)
+    at router.handle (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:186:3)
+    at router (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:60:12)
+[2026-08-07 23:48:04] ERROR: PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    username: "Sid",
+    email: "si@gmail.com",
+    password: "$2b$10$pFYERzDS3UGA42G3z9pue.OAWYx79O1GM62udJV8QHnmfeDeKAPJq",
+    confirmPassword: "12345678",
+    ~~~~~~~~~~~~~~~
+    isActive: true,
+    isVerified: false,
+    verificationToken: "8ebff26921ef3aa4d05bd9e5a58ddfb5425880a416556b6ce17040aca9453c9c",
+    verificationExpires: new Date("2026-08-08T18:18:04.464Z"),
+?   id?: String,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   tasks?: TaskCreateNestedManyWithoutUserInput,
+?   sessions?: SessionCreateNestedManyWithoutUserInput,
+?   refreshTokens?: RefreshTokenCreateNestedManyWithoutUserInput
+  },
+  select: {
+    id: true,
+    username: true,
+    email: true,
+    createdAt: true,
+    updatedAt: true
+  }
+}
+
+Unknown argument `confirmPassword`. Available options are marked with ?.
+    at throwValidationException (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\core\errorRendering\throwValidationException.ts:45:9)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:202:7)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:44:18
+[2026-08-07 23:49:24] ERROR: PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    username: "Sid",
+    email: "si@gmail.com",
+    password: "$2b$10$GiCMC2lQCiu3Ojf/9.ki5.LRyXLHDTvLG0e/xu99sxzQsutqqRQF.",
+    confirmPassword: "12345678",
+    ~~~~~~~~~~~~~~~
+    isActive: true,
+    isVerified: false,
+    verificationToken: "51683847bf4cc6f04f6b2e16143c2521138c42c9bb84b4a194e325ab8274d05a",
+    verificationExpires: new Date("2026-08-08T18:19:24.538Z"),
+?   id?: String,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   tasks?: TaskCreateNestedManyWithoutUserInput,
+?   sessions?: SessionCreateNestedManyWithoutUserInput,
+?   refreshTokens?: RefreshTokenCreateNestedManyWithoutUserInput
+  },
+  select: {
+    id: true,
+    username: true,
+    email: true,
+    createdAt: true,
+    updatedAt: true
+  }
+}
+
+Unknown argument `confirmPassword`. Available options are marked with ?.
+    at throwValidationException (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\core\errorRendering\throwValidationException.ts:45:9)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:202:7)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:44:18
+[2026-08-07 23:49:53] ERROR: PrismaClientValidationError: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    username: "Sid",
+    email: "si@gmail.com",
+    password: "$2b$10$Zye7IZy7xFVk78YmzicKguZDLFqLxJejbVaxx727EngGnCEuPybVK",
+    confirmPassword: "12345678",
+    ~~~~~~~~~~~~~~~
+    isActive: true,
+    isVerified: false,
+    verificationToken: "2e63eec337f4de6686cf94e555d1479c04765edbb94400f47fcdd27b60ced331",
+    verificationExpires: new Date("2026-08-08T18:19:53.095Z"),
+?   id?: String,
+?   createdAt?: DateTime,
+?   updatedAt?: DateTime,
+?   tasks?: TaskCreateNestedManyWithoutUserInput,
+?   sessions?: SessionCreateNestedManyWithoutUserInput,
+?   refreshTokens?: RefreshTokenCreateNestedManyWithoutUserInput
+  },
+  select: {
+    id: true,
+    username: true,
+    email: true,
+    createdAt: true,
+    updatedAt: true
+  }
+}
+
+Unknown argument `confirmPassword`. Available options are marked with ?.
+    at throwValidationException (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\core\errorRendering\throwValidationException.ts:45:9)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:202:7)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:44:18
+[2026-08-08 00:01:28] ERROR: Error: Please verify your email first.
+    at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:97:15
+[2026-08-08 00:22:18] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:22:18] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:27:19] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:27:22] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:27:23] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:27:23] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:32:57] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:32:57] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:32:57] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 00:36:33] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:129:5
+[2026-08-08 01:46:01] ERROR: Error: Email is already registered.
+    at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:32:15
+[2026-08-08 01:47:11] ERROR: Error: Email is already registered.
+    at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:32:15

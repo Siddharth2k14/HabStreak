@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import RegisterPage from "./RegisterPage";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -10,6 +11,8 @@ export const Register = () => {
         password: "",
         confirmPassword: ""
     })
+
+    const navigate = useNavigate();
 
     const backend_Url = import.meta.env.VITE_BACKEND_URL;
 
@@ -59,22 +62,31 @@ export const Register = () => {
         }
         // Handle register logic here
         try {
-            const response =  await axios.post(`${backend_Url}/api/auth/signup`, {
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
+            const response = await axios.post(
+                `${backend_Url}/api/auth/register`,
+                {
                     username: auth.username,
                     email: auth.email,
                     password: auth.password,
-                    confirmPassword: auth.confirmPassword
-                })
-            });
+                    confirmPassword: auth.confirmPassword,
+                },
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+
             const data = response.data;
-            console.log("Registration successful:", data);
+            // console.log("Registration successful:", data);
+            toast.success("Registration successful.");
+            navigate("/auth/login");
 
         } catch (error: unknown) {
             if (axios.isAxiosError(error)) {
+                if (error.response?.data?.message === "Email is already registered.") {
+                    toast.error("Email is already registered.");
+                }
                 console.error("Axios Error:", error.response?.data);
             } else if (error instanceof Error) {
                 console.error("Error:", error.message);
