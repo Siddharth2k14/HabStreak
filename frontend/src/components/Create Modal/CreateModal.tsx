@@ -15,7 +15,7 @@ export const CreateModal = ({ onClose }: CreateModalProps) => {
      });
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 scrollbar-none">
+        <div className="fixed inset-0 bg-background bg-opacity-50 flex items-center justify-center p-4 z-50 scrollbar-none">
             <div className="w-full max-w-2xl max-h-[90vh] rounded-lg p-8 bg-navbar relative overflow-y-auto scrollbar-none">
                 <button
                     onClick={onClose}

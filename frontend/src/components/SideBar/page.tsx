@@ -1,8 +1,10 @@
 import React from "react";
 import { CreateModal } from "../Create Modal/CreateModal";
+import { SearchModal } from "../Search Modal/SearchModal";
 
 const SideBar = () => {
     const [createModalOpen, setCreateModalOpen] = React.useState(false);
+    const [searchModalOpen, setSearchModalOpen] = React.useState(false);
 
     return (
         <>
@@ -23,7 +25,9 @@ const SideBar = () => {
                     </li>
 
                     <li>
-                        <button>
+                        <button
+                            onClick={() => setSearchModalOpen(!searchModalOpen)}
+                        >
                             Search Task
                         </button>
                     </li>
@@ -31,6 +35,7 @@ const SideBar = () => {
             </aside>
 
             {createModalOpen && <CreateModal onClose={() => setCreateModalOpen(!createModalOpen)} />}
+            {searchModalOpen && <SearchModal onClose={() => setSearchModalOpen(!searchModalOpen)} />}
         </>
     );
 };
