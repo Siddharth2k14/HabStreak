@@ -3,11 +3,15 @@ const LoginPage = ({
         setAuth, 
         onLogin 
     }:{ 
-        auth: any; 
-        setAuth: any; 
-        onLogin: (e: React.SubmitEvent<HTMLFormElement>
-
-        ) => void }) => {
+        auth: {
+            email: string;
+            password: string;
+        }; 
+        setAuth: React.Dispatch<React.SetStateAction<{
+            email: string;
+            password: string;
+        }>>
+        onLogin: (e: React.FormEvent<HTMLFormElement>) => void }) => {
     return (
         <div
             className="min-h-screen flex flex-col items-center justify-center text-white"

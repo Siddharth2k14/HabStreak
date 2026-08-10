@@ -411,3 +411,4 @@ Unique constraint failed on the fields: (`token`)
 [2026-08-08 01:47:11] INFO: POST /api/auth/register | 409 | 8 ms | IP: ::1
 [2026-08-08 01:49:00] INFO: POST /api/auth/login | 200 | 238 ms | IP: ::1
 [2026-08-08 01:49:40] INFO: POST /api/auth/login | 200 | 194 ms | IP: ::1
+[2026-08-08 01:54:05] INFO: Server is running on http://localhost:3000
