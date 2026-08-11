@@ -2,6 +2,12 @@ import { Route, Routes } from 'react-router-dom'
 import { Authentication } from './pages/Authentication/page.tsx'
 import HomePage from './pages/Home Page/page.tsx'
 import { Toaster } from 'react-hot-toast'
+import NavBar from './components/NavBar/page.tsx'
+
+import SideBar from "./components/SideBar/page.tsx"
+import { CreateModal } from './components/Create Modal/CreateModal.tsx'
+import { CurrentStreak, LongestStreak } from "./components/Analytics/AnalyticsHeader.tsx"
+import AnalyticsFooter from './components/Analytics/AnalyticsFooter.tsx'
 
 function App() {
 
@@ -12,7 +18,12 @@ function App() {
       <Route path='/auth/*' element={<Authentication />} />
       <Route path='/home-page' element={<HomePage />} />
     </Routes> */}
-      <HomePage />
+      {/* <NavBar /> */}
+      {/* <SideBar /> */}
+      {/* <CreateModal /> */}
+        {/* <CurrentStreak /> */}
+        {/* <LongestStreak /> */}
+        <AnalyticsFooter />
     </>
   )
 }
