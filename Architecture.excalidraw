@@ -7540,8 +7540,8 @@
       "index": "b1o",
       "roundness": null,
       "seed": 507729878,
-      "version": 112,
-      "versionNonce": 1967942090,
+      "version": 114,
+      "versionNonce": 441564682,
       "isDeleted": false,
       "boundElements": [
         {
@@ -7549,7 +7549,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1786462822739,
+      "updated": 1786463457320,
       "link": null,
       "locked": false,
       "text": "Settings\nLogOut",
@@ -7582,16 +7582,20 @@
       "index": "b1p",
       "roundness": null,
       "seed": 67264842,
-      "version": 90,
-      "versionNonce": 293773386,
+      "version": 97,
+      "versionNonce": 1257592470,
       "isDeleted": false,
       "boundElements": [
         {
           "id": "0a3hcGMlyB2dM12aN6mWg",
           "type": "arrow"
+        },
+        {
+          "id": "NSp6o8vBiDqQsE23IrlPr",
+          "type": "arrow"
         }
       ],
-      "updated": 1786462823600,
+      "updated": 1786463472396,
       "link": null,
       "locked": false,
       "text": "Change Password",
@@ -7624,11 +7628,11 @@
       "index": "b1q",
       "roundness": null,
       "seed": 1583280406,
-      "version": 34,
-      "versionNonce": 765200138,
+      "version": 40,
+      "versionNonce": 1047534806,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1786462823601,
+      "updated": 1786463457321,
       "link": null,
       "locked": false,
       "points": [
@@ -8534,6 +8538,111 @@
         "fixedPoint": [
           -0.06964241806360938,
           0.7593801223042915
+        ],
+        "focus": 0,
+        "gap": 0
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": true,
+      "fixedSegments": null,
+      "startIsSpecial": null,
+      "endIsSpecial": null
+    },
+    {
+      "id": "-UFU_TbXr6cMDIQREG5AT",
+      "type": "text",
+      "x": 2585.6781746997426,
+      "y": 2063.379125704966,
+      "width": 197.37582397460938,
+      "height": 20,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "b28",
+      "roundness": null,
+      "seed": 1822646102,
+      "version": 621,
+      "versionNonce": 1766610646,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "NSp6o8vBiDqQsE23IrlPr",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1786463476651,
+      "link": null,
+      "locked": false,
+      "text": "feature/change-password",
+      "fontSize": 16,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "feature/change-password",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "NSp6o8vBiDqQsE23IrlPr",
+      "type": "arrow",
+      "x": 2669.1279623845917,
+      "y": 2055.283945738448,
+      "width": 0.3802967674910178,
+      "height": 62.76188441685281,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "b29",
+      "roundness": null,
+      "seed": 1530305238,
+      "version": 47,
+      "versionNonce": 42404886,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1786463476651,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3802967674910178,
+          -62.76188441685281
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "-UFU_TbXr6cMDIQREG5AT",
+        "fixedPoint": [
+          0.4227963992975357,
+          -0.40475899832590584
+        ],
+        "focus": 0,
+        "gap": 0
+      },
+      "endBinding": {
+        "elementId": "izF9hYFncdhB8jEZYvKN6",
+        "fixedPoint": [
+          0.49960586843306437,
+          1.132743398681478
         ],
         "focus": 0,
         "gap": 0
