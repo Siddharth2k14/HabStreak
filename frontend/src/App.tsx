@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/page.tsx'
 
 import SideBar from "./components/SideBar/page.tsx"
 import { CreateModal } from './components/Create Modal/CreateModal.tsx'
+// import ChangePassword from './components/Change Password/ChangePassword.tsx'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <NavBar />
       <SideBar />
       {/* <CreateModal /> */}
+      {/* <ChangePassword /> */}
     </>
   )
 }
