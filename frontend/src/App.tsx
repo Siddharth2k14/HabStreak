@@ -8,6 +8,7 @@ import SideBar from "./components/SideBar/page.tsx"
 import { CreateModal } from './components/Create Modal/CreateModal.tsx'
 import { CurrentStreak, LongestStreak } from "./components/Analytics/AnalyticsHeader.tsx"
 import AnalyticsFooter from './components/Analytics/AnalyticsFooter.tsx'
+import Dashboard from './components/Dashboard/Dashboard.tsx'
 
 function App() {
 
@@ -18,12 +19,14 @@ function App() {
       <Route path='/auth/*' element={<Authentication />} />
       <Route path='/home-page' element={<HomePage />} />
     </Routes> */}
-      {/* <NavBar /> */}
-      {/* <SideBar /> */}
+      {/* <NavBar />
+      <SideBar /> */}
       {/* <CreateModal /> */}
         {/* <CurrentStreak /> */}
         {/* <LongestStreak /> */}
-        <AnalyticsFooter />
+        {/* <AnalyticsFooter /> */}
+        {/* <Dashboard /> */}
+        <HomePage />
     </>
   )
 }

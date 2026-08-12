@@ -6,7 +6,7 @@ const NavBar = () => {
     return (
         <>
             <div
-                className="relative flex flex-row justify-between m-1 p-1 bg-navbar text-white w-[1270px] h-[35px] items-center"
+                className="border-2 border-slate-600 rounded-lg relative flex flex-row justify-between m-1 p-1 bg-navbar text-white w-[1270px] h-[35px] items-center"
             > {/* -> NavBar box */}
                 <div> {/* -> App Name box */}
                     <h1

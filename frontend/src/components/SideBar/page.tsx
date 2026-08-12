@@ -8,7 +8,7 @@ const SideBar = () => {
 
     return (
         <>
-            <aside className="flex justify-center w-[200px] h-[calc(100vh-50px)] mt-1 ml-1 bg-navbar text-white text-xl">
+            <aside className="border-2 border-slate-600 rounded-lg flex justify-center w-[200px] h-[calc(100vh-50px)] mt-1 ml-1 bg-navbar text-white text-xl">
                 <ul className="flex flex-col items-center gap-3 mt-2 list-none">
                     <li>
                         <button>

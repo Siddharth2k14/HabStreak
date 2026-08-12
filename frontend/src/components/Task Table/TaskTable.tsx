@@ -74,10 +74,10 @@ const TaskTable = () => {
     ]
 
     return (
-        <div className="flex-1 p-4 md:p-6 h-[calc(100vh-279px)] overflow-hidden">
-            <div className="border-2 border-slate-600 rounded-lg h-full overflow-auto scrollbar-none bg-slate-950">
+        <div className="flex-1 h-full overflow-hidden">
+            <div className="border-2 border-slate-600 rounded-lg h-full overflow-auto scrollbar-none bg-slate-950/50">
                 <table className="border-collapse text-white text-sm md:text-base w-full">
-                <thead className="bg-slate-900 sticky top-0">
+                <thead className="bg-slate-900/50 sticky top-0">
                     <tr>
                         <th className="border-2 border-slate-600 px-3 md:px-4 py-2 text-left min-w-[150px]">
                             Task

@@ -15,8 +15,8 @@ export const CreateModal = ({ onClose }: CreateModalProps) => {
      });
 
     return (
-        <div className="fixed inset-0 bg-background bg-opacity-50 flex items-center justify-center p-4 z-50 scrollbar-none">
-            <div className="w-full max-w-2xl max-h-[90vh] rounded-lg p-8 bg-navbar relative overflow-y-auto scrollbar-none">
+        <div className="fixed inset-0 flex items-center justify-center p-4 z-50 scrollbar-none">
+            <div className="border-3 border-slate-600 rounded-lg w-full max-w-2xl max-h-[90vh] p-8 bg-slate-900/75 relative overflow-y-auto scrollbar-none">
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition"

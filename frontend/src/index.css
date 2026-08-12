@@ -5,7 +5,7 @@
     --font-default: 'Inter';
 
     /* Common */
-    --color-background: #020617;
+    --background-image-dashboard: url('/Porsche yacht desktop.jpg');
     --color-navbar: rgba(15, 23, 42, 0.5);
     
     /* Auth */
@@ -18,8 +18,4 @@
     box-sizing: border-box;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-}
-
-body {
-    background-color: var(--color-background);
 }

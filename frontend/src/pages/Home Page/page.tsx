@@ -1,14 +1,14 @@
 import NavBar from "../../components/NavBar/page"
 import SideBar from "../../components/SideBar/page"
-import TaskTable from "../../components/Task Table/TaskTable"
+import Dashboard from "../../components/Dashboard/Dashboard"
 
 const HomePage = () => {
   return (
-    <div className="h-screen w-screen flex flex-col scrollbar-none overflow-hidden">
+    <div className="h-screen w-screen flex flex-col bg-dashboard bg-no-repeat bg-center bg-cover">
         <NavBar />
-        <div className="flex flex-1 overflow-hidden">
+        <div className="flex flex-row">
             <SideBar />
-            <TaskTable />
+            <Dashboard />
         </div>
     </div>
   )
