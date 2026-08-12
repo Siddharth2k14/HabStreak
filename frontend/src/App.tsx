@@ -6,19 +6,22 @@ import NavBar from './components/NavBar/page.tsx'
 
 import SideBar from "./components/SideBar/page.tsx"
 import { CreateModal } from './components/Create Modal/CreateModal.tsx'
+import ProfilePage from './components/Profile Page/page.tsx'
 
 function App() {
 
   return (
     <>
-      {/* <Toaster position='top-right' />
-    <Routes>
-      <Route path='/auth/*' element={<Authentication />} />
-      <Route path='/home-page' element={<HomePage />} />
-    </Routes> */}
-      <NavBar />
-      <SideBar />
+      <Toaster position='top-right' />
+      <Routes>
+        <Route path='/auth/*' element={<Authentication />} />
+        <Route path='/home-page' element={<HomePage />} />
+        <Route path='/profile-page' element={<ProfilePage />} />
+      </Routes>
+      {/* <NavBar />
+      <SideBar /> */}
       {/* <CreateModal /> */}
+      {/* <ProfilePage /> */}
     </>
   )
 }
