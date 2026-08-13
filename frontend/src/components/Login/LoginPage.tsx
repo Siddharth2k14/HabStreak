@@ -10,8 +10,10 @@ const LoginPage = ({
         ) => void }) => {
     return (
         <div
-            className="min-h-screen flex flex-col items-center justify-center text-white"
-            style={{ backgroundColor: 'var(--color-background)' }}
+            className="min-h-screen flex flex-col items-center justify-center text-white bg-cover bg-center"
+            style={{
+                backgroundImage: 'var(--background-image-dashboard)'
+            }}
         >
             <h1 className="text-4xl font-bold mb-8">
                 LOGIN

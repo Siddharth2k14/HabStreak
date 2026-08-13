@@ -62,7 +62,7 @@ export const Register = () => {
         }
         // Handle register logic here
         try {
-            const response = await axios.post(
+            await axios.post(
                 `${backend_Url}/api/auth/register`,
                 {
                     username: auth.username,
@@ -77,7 +77,6 @@ export const Register = () => {
                 }
             );
 
-            const data = response.data;
             // console.log("Registration successful:", data);
             toast.success("Registration successful.");
             navigate("/auth/login");

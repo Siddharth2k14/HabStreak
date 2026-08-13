@@ -4,7 +4,7 @@ const Profile = () => {
     const navigate = useNavigate();
     return (
         <>
-            <div className="absolute right-0 w-25 rounded-lg border border-gray-200 bg-navbar shadow-lg z-50">
+            <div className="absolute right-0 w-25 rounded-lg border border-gray-200 bg-navbar shadow-lg z-50 mt-11">
 
                 <div>
                     <button

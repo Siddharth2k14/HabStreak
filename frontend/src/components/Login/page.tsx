@@ -38,7 +38,7 @@ export const Login = () => {
             return;
         }
         try {
-            const response = await axios.post(
+            await axios.post(
                 `${backend_Url}/api/auth/login`,
                 auth,
                 {

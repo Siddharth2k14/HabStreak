@@ -1,6 +1,6 @@
-import NavBar from "../../components/NavBar/page"
-import SideBar from "../../components/SideBar/page"
-import Dashboard from "../../components/Dashboard/Dashboard"
+import { Outlet } from "react-router-dom";
+import NavBar from "../../components/NavBar/page";
+import SideBar from "../../components/SideBar/page";
 
 const HomePage = () => {
   return (
@@ -8,10 +8,11 @@ const HomePage = () => {
         <NavBar />
         <div className="flex flex-row">
             <SideBar />
-            <Dashboard />
+            <Outlet />
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
+
