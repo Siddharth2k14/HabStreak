@@ -4,6 +4,7 @@ import HomePage from './pages/Home Page/page.tsx'
 import { Toaster } from 'react-hot-toast'
 import Dashboard from './components/Dashboard/Dashboard.tsx'
 import ProfilePage from './components/Profile Page/page.tsx'
+// import ChangePassword from './components/Change Password/ChangePassword.tsx'
 
 function App() {
 
