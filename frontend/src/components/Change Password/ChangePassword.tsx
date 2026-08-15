@@ -2,104 +2,239 @@ import React from "react";
 import type { ChangePasswordType } from "./ChangePasswordType";
 
 const ChangePassword = () => {
-    const [changePassword, setChangePassword] = React.useState<ChangePasswordType>({
-        Username: "",
-        Email: "",
-        Current_password: "",
-        New_password: "",
-        Confirm_password: "",
-    });
+    const [changePassword, setChangePassword] =
+        React.useState<ChangePasswordType>({
+            Username: "",
+            Email: "",
+            New_password: "",
+            Confirm_password: "",
+        });
 
     return (
-        <div className="min-h-screen bg-background text-white p-8 md:p-16">
-            <div className="max-w-2xl mx-auto">
-                <h1 className="text-2xl md:text-3xl font-bold text-center mb-16">
-                    CHANGE PASSWORD
-                </h1>
+        <div className="w-full min-h-[500px] flex justify-center p-2">
 
-                <form onSubmit={(e) => e.preventDefault()} className="space-y-8">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <label htmlFor="Username" className="text-lg md:text-xl font-medium md:w-1/3">
-                            USERNAME
-                        </label>
-                        <input 
-                            type="text"
-                            name="Username"
-                            id="Username"
-                            value={changePassword.Username}
-                            onChange={(e) => {setChangePassword({ ...changePassword, Username: e.target.value })}}
-                            className="w-full md:w-1/2 px-4 py-2 bg-gray-300 text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
-                    </div>
+            <div className="w-full max-w-2xl rounded-2xl border border-slate-700 bg-slate-900/75 shadow-xl overflow-hidden">
 
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <label htmlFor="Email" className="text-lg md:text-xl font-medium md:w-1/3">
-                            EMAIL
-                        </label>
-                        <input 
-                            type="email"
-                            name="Email"
-                            id="Email"
-                            value={changePassword.Email}
-                            onChange={(e) => {setChangePassword({ ...changePassword, Email: e.target.value })}}
-                            className="w-full md:w-1/2 px-4 py-2 bg-gray-300 text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
-                    </div>
+                {/* Header */}
+                <div className="px-6 py-5 border-b border-slate-700">
+                    <h2 className="text-2xl font-semibold text-white">
+                        Change Password
+                    </h2>
 
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <label htmlFor="Current Password" className="text-lg md:text-xl font-medium md:w-1/3">
-                            CURRENT PASSWORD
-                        </label>
-                        <input 
-                            type="password"
-                            name="Current Password"
-                            id="Current Password"
-                            value={changePassword.Current_password}
-                            onChange={(e) => {setChangePassword({ ...changePassword, Current_password: e.target.value })}}
-                            className="w-full md:w-1/2 px-4 py-2 bg-gray-300 text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
-                    </div>
+                    <p className="mt-1 text-sm text-slate-400">
+                        Update your account password.
+                    </p>
+                </div>
 
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <label htmlFor="New Password" className="text-lg md:text-xl font-medium md:w-1/3">
-                            NEW PASSWORD
-                        </label>
-                        <input 
-                            type="password"
-                            name="New Password"
-                            id="New Password"
-                            value={changePassword.New_password}
-                            onChange={(e) => {setChangePassword({ ...changePassword, New_password: e.target.value })}}
-                            className="w-full md:w-1/2 px-4 py-2 bg-gray-300 text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
-                    </div>
+                {/* Form */}
+                <div className="p-6">
+                    <form
+                        onSubmit={(e) => e.preventDefault()}
+                        className="space-y-5"
+                    >
 
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <label htmlFor="Confirm Password" className="text-lg md:text-xl font-medium md:w-1/3">
-                            CONFIRM PASSWORD
-                        </label>
-                        <input 
-                            type="password"
-                            name="Confirm Password"
-                            id="Confirm Password"
-                            value={changePassword.Confirm_password}
-                            onChange={(e) => {setChangePassword({ ...changePassword, Confirm_password: e.target.value })}}
-                            className="w-full md:w-1/2 px-4 py-2 bg-gray-300 text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
-                    </div>
+                        {/* Username */}
+                        <div className="space-y-2">
+                            <label
+                                htmlFor="username"
+                                className="block text-sm font-medium text-slate-300"
+                            >
+                                Username
+                            </label>
 
-                    <div className="flex justify-center md:justify-end pt-8">
-                        <button 
-                            type="submit"
-                            className="px-12 py-3 bg-gray-400 text-black text-lg font-semibold rounded-full hover:bg-gray-500 transition duration-200"
-                        >
-                            Change It
-                        </button>
-                    </div>
-                </form>
+                            <input
+                                type="text"
+                                name="username"
+                                id="username"
+                                value={changePassword.Username}
+                                onChange={(e) =>
+                                    setChangePassword({
+                                        ...changePassword,
+                                        Username: e.target.value,
+                                    })
+                                }
+                                placeholder="Enter your username"
+                                className="
+                                    w-full
+                                    rounded-lg
+                                    border border-slate-700
+                                    bg-slate-800
+                                    px-4 py-3
+                                    text-sm text-white
+                                    placeholder:text-slate-500
+                                    outline-none
+                                    transition
+                                    hover:border-slate-600
+                                    focus:border-slate-500
+                                    focus:ring-2
+                                    focus:ring-slate-600/40
+                                "
+                            />
+                        </div>
+
+                        {/* Email */}
+                        <div className="space-y-2">
+                            <label
+                                htmlFor="email"
+                                className="block text-sm font-medium text-slate-300"
+                            >
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                value={changePassword.Email}
+                                onChange={(e) =>
+                                    setChangePassword({
+                                        ...changePassword,
+                                        Email: e.target.value,
+                                    })
+                                }
+                                placeholder="Enter your email"
+                                className="
+                                    w-full
+                                    rounded-lg
+                                    border border-slate-700
+                                    bg-slate-800
+                                    px-4 py-3
+                                    text-sm text-white
+                                    placeholder:text-slate-500
+                                    outline-none
+                                    transition
+                                    hover:border-slate-600
+                                    focus:border-slate-500
+                                    focus:ring-2
+                                    focus:ring-slate-600/40
+                                "
+                            />
+                        </div>
+
+                        {/* Password Section */}
+                        <div className="border-t border-slate-800 pt-5">
+                            <h3 className="text-sm font-medium text-white">
+                                Password Security
+                            </h3>
+
+                            <p className="mt-1 text-xs text-slate-500">
+                                Enter your current password and choose a new one.
+                            </p>
+                        </div>
+
+                        {/* New Password */}
+                        <div className="space-y-2">
+                            <label
+                                htmlFor="new-password"
+                                className="block text-sm font-medium text-slate-300"
+                            >
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                name="new-password"
+                                id="new-password"
+                                value={changePassword.New_password}
+                                onChange={(e) =>
+                                    setChangePassword({
+                                        ...changePassword,
+                                        New_password: e.target.value,
+                                    })
+                                }
+                                placeholder="Enter your new password"
+                                className="
+                                    w-full
+                                    rounded-lg
+                                    border border-slate-700
+                                    bg-slate-800
+                                    px-4 py-3
+                                    text-sm text-white
+                                    placeholder:text-slate-500
+                                    outline-none
+                                    transition
+                                    hover:border-slate-600
+                                    focus:border-slate-500
+                                    focus:ring-2
+                                    focus:ring-slate-600/40
+                                "
+                            />
+                        </div>
+
+                        {/* Confirm Password */}
+                        <div className="space-y-2">
+                            <label
+                                htmlFor="confirm-password"
+                                className="block text-sm font-medium text-slate-300"
+                            >
+                                Confirm New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                name="confirm-password"
+                                id="confirm-password"
+                                value={changePassword.Confirm_password}
+                                onChange={(e) =>
+                                    setChangePassword({
+                                        ...changePassword,
+                                        Confirm_password: e.target.value,
+                                    })
+                                }
+                                placeholder="Confirm your new password"
+                                className="
+                                    w-full
+                                    rounded-lg
+                                    border border-slate-700
+                                    bg-slate-800
+                                    px-4 py-3
+                                    text-sm text-white
+                                    placeholder:text-slate-500
+                                    outline-none
+                                    transition
+                                    hover:border-slate-600
+                                    focus:border-slate-500
+                                    focus:ring-2
+                                    focus:ring-slate-600/40
+                                "
+                            />
+                        </div>
+
+                        {/* Button */}
+                        <div className="flex justify-end pt-2">
+                            <button
+                                type="submit"
+                                className="
+                                    group
+                                    flex items-center gap-2
+                                    rounded-lg
+                                    bg-white
+                                    px-6 py-3
+                                    text-sm
+                                    font-semibold
+                                    text-slate-900
+                                    transition-all
+                                    duration-200
+                                    hover:bg-slate-200
+                                    active:scale-[0.98]
+                                    focus:outline-none
+                                    focus:ring-2
+                                    focus:ring-slate-500
+                                "
+                            >
+                                Change Password
+
+                                <span className="text-slate-500 transition-transform duration-200 group-hover:translate-x-1">
+                                    →
+                                </span>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default ChangePassword;

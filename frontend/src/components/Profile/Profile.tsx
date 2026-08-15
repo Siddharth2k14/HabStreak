@@ -17,6 +17,7 @@ const Profile = () => {
 
                 <div>
                     <button
+                        onClick={() => navigate('/settings')}
                         className="w-full px-4 py-2 text-left text-lg text-white hover:bg-gray-100 hover:text-gray-900"
                     >
                         Settings
