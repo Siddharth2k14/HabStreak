@@ -136,6 +136,15 @@ export const loginUser = asyncHandler(async (req: Request, res: Response): Promi
         },
     });
 
+    await prisma.session.create({
+        data: {
+            userId: user.id,
+            expiresAt: new Date(
+                Date.now() + 30 * 24 * 60 * 60 * 1000
+            ),
+        },
+    });
+
     res.status(200).json({
         success: true,
         accessToken,

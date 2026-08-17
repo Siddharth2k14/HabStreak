@@ -10,16 +10,16 @@ const router = express.Router();
 /**
  * Create Task
  */
-router.post("/tasks", authenticateUser, validate(createTaskSchema), createTask);
+router.post("/", authenticateUser, validate(createTaskSchema), createTask);
 
 /**
  * Update Task
  */
-router.patch("/tasks/:taskId", authenticateUser, authorizeTaskOwner, validate(updateTaskSchema), updateTask);
+router.patch("/:taskId", authenticateUser, authorizeTaskOwner, validate(updateTaskSchema), updateTask);
 
 /**
  * Delete Task
  */
-router.delete("/tasks/:taskId", authenticateUser, authorizeTaskOwner, validate(taskIdSchema), deleteTask);
+router.delete("/:taskId", authenticateUser, authorizeTaskOwner, validate(taskIdSchema), deleteTask);
 
 export default router;

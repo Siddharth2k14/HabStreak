@@ -1,5 +1,7 @@
 import React from "react";
 import type { CreateTaskTypes } from "./CreateTaskType";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 interface CreateModalProps {
     onClose: () => void;
@@ -13,6 +15,58 @@ export const CreateModal = ({ onClose }: CreateModalProps) => {
          link: "",
          description: "",
      });
+     const [loading, setLoading] = React.useState(false);
+
+     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+         e.preventDefault();
+         if (!createTask.task_name.trim()) {
+             toast.error("Task Name is required.");
+             return;
+         }
+
+         setLoading(true);
+         try {
+             const token = localStorage.getItem("token");
+             if (!token) {
+                 toast.error("You must be logged in to create a task.");
+                 setLoading(false);
+                 return;
+             }
+
+             const backend_Url = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+
+             const payload: any = {
+                 title: createTask.task_name.trim(),
+                 priority: createTask.priority,
+             };
+             if (createTask.description?.trim()) {
+                 payload.description = createTask.description.trim();
+             }
+             if (createTask.due_date) {
+                 payload.dueDate = new Date(createTask.due_date).toISOString();
+             }
+
+             await axios.post(
+                 `${backend_Url}/api/tasks`,
+                 payload,
+                 {
+                     headers: {
+                         "Content-Type": "application/json",
+                         Authorization: `Bearer ${token}`,
+                     },
+                 }
+             );
+
+             toast.success("Task created successfully!");
+             onClose();
+         } catch (error: any) {
+             console.error("Error creating task:", error);
+             const errMsg = error.response?.data?.message || "Failed to create task.";
+             toast.error(errMsg);
+         } finally {
+             setLoading(false);
+         }
+     };
 
     return (
         <div className="fixed inset-0 bg-background bg-opacity-50 flex items-center justify-center p-4 z-50 scrollbar-none">
@@ -27,7 +81,7 @@ export const CreateModal = ({ onClose }: CreateModalProps) => {
                     Create Task
                 </h1>
 
-                <form onSubmit={(e) => e.preventDefault()} className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-8">
                     <div>
                         <label htmlFor="Task Name" className="block text-white text-lg mb-1">
                             Task Name
@@ -104,9 +158,10 @@ export const CreateModal = ({ onClose }: CreateModalProps) => {
                     <div className="flex justify-end pt-1">
                         <button 
                             type="submit"
-                            className="px-12 py-3 bg-gray-400 text-black text-lg font-semibold rounded-full hover:bg-gray-500 transition duration-200"
+                            disabled={loading}
+                            className="px-12 py-3 bg-gray-400 text-black text-lg font-semibold rounded-full hover:bg-gray-500 transition duration-200 disabled:opacity-50"
                         >
-                            Create Task
+                            {loading ? "Creating..." : "Create Task"}
                         </button>
                     </div>
                 </form>
