@@ -47,6 +47,10 @@ export const Login = () => {
                     },
                 }
             );
+            const token = response.data.token || response.data.accessToken;
+            if (token) {
+                localStorage.setItem("token", token);
+            }
             toast.success("Login successful");
             navigate("/home-page");
         } catch (error: unknown) {

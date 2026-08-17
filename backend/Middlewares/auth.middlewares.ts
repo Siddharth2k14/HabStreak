@@ -87,7 +87,9 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
         const session = await prisma.session.findFirst({
             where: {
                 userId: decoded.userId,
-                revoked: false,
+                expiresAt: {
+                    gt: new Date(),
+                },
             },
         });
 
