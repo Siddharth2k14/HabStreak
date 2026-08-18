@@ -9,6 +9,16 @@ import ChangePassword from './components/Change Password/ChangePassword.tsx'
 import ChangeBackground from './components/Change Background/ChangeBackground.tsx'
 // import ChangePassword from './components/Change Password/ChangePassword.tsx'
 
+const ProtectedLayout = () => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return <Navigate to="/auth/login" replace />;
+  }
+
+  return <HomePage />;
+}
+
 function App() {
 
   return (
@@ -16,8 +26,8 @@ function App() {
       <Toaster position='top-right' />
       <Routes>
         <Route path='/auth/*' element={<Authentication />} />
-        <Route path='/' element={<HomePage />}>
-          <Route index element={<Dashboard />} />
+        <Route path='/' element={<ProtectedLayout />}>
+          <Route index element={<Navigate to="/home-page" replace />} />
           <Route path='home-page' element={<Dashboard />} />
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='profile-page' element={<ProfilePage />} />

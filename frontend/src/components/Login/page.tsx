@@ -38,7 +38,7 @@ export const Login = () => {
             return;
         }
         try {
-            await axios.post(
+            const response = await axios.post(
                 `${backend_Url}/api/auth/login`,
                 auth,
                 {
@@ -50,6 +50,9 @@ export const Login = () => {
             const token = response.data.token || response.data.accessToken;
             if (token) {
                 localStorage.setItem("token", token);
+            }
+            if (response.data.refreshToken) {
+                localStorage.setItem("refreshToken", response.data.refreshToken);
             }
             toast.success("Login successful");
             navigate("/home-page");

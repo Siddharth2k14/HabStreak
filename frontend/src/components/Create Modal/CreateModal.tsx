@@ -42,6 +42,9 @@ export const CreateModal = ({ onClose }: CreateModalProps) => {
              if (createTask.description?.trim()) {
                  payload.description = createTask.description.trim();
              }
+             if (createTask.link?.trim()) {
+                 payload.link = createTask.link.trim();
+             }
              if (createTask.due_date) {
                  payload.dueDate = new Date(createTask.due_date).toISOString();
              }

@@ -67,11 +67,6 @@ const authenticateUser = async (req: Request, res: Response, next: NextFunction)
             throw new ApiError(403, "Accunt has been disabled.");
         }
 
-        // Is user verified or not.
-        if (!user.isVerified) {
-            throw new ApiError(403, "Please verify your email first.");
-        }
-
         // Check Blacklisted Token
         const blacklisted = await prisma.blacklistedToken.findUnique({
             where: {

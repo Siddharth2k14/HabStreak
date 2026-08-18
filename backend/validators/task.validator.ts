@@ -6,6 +6,8 @@ export const createTaskSchema = z.object({
 
         description: z.string().max(500).optional(),
 
+        link: z.string().url("Link must be a valid URL.").max(500).optional(),
+
         priority: z.enum(["LOW", "MEDIUM", "HIGH"]).optional(),
 
         dueDate: z.string().datetime().optional(),
@@ -17,6 +19,8 @@ export const updateTaskSchema = z.object({
         title: z.string().min(1).max(100).optional(),
 
         description: z.string().max(500).optional(),
+
+        link: z.string().url("Link must be a valid URL.").max(500).optional(),
 
         priority: z.enum(["LOW", "MEDIUM", "HIGH"]).optional(),
 

@@ -413,3 +413,20 @@ Unique constraint failed on the fields: (`token`)
 [2026-08-08 01:49:40] INFO: POST /api/auth/login | 200 | 194 ms | IP: ::1
 [2026-08-17 00:09:13] INFO: Server is running on http://localhost:3000
 [2026-08-17 00:14:57] INFO: Server is running on http://localhost:3000
+[2026-08-19 00:05:28] INFO: GET / | 200 | 7 ms | IP: ::1
+[2026-08-19 00:05:28] ERROR: Error: Route '/favicon.ico' not found.
+    at notFoundMiddleware (file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Middlewares/notFound.middleware.ts:10:9)
+    at Layer.handleRequest (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:342:13)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:342:13)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-08-19 00:05:28] INFO: GET /favicon.ico | 404 | 12 ms | IP: ::1
+[2026-08-19 00:06:06] INFO: POST /api/auth/login | 200 | 213 ms | IP: ::1
+[2026-08-19 00:06:24] INFO: POST /api/tasks | 400 | 51 ms | IP: ::1
+[2026-08-19 00:09:20] INFO: POST /api/auth/login | 200 | 96 ms | IP: ::1
+[2026-08-19 00:09:36] INFO: POST /api/tasks | 400 | 14 ms | IP: ::1

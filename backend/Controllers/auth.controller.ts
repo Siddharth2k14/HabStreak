@@ -204,10 +204,6 @@ export const refreshAccessToken = asyncHandler(async (req: Request, res: Respons
         throw new ApiError(403, "Accunt has been disabled.");
     }
 
-    if (!user.isVerified) {
-        throw new ApiError(403, "Please verify your email first.");
-    }
-
     // Generate new access token
     const accessToken = generateAccessToken({
         userId: user.id,

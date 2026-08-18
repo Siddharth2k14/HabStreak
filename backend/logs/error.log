@@ -248,3 +248,14 @@ Unique constraint failed on the fields: (`token`)
     at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:32:15
 [2026-08-08 01:47:11] ERROR: Error: Email is already registered.
     at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:32:15
+[2026-08-19 00:05:28] ERROR: Error: Route '/favicon.ico' not found.
+    at notFoundMiddleware (file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Middlewares/notFound.middleware.ts:10:9)
+    at Layer.handleRequest (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:342:13)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:342:13)
+    at C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\index.js:297:9

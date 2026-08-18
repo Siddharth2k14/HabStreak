@@ -8,12 +8,13 @@ export const createTask = asyncHandler(async (req: Request, res: Response): Prom
         throw new ApiError(401, "Unauthorized.");
     }
 
-    const { title, description, priority, dueDate } = req.body;
+    const { title, description, link, priority, dueDate } = req.body;
 
-    const task = await (prisma as any).task.create({
+    const task = await prisma.task.create({
         data: {
             title,
             description,
+            link,
             priority,
             dueDate: dueDate ? new Date(dueDate) : null,
             userId: req.user.id,
@@ -33,18 +34,20 @@ export const updateTask = asyncHandler(async (req: Request, res: Response): Prom
     const {
         title,
         description,
+        link,
         status,
         priority,
         dueDate,
     } = req.body;
 
-    const updatedTask = await (prisma as any).task.update({
+    const updatedTask = await prisma.task.update({
         where: {
             id: taskId,
         },
         data: {
             ...(title !== undefined && { title }),
             ...(description !== undefined && { description }),
+            ...(link !== undefined && { link }),
             ...(status !== undefined && { status }),
             ...(priority !== undefined && { priority }),
             ...(dueDate !== undefined && {
@@ -63,7 +66,7 @@ export const updateTask = asyncHandler(async (req: Request, res: Response): Prom
 export const deleteTask = asyncHandler(async (req: Request, res: Response): Promise<void> => {
     const { taskId } = req.params;
 
-    await (prisma as any).task.delete({
+    await prisma.task.delete({
         where: {
             id: taskId,
         },
