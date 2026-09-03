@@ -1,9 +1,9 @@
 import express from "express";
-import { loginSchema, registerSchema } from "../../validators/auth.validator.ts";
+import { loginSchema, registerSchema, resendVerificationSchema } from "../../validators/auth.validator.ts";
 import validate from "../../Middlewares/validation.middleware.ts";
 import authenticateUser from "../../Middlewares/auth.middlewares.ts";
-import { loginUser, logoutUser, refreshAccessToken, registerUser, verifyEmail } from "../../Controllers/auth.controller.ts";
-import { loginRateLimiter, logoutRateLimiter, refreshRateLimiter, signupRateLimiter } from "../../Middlewares/rateLimit.middleware.ts";
+import { loginUser, logoutUser, refreshAccessToken, registerUser, resendVerificationEmail, verifyEmail } from "../../Controllers/auth.controller.ts";
+import { loginRateLimiter, logoutRateLimiter, refreshRateLimiter, resendVerificationRateLimiter, signupRateLimiter } from "../../Middlewares/rateLimit.middleware.ts";
 
 const router = express.Router();
 
@@ -27,6 +27,12 @@ router.post("/login", loginRateLimiter, validate(loginSchema), loginUser);
  * Refresh
  */
 router.post("/refresh", refreshRateLimiter, refreshAccessToken);
+
+/**
+ * Resend verification email
+ * email -> string
+ */
+router.post("/resend-verification", resendVerificationRateLimiter, validate(resendVerificationSchema), resendVerificationEmail);
 
 /**
  * Verify Token

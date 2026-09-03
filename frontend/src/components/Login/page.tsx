@@ -24,8 +24,8 @@ export const Login = () => {
             return false;
         }
 
-        if (auth.password.length < 6 || auth.password.length > 10) {
-            toast.error("Password must be between 6 and 10 characters");
+        if (auth.password.length < 8 || auth.password.length > 32) {
+            toast.error("Password must be between 8 and 32 characters");
             return false;
         }
 
@@ -60,6 +60,9 @@ export const Login = () => {
             if (axios.isAxiosError(error)) {
                 if (error.response?.data?.message === "Too many login attempts. Please try again later.") {
                     toast.error("Too many login attempts. Please try again later.");
+                } else if (error.response?.data?.message === "Validation failed.") {
+                    const validationMessage = error.response.data.errors?.[0]?.message;
+                    toast.error(validationMessage || "Please check your login details.");
                 }
                 console.error("Axios Error:", error.response?.data || error.message);
             } else if (error instanceof Error) {

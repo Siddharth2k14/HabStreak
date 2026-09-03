@@ -1,11 +1,12 @@
 import type { Request, Response } from "express";
 import bcrypt from "bcrypt";
-import * as crypto from "crypto";
 import prisma from "../config/prisma.ts";
 import jwt from "jsonwebtoken";
 import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from "../utils/jwt.ts";
 import ApiError from "../utils/ApiError.ts";
 import asyncHandler from "../utils/AsyncHandler.ts";
+import { generateVerificationToken, hashVerificationToken } from "../utils/token.utils.ts";
+import { sendVerificationEmail } from "../services/email.service.ts";
 
 type AuthRequest = Request & {
     user?: {
@@ -35,9 +36,10 @@ export const registerUser = asyncHandler(async (req: Request, res: Response): Pr
     // Hash Password
     const hashPassword = await bcrypt.hash(password, 10);
 
-    const verificationToken = crypto.randomBytes(32).toString("hex");
+    const verificationToken = generateVerificationToken();
+    const hashedVerificationToken = hashVerificationToken(verificationToken);
     const verificationExpires = new Date(
-        Date.now() + 24 * 60 * 60 * 1000
+        Date.now() + 15 * 60 * 1000
     );
 
     // Creating the user
@@ -48,7 +50,7 @@ export const registerUser = asyncHandler(async (req: Request, res: Response): Pr
             password: hashPassword,
             isActive: true,
             isVerified: false,
-            verificationToken,
+            verificationToken: hashedVerificationToken,
             verificationExpires,
         },
         select: {
@@ -59,6 +61,24 @@ export const registerUser = asyncHandler(async (req: Request, res: Response): Pr
             updatedAt: true,
         },
     });
+
+    try {
+        await sendVerificationEmail({
+            email: user.email,
+            name: user.username,
+            token: verificationToken,
+        });
+    } catch (error) {
+        console.error(
+            "Verification email failed:",
+            error
+        );
+
+        throw new ApiError(
+            500,
+            "Account created but verification email could not be sent."
+        );
+    }
 
     // Generating the JWT Token
     const token = generateAccessToken({
@@ -218,49 +238,141 @@ export const refreshAccessToken = asyncHandler(async (req: Request, res: Respons
     });
 });
 
-export const verifyEmail = asyncHandler(async (req: Request, res: Response): Promise<void> => {
-    const paramToken = req.params.token;
-    const token = Array.isArray(paramToken) ? paramToken[0] : paramToken;
+export const verifyEmail = asyncHandler(
+    async (req: Request, res: Response): Promise<void> => {
 
-    if (!token) {
-        throw new ApiError(400, "Verification token is required.");
+        const paramToken = req.params.token;
+        
+
+        const token = Array.isArray(paramToken)
+            ? paramToken[0]
+            : paramToken;
+
+        if (!token) {
+            throw new ApiError(
+                400,
+                "Verification token is required."
+            );
+        }
+
+        const hashedToken = hashVerificationToken(token);
+
+        const user = await prisma.user.findFirst({
+            where: {
+                OR: [
+                    { verificationToken: hashedToken },
+                    { verificationToken: token },
+                ],
+            },
+        });
+
+        if (!user) {
+            throw new ApiError(
+                400,
+                "Invalid verification token."
+            );
+        }
+
+        if (user.isVerified) {
+            throw new ApiError(
+                409,
+                "Email is already verified."
+            );
+        }
+
+        if (
+            !user.verificationExpires ||
+            user.verificationExpires < new Date()
+        ) {
+            throw new ApiError(
+                400,
+                "Verification token has expired."
+            );
+        }
+
+        await prisma.user.update({
+            where: {
+                id: user.id,
+            },
+
+            data: {
+                isVerified: true,
+                verificationToken: null,
+                verificationExpires: null,
+            },
+        });
+
+        res.redirect(
+            `${process.env.FRONTEND_URL}/email-verified`
+        );
     }
+);
 
-    const user = await prisma.user.findFirst({
+export const resendVerificationEmail = asyncHandler(async (
+    req: Request,
+    res: Response
+): Promise<void> => {
+    const email = req.body.email.trim();
+
+    const user = await prisma.user.findUnique({
         where: {
-            verificationToken: token,
+            email,
         },
     });
 
     if (!user) {
-        throw new ApiError(400, "Invalid verification token");
+        throw new ApiError(404, "User not found.");
     }
 
     if (user.isVerified) {
-        throw new ApiError(409, "Email is already verified.");
+        res.status(200).json({
+            success: true,
+            message: "Email is already verified.",
+        });
+        return;
     }
 
-    if (
-        !user.verificationExpires ||
-        user.verificationExpires < new Date()
-    ) {
-        throw new ApiError(400, "Verification token has expired.");
+    if (!user.isActive) {
+        throw new ApiError(403, "Account has been disabled.");
     }
+
+    const verificationToken = generateVerificationToken();
+    const hashedVerificationToken = hashVerificationToken(verificationToken);
+    const verificationExpires = new Date(
+        Date.now() + 15 * 60 * 1000
+    );
 
     await prisma.user.update({
         where: {
             id: user.id,
         },
         data: {
-            isVerified: true,
-            verificationToken: null,
-            verificationExpires: null,
+            verificationToken: hashedVerificationToken,
+            verificationExpires,
         },
     });
 
+    try {
+        await sendVerificationEmail({
+            email: user.email,
+            name: user.username,
+            token: verificationToken,
+        });
+    } catch (error) {
+        console.error(
+            "Verification email resend failed:",
+            error
+        );
+
+        throw new ApiError(
+            500,
+            "Verification email could not be sent."
+        );
+    }
+
     res.status(200).json({
         success: true,
-        message: "Email verified successfully.",
+        message: "Verification email sent successfully.",
     });
 });
 

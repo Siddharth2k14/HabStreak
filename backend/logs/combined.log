@@ -430,3 +430,128 @@ Unique constraint failed on the fields: (`token`)
 [2026-08-19 00:06:24] INFO: POST /api/tasks | 400 | 51 ms | IP: ::1
 [2026-08-19 00:09:20] INFO: POST /api/auth/login | 200 | 96 ms | IP: ::1
 [2026-08-19 00:09:36] INFO: POST /api/tasks | 400 | 14 ms | IP: ::1
+[2026-08-19 01:09:05] INFO: Server is running on http://localhost:3000
+[2026-08-19 01:09:28] INFO: Server is running on http://localhost:3000
+[2026-08-19 04:03:39] INFO: Server is running on http://localhost:3000
+[2026-08-19 04:05:20] ERROR: Error: Account created but verification email could not be sent.
+    at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:77:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-08-19 04:05:20] INFO: POST /api/auth/register | 500 | 629 ms | IP: ::1
+[2026-08-19 04:05:34] ERROR: Error: Email is already registered.
+    at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:33:15
+[2026-08-19 04:05:34] INFO: POST /api/auth/register | 409 | 22 ms | IP: ::1
+[2026-08-19 16:37:22] ERROR: Error: Account created but verification email could not be sent.
+    at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:77:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-08-19 16:37:22] INFO: POST /api/auth/register | 500 | 301 ms | IP: ::1
+[2026-08-20 03:26:29] INFO: Server is running on http://localhost:3000
+[2026-08-20 03:27:01] ERROR: Error: Token expired
+    at authenticateUser (file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Middlewares/auth.middlewares.ts:99:19)
+    at Layer.handleRequest (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\msnhp\OneDrive\Desktop\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-08-20 03:27:02] INFO: POST /api/auth/logout | 401 | 149 ms | IP: ::1
+[2026-08-20 03:27:31] ERROR: Error: Email is already registered.
+    at file:///C:/Users/msnhp/OneDrive/Desktop/HabStreak/backend/Controllers/auth.controller.ts:33:15
+[2026-08-20 03:27:31] INFO: POST /api/auth/register | 409 | 713 ms | IP: ::1
+[2026-08-20 03:28:01] INFO: POST /api/auth/login | 200 | 782 ms | IP: ::1
+[2026-08-20 03:28:16] INFO: POST /api/tasks | 400 | 71 ms | IP: ::1
+[2026-08-20 03:29:51] INFO: POST /api/tasks | 400 | 12 ms | IP: ::1
+[2026-08-20 03:31:10] INFO: Server is running on http://localhost:3000
+[2026-08-20 22:28:02] INFO: Server is running on http://localhost:3000
+[2026-08-29 22:52:37] INFO: Server is running on http://localhost:3000
+[2026-08-29 22:57:18] ERROR: PrismaClientInitializationError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:242:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:102:18
+[2026-08-29 22:57:18] ERROR: PrismaClientInitializationError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:242:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:102:18
+[2026-08-29 22:57:18] INFO: POST /api/auth/login | 500 | 4257 ms | IP: ::1
+[2026-08-29 22:57:18] INFO: POST /api/auth/login | 500 | 4236 ms | IP: ::1
+[2026-08-29 22:57:27] ERROR: PrismaClientInitializationError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:242:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:102:18
+[2026-08-29 22:57:27] ERROR: PrismaClientInitializationError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:242:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:102:18
+[2026-08-29 23:57:17] INFO: Server is running on http://localhost:3000
+[2026-08-29 23:57:32] INFO: POST /api/auth/login | 200 | 299 ms | IP: ::1
+[2026-08-30 00:06:14] INFO: POST /api/auth/logout | 200 | 151 ms | IP: ::1
+[2026-08-30 00:10:08] ERROR: Error: Account created but verification email could not be sent.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:77:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-08-30 00:10:08] INFO: POST /api/auth/register | 500 | 172 ms | IP: ::1
+[2026-08-30 00:10:28] ERROR: Error: Email is already registered.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:33:15
+[2026-08-30 00:10:28] INFO: POST /api/auth/register | 409 | 8 ms | IP: ::1
+[2026-09-01 03:37:01] INFO: Server is running on http://localhost:3000
+[2026-09-03 23:41:26] INFO: Server is running on http://localhost:3000
+[2026-09-03 23:43:39] INFO: POST /api/auth/register | 201 | 6238 ms | IP: ::1
+[2026-09-03 23:45:02] INFO: POST /api/auth/login | 400 | 10 ms | IP: ::1
+[2026-09-03 23:45:04] INFO: POST /api/auth/login | 400 | 2 ms | IP: ::1
+[2026-09-03 23:45:06] INFO: POST /api/auth/login | 400 | 1 ms | IP: ::1
+[2026-09-04 00:33:46] INFO: POST /api/auth/login | 200 | 872 ms | IP: ::1
+[2026-09-04 00:34:48] ERROR: Error: Verification token has expired.
+    at <anonymous> (F:\Programming\Projects\HabStreak\backend\Controllers\auth.controller.ts:287:23)
+    at processTicksAndRejections (native:7:39)
+[2026-09-04 00:34:48] INFO: GET /api/auth/verify/363b9e67113a0cda3551a62b0738d308195f4a0a8209c4cfb77adb387cc26451 | 400 | 344 ms | IP: ::1
+[2026-09-04 00:34:48] ERROR: Error: Route '/favicon.ico' not found.
+    at notFoundMiddleware (F:\Programming\Projects\HabStreak\backend\Middlewares\notFound.middleware.ts:10:13)
+    at handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at <anonymous> (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (F:\Programming\Projects\HabStreak\backend\Middlewares\logger.middleware.ts:19:5)
+    at handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at <anonymous> (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+[2026-09-04 00:34:48] INFO: GET /favicon.ico | 404 | 6 ms | IP: ::1
+[2026-09-04 00:35:00] INFO: POST /api/auth/logout | 200 | 105 ms | IP: ::1
+[2026-09-04 00:41:38] ERROR: Error: Email is already registered.
+    at <anonymous> (F:\Programming\Projects\HabStreak\backend\Controllers\auth.controller.ts:33:19)
+    at processTicksAndRejections (native:7:39)
+[2026-09-04 00:41:38] INFO: POST /api/auth/register | 409 | 9 ms | IP: ::1
+[2026-09-04 00:41:48] INFO: POST /api/auth/register | 201 | 13330 ms | IP: ::1
+[2026-09-04 00:42:16] INFO: GET /api/auth/verify/aba69c03ccd7c8237e7aa46f36c7b94527d4bf22832e9aa7318640c6a30e0280 | 302 | 373 ms | IP: ::1
+[2026-09-04 00:42:44] INFO: POST /api/auth/login | 200 | 198 ms | IP: ::1
+[2026-09-04 00:43:04] INFO: POST /api/tasks | 400 | 34 ms | IP: ::1
+[2026-09-04 00:43:25] INFO: POST /api/tasks | 400 | 17 ms | IP: ::1
