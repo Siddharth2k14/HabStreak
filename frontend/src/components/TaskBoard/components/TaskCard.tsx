@@ -1,6 +1,5 @@
+import { useSortable } from "@dnd-kit/sortable";
 import type { Task } from "../types/task.types";
-
-import { useDraggable } from "@dnd-kit/core";
 
 import { CSS } from "@dnd-kit/utilities";
 import { Box } from "@mui/material";
@@ -13,7 +12,7 @@ interface TaskCardProps {
 
 const TaskCard = ({ task }: TaskCardProps) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } =
-    useDraggable({
+    useSortable({
       id: task.id,
     });
 

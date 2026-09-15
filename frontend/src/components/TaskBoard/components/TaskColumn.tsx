@@ -1,155 +1,108 @@
 import { Box, Typography } from "@mui/material";
 
-import {
-    useDroppable,
-} from "@dnd-kit/core";
+import { useDroppable } from "@dnd-kit/core";
 
-import type {
-    Task,
-    TaskStatus,
-} from "../types/task.types";
+import type { Task, TaskStatus } from "../types/task.types";
 
 import TaskCard from "./TaskCard";
-
+import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 
 interface TaskColumnProps {
+  status: TaskStatus;
 
-    status: TaskStatus;
-
-    tasks: Task[];
+  tasks: Task[];
 }
 
+export const TaskColumn = ({ status, tasks }: TaskColumnProps) => {
+  const columnTitle = {
+    TODO: "TODO",
 
-export const TaskColumn = ({
-    status,
-    tasks,
-}: TaskColumnProps) => {
+    DOING: "DOING",
 
-    const {
-        setNodeRef,
-        isOver,
-    } = useDroppable({
-        id: status,
-    });
+    IN_REVIEW: "IN REVIEW",
 
+    DONE: "DONE",
+  };
 
-    const columnTitle = {
-
-        TODO: "TODO",
-
-        DOING: "DOING",
-
-        IN_REVIEW: "IN REVIEW",
-
-        DONE: "DONE",
-    };
-
-
-    return (
-
-        <Box
-            className="
+  return (
+    <Box
+      className="
                 flex
                 flex-col
-                min-w-[300px]
+                min-w-75
                 w-full
                 bg-slate-950
                 rounded-xl
                 p-4
+                h-fit
             "
-        >
+    >
+      {/* COLUMN HEADER */}
 
-            {/* COLUMN HEADER */}
-
-            <Box
-                className="
+      <Box
+        className="
                     flex
                     justify-between
                     items-center
                     mb-4
                 "
-            >
-
-                <Typography
-                    className="
+      >
+        <Typography
+          className="
                         text-white
                         font-semibold
                     "
-                >
-                    {columnTitle[status]}
-                </Typography>
+        >
+          {columnTitle[status]}
+        </Typography>
 
-
-                <Typography
-                    className="
+        <Typography
+          className="
                         text-slate-400
                     "
-                >
-                    {tasks.length}
-                </Typography>
+        >
+          {tasks.length}
+        </Typography>
+      </Box>
 
-            </Box>
-
-
-            {/* TASK CONTAINER */}
-
+      <SortableContext
+        items={tasks.map((task) => task.id)}
+        strategy={verticalListSortingStrategy}
+      >
+        <Box
+          className="
+                        flex
+                        flex-col
+                        gap-3
+                        min-h-[500px]
+                    "
+        >
+          {tasks.length > 0 ? (
+            tasks.map((task) => <TaskCard key={task.id} task={task} />)
+          ) : (
             <Box
-                ref={setNodeRef}
-                className={`
-                    flex
-                    flex-col
-                    gap-3
-                    min-h-[500px]
-                    rounded-lg
-                    transition
-                    ${
-                        isOver
-                            ? "bg-slate-800"
-                            : ""
-                    }
-                `}
-            >
-
-                {tasks.length > 0 ? (
-
-                    tasks.map((task) => (
-
-                        <TaskCard
-                            key={task.id}
-                            task={task}
-                        />
-
-                    ))
-
-                ) : (
-
-                    <Box
-                        className="
-                            flex
-                            items-center
-                            justify-center
-                            min-h-[150px]
-                            border
-                            border-dashed
-                            border-slate-700
-                            rounded-lg
-                        "
-                    >
-
-                        <Typography
-                            className="
-                                text-slate-500
+              className="
+                                min-h-[150px]
+                                border
+                                border-dashed
+                                border-slate-700
+                                rounded-lg
+                                flex
+                                items-center
+                                justify-center
                             "
-                        >
-                            Drop task here
-                        </Typography>
-
-                    </Box>
-
-                )}
-
+            >
+              <Typography
+                className="
+                                    text-slate-500
+                                "
+              >
+                Drop task here
+              </Typography>
             </Box>
-
+          )}
         </Box>
-    );
+      </SortableContext>
+    </Box>
+  );
 };

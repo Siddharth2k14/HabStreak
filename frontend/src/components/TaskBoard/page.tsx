@@ -11,10 +11,14 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
+  closestCorners,
   type DragEndEvent,
   type DragOverEvent,
   type DragStartEvent,
 } from "@dnd-kit/core";
+
+import { arrayMove } from "@dnd-kit/sortable";
+import TaskCard from "./components/TaskCard";
 
 export const TaskBoard = () => {
   const [tasksByStatus, setTasksByStatus] = React.useState<
@@ -31,7 +35,7 @@ export const TaskBoard = () => {
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
-        distance: 5,
+        distance: 8,
       },
     }),
   );
@@ -49,15 +53,23 @@ export const TaskBoard = () => {
   };
 
   const findTaskStatus = (taskId: string): TaskStatus | null => {
-    for (const status of Object.keys(tasksByStatus) as TaskStatus[]) {
-      const task = tasksByStatus[status].find((task) => task.id === taskId);
+    for (const status of TASK_STATUSES) {
+      const exists = tasksByStatus[status].some((task) => task.id === taskId);
 
-      if (task) {
+      if (exists) {
         return status;
       }
     }
 
     return null;
+  };
+
+  const findContainer = (id: string): TaskStatus | null => {
+    if (TASK_STATUSES.includes(id as TaskStatus)) {
+      return id as TaskStatus;
+    }
+
+    return findTaskStatus(id);
   };
 
   const handleDragStart = (event: DragStartEvent) => {
@@ -121,12 +133,75 @@ export const TaskBoard = () => {
   };
 
   const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
     setActiveTask(null);
+
+    if (!over) {
+      return;
+    }
+
+    const activeId = active.id.toString();
+    const overId = over.id.toString();
+
+    const activeContainer = findContainer(activeId);
+    const overContainer = findContainer(overId);
+
+    if (!activeContainer || !overContainer) {
+      return;
+    }
+
+    if (activeContainer === overContainer) {
+      setTasksByStatus((previous) => {
+        const tasks = previous[activeContainer];
+
+        const oldIndex = tasks.findIndex((task) => task.id === activeId);
+        const newIndex = tasks.findIndex((task) => task.id === overId);
+
+        if (oldIndex === -1 || newIndex === -1 || oldIndex === newIndex) {
+          return previous;
+        }
+
+        const reorderedTasks = arrayMove(tasks, oldIndex, newIndex);
+
+        return {
+          ...previous,
+          [activeContainer]: reorderedTasks.map((task, index) => ({
+            ...task,
+            position: index + 1,
+          })),
+        };
+      });
+
+      return;
+    }
+
+    setTasksByStatus((previous) => {
+      const updated: Record<TaskStatus, Task[]> = {
+        ...previous,
+      };
+
+      updated[activeContainer] = updated[activeContainer].map(
+        (task, index) => ({
+          ...task,
+          position: index + 1,
+        }),
+      );
+
+      updated[overContainer] = updated[overContainer].map((task, index) => ({
+        ...task,
+        status: overContainer,
+        position: index + 1,
+      }));
+
+      return updated;
+    });
   };
 
   return (
     <DndContext
       sensors={sensors}
+      collisionDetection={closestCorners}
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
@@ -134,19 +209,19 @@ export const TaskBoard = () => {
       <Box className="flex flex-col gap-2">
         <TaskBoardHeader />
         <Box className="flex gap-5 w-full overflow-x-auto p-4">
-          <TaskColumn status="TODO" tasks={tasksByStatus.TODO} />
-
-          <TaskColumn status="DOING" tasks={tasksByStatus.DOING} />
-
-          <TaskColumn status="IN_REVIEW" tasks={tasksByStatus.IN_REVIEW} />
-
-          <TaskColumn status="DONE" tasks={tasksByStatus.DONE} />
+          {TASK_STATUSES.map((status) => (
+            <TaskColumn
+              key={status}
+              status={status}
+              tasks={tasksByStatus[status]}
+            />
+          ))}
         </Box>
       </Box>
 
       <DragOverlay>
         {activeTask ? (
-          <Box className="opacity-80">{activeTask.title}</Box>
+          <TaskCard task={activeTask} />
         ) : null}
       </DragOverlay>
     </DndContext>
