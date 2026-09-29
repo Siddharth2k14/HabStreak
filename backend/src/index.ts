@@ -8,6 +8,7 @@ import logger from "../utils/logger.ts";
 import notFoundMiddleware from "../Middlewares/notFound.middleware.ts";
 import userRoutes from "../Routes/User Routes/user.routes.ts";
 import taskRoutes from "../Routes/Task Routes/task.routes.ts";
+import authenticateUser from "../Middlewares/auth.middlewares.ts";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -25,7 +26,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", userRoutes);
-app.use("/api/tasks", taskRoutes);
+app.use("/api/tasks",authenticateUser ,taskRoutes);
+// app.use("/api/tasks", taskRoutes);
 
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);

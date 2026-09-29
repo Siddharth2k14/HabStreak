@@ -1,36 +1,135 @@
-# What to Built?
+# What to Build?
 
-You need to built a software named as HabStreak. It is basically a Habit & Daily Task Tracking software with the functionality like “Streak”. The user can track their habits & daily tasks with the help of this software. 
+HabStreak is a habit and daily productivity application built around user accountability, streak tracking, and structured task execution. The product should help users manage personal tasks, focus sessions, and progress insights in a clean, motivating interface.
 
 ## Core Functionality
 
-1. User Authentication → SignUp, LogIn, LogOut
-2. There will be a table which should have the following things:
-    1. first column → task name
-    2. remaining columns → dates
-    3. Each date → row → checkbox → to mark the task completed
-3. There will be text area where the the user can see the tasks → marked as completed.
-4. User should have following functions/options/powers:
-    1. Create new task
-    2. Update the task
-    3. Delete the task
-    4. View the created task
-5. Each task row → three dot menu → 1. View, 2. Delete
+1. User Authentication
+   - SignUp
+   - Login
+   - Logout
+
+2. Task Management System
+   - Users can create tasks.
+   - Users can view tasks.
+   - Users can update tasks.
+   - Users can delete tasks.
+   - Users can view detailed information about a task.
+
+3. Kanban Task Board
+   - Tasks should be organized into four columns:
+     1. Todo
+     2. Doing
+     3. In Review
+     4. Done
+   - Users should be able to drag and drop tasks between columns.
+   - Users should be able to reorder tasks within the same column.
+   - Moving a task to another column should update its status.
+   - Task changes should persist in the database.
+   - The UI should use optimistic updates for a smooth drag-and-drop experience.
+   - If the API request fails, the task should return to its previous position.
+
+4. All Tasks Page
+   - Users should be able to view all their tasks in a structured format.
+   - Each task should display its current status/column.
+   - Users should be able to change the task status without drag and drop.
+   - Users should be able to search tasks.
+   - Users should be able to filter tasks by status.
+   - Users should be able to filter tasks by priority.
+   - Users should be able to sort tasks.
+
+5. Task Actions
+   - Create Task
+   - View Task
+   - Edit Task
+   - Delete Task
+   - Change Task Status
+   - Change Task Priority
+   - Start Focus Timer (Future Work)
+
+6. Task Details
+   - Each task should have a detailed view.
+   - Users should be able to view and update task information.
+   - Users should be able to change the task status.
+   - Users should be able to start a Focus Timer (Future Work).
+   - Users should be able to view focus time and session history (Future Work).
+
+## Task Status
+
+Every task should belong to exactly one task status.
+
+Available statuses:
+
+1. TODO
+2. DOING
+3. IN_REVIEW
+4. DONE
+
+Status Mapping:
+
+TODO
+↓
+Todo Column
+
+DOING
+↓
+Doing Column
+
+IN_REVIEW
+↓
+In Review Column
+
+DONE
+↓
+Done Column
+
+The task status should act as the single source of truth for determining which column a task belongs to.
+
+## Task Position
+
+Each task should contain a position value.
+
+The position determines the order of a task inside its current status column.
+
+Example:
+
+TODO Column
+
+Task A → Position 0
+Task B → Position 1
+Task C → Position 2
+
+Users should be able to:
+
+- Move tasks between different columns.
+- Reorder tasks inside the same column.
+
+When a task is moved:
+
+- Its status should be updated if the column changes.
+- Its position should be updated.
+- Other affected tasks should be reordered accordingly.
+- Database updates should be performed safely using a transaction.
 
 ## Analytics
 
 1. Line Chart
-2. Streak Graph (Like Github & LeetCode)
-3. Segmented Radial Progress Gauge (Like LeetCode)
+2. Streak Graph (Like GitHub and LeetCode)
+3. Segmented radial progress gauge (Like LeetCode)
 4. Other productivity charts
+5. Task completion trends by status
+6. Focus time analytics and productivity insights (Future Work)
 
 ## User Experience
 
-1. Design → Responsive for both Mobile & Desktop
-2. Simple and Clean interface.
-3. Instead of pure dark theme use grey theme
+1. Design → Responsive for both Mobile and Desktop
+2. Simple and clean interface
+3. Grey-based theme with strong readability
+4. Support light and dark mode
+5. Focus on smooth task movement and real-time visual feedback
 
 ### Personalization
+
 1. User can switch between Light Theme and Dark Theme.
 2. User can upload a custom background image for the dashboard.
 3. User can remove the custom background image and revert to the default background.
@@ -41,6 +140,7 @@ You need to built a software named as HabStreak. It is basically a Habit & Daily
 8. The application should validate image size and reject excessively large uploads.
 
 #### Custom Background Behavior
+
 1. When a custom background image is applied, the dashboard background should use the uploaded image.
 2. The Navbar should automatically become translucent.
 3. The Sidebar should automatically become translucent.
@@ -50,6 +150,7 @@ You need to built a software named as HabStreak. It is basically a Habit & Daily
 7. The user should be able to reset the appearance settings to the default application theme at any time.
 
 #### Glassmorphism
+
 - Navbar → translucent background with backdrop blur.
 - Sidebar → translucent background with backdrop blur.
 - Opacity should be configurable between 60% and 90%.
@@ -57,12 +158,13 @@ You need to built a software named as HabStreak. It is basically a Habit & Daily
 
 ## Data Management
 
-1. Store the User with the tasks and all the things related to it.
-2. Data should be consistent or preserve across sessions.
-3. Ensure the authorization (User can only see their own data).
+1. Store the user with their tasks and related productivity data.
+2. Data should be consistent and preserved across sessions.
+3. Ensure authorization so each user can only access their own data.
 4. Store user appearance preferences such as theme and custom dashboard background.
+5. Store task status, position, and ordering data required for a reliable Kanban board.
 
-# How it should Built?
+# How it should be Built?
 
 ## Tech Stack
 
@@ -73,59 +175,164 @@ You need to built a software named as HabStreak. It is basically a Habit & Daily
 3. TanStack / React Redux
 4. Tailwind CSS
 5. Material UI / ShadCN / Aceternity UI
+6. dnd-kit
+
+Use dnd-kit for:
+
+- Drag and drop
+- Sortable task cards
+- Multiple task columns
+- Task reordering
 
 ### Backend
 
 1. Express JS
-2. Rest APIs
+2. REST APIs
 3. JWT
-4. SQL
-5. Nodemon
+4. PostgreSQL
+5. Prisma ORM
+6. Nodemon
 
 ## Architecture
 
-Frontend
+### Frontend
 
 ├── Authentication Pages
-
+│
 ├── Dashboard
-
+│
+├── Task Management
+│   │
+│   ├── Task Board
+│   │   ├── Todo Column
+│   │   ├── Doing Column
+│   │   ├── In Review Column
+│   │   └── Done Column
+│   │
+│   ├── All Tasks Page
+│   │
+│   ├── Task Details Page
+│   │
+│   ├── Create Task
+│   │
+│   └── Edit Task
+│
+├── Focus Timer (Future Work)
+│
 ├── Analytics
+│
+└── User Profile
 
-├── User Profile
-
-Backend
+### Backend
 
 ├── Auth Service
-
+│
 ├── Task Service
-
-├── Analytics Service
+│
+├── Task Movement Service
+│
+├── Focus Timer Service (Future Work)
+│
+└── Analytics Service
 
 ## Database
 
-MongoDB
+PostgreSQL
 
-├── Users
+Use Prisma ORM for database management.
 
-├── Tasks
+Models:
 
-├── Task Completions
+├── User
+│
+├── Task
+│
+├── FocusSession
+│
+└── UserAppearance
+
+## Task Data Model
+
+Each task should contain:
+
+- id
+- title
+- description
+- status
+- priority
+- position
+- dueDate
+- userId
+- createdAt
+- updatedAt
+
+Status values:
+
+- TODO
+- DOING
+- IN_REVIEW
+- DONE
+
+Priority values:
+
+- LOW
+- MEDIUM
+- HIGH
+
+Position:
+
+- Determines the order of the task inside its current status column.
 
 ## APIs
 
-1. /auth/login → post ⇒ Login the user
-2. /auth/signup → post ⇒ Signup the user
-3. /auth/logout → post ⇒ Logout the user
-4. /auth/me → get ⇒ Get the current user
-5. /tasks → post ⇒ Create the tasks
-6. /tasks → get ⇒ Get all the tasks
-7. /tasks/:taskId → get ⇒ Get the tasks by taskId
-8. /tasks/:taskId→ patch or put ⇒ Edit the tasks by taskId
-9. /tasks/:taskId → delete ⇒ Delete the tasks by taskId
-10. /tasks/assigned → post ⇒ To assign the tasks
-11. /tasks/assigned → get ⇒ Fetch assigned tasks
-12. /tasks/:taskId/completion → patch ⇒ Mark the tasks with specific taskId as completed
+### Authentication
+
+1. POST /auth/login
+   → Login the user
+
+2. POST /auth/signup
+   → Register the user
+
+3. POST /auth/logout
+   → Logout the user
+
+4. GET /auth/me
+   → Get the current authenticated user
+
+### Task APIs
+
+5. POST /tasks
+   → Create a new task
+
+6. GET /tasks
+   → Get all tasks belonging to the authenticated user
+
+7. GET /tasks/:taskId
+   → Get a specific task
+
+8. PATCH /tasks/:taskId
+   → Update task information
+
+9. PATCH /tasks/:taskId/status
+   → Change the task status
+
+10. PATCH /tasks/:taskId/move
+    → Move a task between columns and update its position
+
+11. DELETE /tasks/:taskId
+    → Delete a task
+
+### Focus Timer APIs (Future Work)
+
+12. POST /tasks/:taskId/timer/start (Future Work)
+
+13. PATCH /timer/:timerId/pause (Future Work)
+
+14. PATCH /timer/:timerId/resume (Future Work)
+
+15. PATCH /timer/:timerId/stop (Future Work)
+
+16. GET /tasks/:taskId/focus-sessions (Future Work)
 
 ## Middleware
 
@@ -169,9 +376,9 @@ Protected Routes:
 - GET /tasks
 - GET /tasks/:taskId
 - PATCH /tasks/:taskId
+- PATCH /tasks/:taskId/status
+- PATCH /tasks/:taskId/move
 - DELETE /tasks/:taskId
-- POST /tasks/assigned
-- GET /tasks/assigned
 
 ### authorization.middleware.ts
 
@@ -199,14 +406,18 @@ Validate:
 - Authentication requests.
 - Task creation requests.
 - Task update requests.
-- Task assignment requests.
+- Task status update requests.
+- Task movement requests.
+- Task position values.
+- Task priority values.
+- Task due dates.
 
 Examples:
 
 - Missing required fields.
 - Invalid email format.
 - Invalid priority values.
-- Empty task names.
+- Empty task titles.
 
 ### logger.middleware.ts
 
@@ -221,9 +432,15 @@ Log Events:
 - Signup
 - Logout
 - Task Creation
-- Task Updates
+- Task Update
 - Task Deletion
-- Task Completion
+- Task Status Change
+- Task Movement
+- Task Reordering
+- Focus Timer Started (Future Work)
+- Focus Timer Paused (Future Work)
+- Focus Timer Resumed (Future Work)
+- Focus Timer Stopped (Future Work)
 - System Errors
 
 Do Not Log:
@@ -284,12 +501,130 @@ Example Response:
   "message": "Route Not Found"
 }
 
+## Task Movement Validation
+
+When moving a task:
+
+1. Verify taskId is valid.
+2. Verify the task exists.
+3. Verify the task belongs to the authenticated user.
+4. Validate the target status.
+5. Validate the target position.
+6. Prevent invalid status values.
+7. Update affected task positions.
+8. Perform database changes using a transaction.
+9. Return the updated task.
+
+## Task Board UI Requirements
+
+The application should provide a Kanban-style task board.
+
+### Columns
+
+The board should contain:
+
+1. Todo
+2. Doing
+3. In Review
+4. Done
+
+### Task Cards
+
+Each task card may display:
+
+- Task title
+- Description
+- Priority
+- Due date
+- Focus time
+- Number of focus sessions
+- Current status
+- Actions menu
+
+### Drag and Drop
+
+Users should be able to:
+
+- Drag a task.
+- Drop a task into another column.
+- Reorder tasks within the same column.
+- Move tasks between columns.
+
+### Drag and Drop Behavior
+
+When a task is dropped:
+
+1. Update the UI immediately.
+2. Send the update request to the backend.
+3. Update task status.
+4. Update task position.
+5. Persist changes in the database.
+
+If the API request fails:
+
+1. Restore the previous task position.
+2. Restore the previous task status.
+3. Display an error message.
+
+## All Tasks Page
+
+The application should provide a separate page where users can view all their tasks.
+
+Each task should display:
+
+- Task title
+- Description
+- Priority
+- Due date
+- Current status
+- Focus time
+- Created date
+- Updated date
+
+### Features
+
+Users should be able to:
+
+- View all tasks.
+- Search tasks.
+- Filter tasks by status.
+- Filter tasks by priority.
+- Sort tasks.
+- Open task details.
+- Edit tasks.
+- Delete tasks.
+- Change task status.
+
+### Status Change
+
+Each task should provide a status selector.
+
+Available options:
+
+- TODO
+- DOING
+- IN_REVIEW
+- DONE
+
+When the status is changed:
+
+1. Update the task.
+2. Persist the change in the database.
+3. Reflect the change on the Task Board.
+
+The Task Board and All Tasks Page must use the same task data.
+The task status should act as the single source of truth.
+
 # What should be avoided?
 
 1. Do not use third-party paid services.
 2. Do not store passwords in plain text.
 3. Avoid complex animations.
 4. Do not require user registration for basic usage.
+5. Do not keep the old date-based table task system.
+6. Do not keep the old checkbox completion model as the main task flow.
+7. Do not use MongoDB references in the production architecture.
+8. Do not add separate completion endpoints as the normal task completion mechanism.
 
 # Edge Cases
 
@@ -303,7 +638,7 @@ Example Response:
 6. Password too short
 7. Password too long
 8. Special characters in name
-9. SQL/NoSQL injection attempts
+9. SQL injection attempts
 10. XSS payload
 
 ## API Failure
@@ -322,7 +657,7 @@ Example Response:
 - Account not verified
 - Password too short/too long
 - Extremely long email value
-- NoSQL injection attempt
+- SQL injection attempt
 - XSS payload in input
 - Multiple failed login attempts (brute force)
 - JWT generation failure
@@ -347,7 +682,7 @@ Example Response:
 - Duplicate signup requests
 - Race condition creating same account twice
 - User attempts to assign role directly (`role: "admin"`)
-- NoSQL injection attempt
+- SQL injection attempt
 - XSS payload submission
 - Database write failure
 - Email verification service failure
@@ -421,7 +756,7 @@ Example Response:
 ### `GET /tasks/:taskId`
 
 - Missing taskId
-- Invalid MongoDB ObjectId
+- Invalid UUID
 - Task not found
 - Task already deleted
 - Unauthorized access
@@ -432,21 +767,65 @@ Example Response:
 
 ---
 
-### `PATCH/PUT /tasks/:taskId`
+### `PATCH /tasks/:taskId`
 
 - Missing taskId
 - Invalid taskId
 - Task not found
 - Empty request body
-- Invalid status
 - Invalid priority
 - Invalid due date
 - Unauthorized update
 - Updating another user's task
-- Editing completed task
-- Invalid status transition
 - Database update failure
 - Concurrent updates from multiple users
+
+This endpoint should focus on:
+
+- Title
+- Description
+- Priority
+- Due Date
+
+---
+
+### `PATCH /tasks/:taskId/status`
+
+- Missing taskId
+- Invalid taskId
+- Task not found
+- Missing status
+- Null status
+- Invalid status value
+- Invalid status transition
+- Attempting to move task to an unavailable column
+- Task already belongs to the selected column
+- Unauthorized status change
+- Concurrent status updates
+
+---
+
+### `PATCH /tasks/:taskId/move`
+
+- Missing taskId
+- Invalid taskId
+- Task not found
+- Unauthorized task movement
+- Moving another user's task
+- Missing status
+- Invalid status
+- Missing position
+- Invalid position
+- Negative position
+- Position greater than available tasks
+- Moving task to same position
+- Moving task to same column
+- Moving task between columns
+- Empty target column
+- Concurrent task movement
+- Database transaction failure
+- Partial reorder failure
+- Network failure during drag and drop
 
 ---
 
@@ -461,57 +840,6 @@ Example Response:
 - Database failure
 - Database timeout
 - Multiple delete requests simultaneously
-- Related assignment records still exist
-
----
-
-### `POST /tasks/assigned`
-
-- Missing taskId
-- Missing assigneeId
-- Invalid taskId
-- Invalid assigneeId
-- Task does not exist
-- User does not exist
-- Task already assigned
-- Duplicate assignment request
-- Assigning deleted task
-- Assigning completed task
-- Unauthorized assignment
-- Assigning task to self when restricted
-- Multiple assignments submitted simultaneously
-- Database write failure
-
----
-
-### `GET /tasks/assigned`
-
-- User not authenticated
-- No assigned tasks found
-- Invalid query parameters
-- Invalid pagination values
-- Unauthorized access to another user's assignments
-- Large number of assigned tasks
-- Slow query execution
-- Database timeout
-- Database unavailable
-
----
-
-### `PATCH /tasks/:taskId/completion`
-
-- Missing taskId
-- Invalid taskId
-- Task not found
-- Task already completed
-- Unauthorized completion update
-- User not assigned to task
-- Completion status already true
-- Task deleted before update
-- Database update failure
-- Concurrent completion requests
-- Marking archived task as completed
-- Invalid completion payload
 
 ---
 
@@ -542,20 +870,24 @@ Example Response:
 - Unexpected fields in payload
 - Large payload size
 
-### MongoDB / Database
+### PostgreSQL / Database
 
-- Invalid ObjectId
-- Duplicate key error
+- Invalid UUID
+- Foreign key constraint failure
+- Unique constraint violation
 - Database connection failure
 - Database timeout
+- Transaction failure
 - Partial write failure
+- Concurrent transaction conflict
+- Database rollback
 - Corrupted data
 
 ### Security
 
-- NoSQL Injection
+- SQL injection attempts
 - XSS payloads
-- CSRF attacks (cookie-based auth)
+- CSRF attacks
 - Brute force attacks
 - Rate limit abuse
 - Request flooding
@@ -573,9 +905,14 @@ Example Response:
 
 - Multiple users editing same task
 - Multiple users deleting same task
-- Multiple users assigning same task
-- Multiple completion requests
-- Duplicate form submissions
+- Multiple requests changing task status
+- Multiple requests moving the same task
+- Task moved while being deleted
+- Task moved while being edited
+- Task position conflict
+- Concurrent task reordering
+- Two requests assigning the same position
+- Database transaction rollback
 
 ### Performance
 
@@ -586,13 +923,24 @@ Example Response:
 - High traffic spikes
 - Pagination not applied
 
+### Task Board Concurrency
+
+- Multiple requests moving the same task.
+- Multiple requests changing task status.
+- Task moved while being deleted.
+- Task moved while being edited.
+- Task position conflict.
+- Concurrent task reordering.
+- Two requests assigning the same position.
+- Database transaction rollback.
+
 # Future Requirements
 
-## Focus Timer Module
+## Focus Timer Module (Future Work)
 
-Create a dedicated Focus Timer module that enables users to stay productive while working on their tasks. The timer should seamlessly integrate with the task management system, allowing users to measure and analyze the time spent on each task.
+Create a dedicated Focus Timer module (Future Work) that enables users to stay productive while working on their tasks. The timer should seamlessly integrate with the task management system, allowing users to measure and analyze the time spent on each task.
 
-### Timer Modes
+### Timer Modes (Future Work)
 
 #### 1. Pomodoro Timer
 
@@ -627,25 +975,26 @@ Provide a standard countdown timer for users who prefer uninterrupted work sessi
 
 ---
 
-## Task Integration
+## Task Integration (Future Work)
 
-The Focus Timer should be tightly integrated with the task management system.
+The Focus Timer should be tightly integrated with the task management system (Future Work).
 
-### Task Actions
+### Task Actions (Future Work)
 
-Every task should contain a Start Timer button.
+Every task should contain a Start Timer button (Future Work).
 
 The user should be able to choose:
 
 - 🍅 Pomodoro Timer
 - ⏳ Custom Countdown Timer
 
-### Timer Association
+### Timer Association (Future Work)
 
 Once selected:
 
 - The timer becomes associated with the selected task.
-- The task status changes to `In Progress`.
+- The task status changes to `DOING`.
+- If the task is currently in `TODO` and the user starts a Focus Timer (Future Work), the task should automatically move to the `DOING` column.
 - The active timer remains visible until completed or stopped.
 
 ### When a Timer Ends
@@ -661,9 +1010,9 @@ If another session is started, focus time should continue accumulating for the s
 
 ---
 
-## Focus Time Tracking
+## Focus Time Tracking (Future Work)
 
-Record productivity statistics for every task.
+Record productivity statistics for every task (Future Work).
 
 Each task should store:
 
@@ -680,9 +1029,9 @@ Display this information:
 
 ---
 
-## Timer Controls
+## Timer Controls (Future Work)
 
-Provide intuitive controls:
+Provide intuitive controls (Future Work):
 
 - ▶ Start
 - ⏸ Pause
@@ -700,9 +1049,9 @@ The interface should always display:
 
 ---
 
-## Notifications
+## Notifications (Future Work)
 
-Notify users when:
+Notify users when (Future Work):
 
 - A focus session ends.
 - A short break begins.
@@ -717,9 +1066,9 @@ Notify users when:
 
 ---
 
-## Session Persistence
+## Session Persistence (Future Work)
 
-The timer should continue seamlessly even if:
+The timer should continue seamlessly even if (Future Work):
 
 - The page is refreshed.
 - The browser is closed and reopened.
@@ -738,9 +1087,9 @@ Persist:
 
 ---
 
-## Focus Session History
+## Focus Session History (Future Work)
 
-Maintain a complete history of all focus sessions.
+Maintain a complete history of all focus sessions (Future Work).
 
 Each session record should include:
 
@@ -758,9 +1107,9 @@ This history should power productivity reports and insights.
 
 ---
 
-## Focus Timer UI Requirements
+## Focus Timer UI Requirements (Future Work)
 
-The Focus Timer should have a clean, modern, and distraction-free interface.
+The Focus Timer should have a clean, modern, and distraction-free interface (Future Work).
 
 ### Requirements
 
@@ -796,6 +1145,156 @@ The Focus Timer should have a clean, modern, and distraction-free interface.
 - Time spent on each task.
 - Time spent on each category/project.
 - Longest uninterrupted focus session.
+- Daily focus streaks.
+- Weekly focus streaks.
+
+These insights should help users understand and improve their productivity over time.
+
+# Recommended Final Task System Architecture
+
+This is what HabStreak should represent:
+
+                         HABSTREAK
+
+                            │
+                            ▼
+
+                    TASK MANAGEMENT
+
+                            │
+
+             ┌──────────────┴──────────────┐
+
+             │                             │
+
+             ▼                             ▼
+
+        TASK BOARD                     ALL TASKS
+
+        Kanban View                 Structured View
+
+             │                             │
+
+      Drag and Drop                 Status Dropdown
+
+             │                             │
+
+             └──────────────┬──────────────┘
+
+                            │
+
+                    SAME TASK DATA
+
+                            │
+
+              ┌─────────────┴─────────────┐
+
+              │                           │
+
+              ▼                           ▼
+
+           STATUS                       POSITION
+
+              │                           │
+
+              ▼                           ▼
+
+        Task Column                  Task Order
+
+                            │
+
+                            ▼
+
+                      TASK SERVICE
+
+                            │
+
+                            ▼
+
+                   PRISMA TRANSACTION
+
+                            │
+
+                            ▼
+
+                       POSTGRESQL
+
+## Recommended Frontend Component Structure
+
+src
+
+├── pages
+│
+│   ├── Dashboard
+│   │
+│   ├── TaskBoard
+│   │
+│   ├── AllTasks
+│   │
+│   ├── TaskDetails
+│   │
+│   ├── Analytics
+│   │
+│   └── Profile
+│
+├── components
+│
+│   └── Tasks
+│       │
+│       ├── TaskBoard.tsx
+│       ├── TaskColumn.tsx
+│       ├── TaskCard.tsx
+│       ├── TaskStatusSelector.tsx
+│       ├── TaskFilters.tsx
+│       ├── TaskSearch.tsx
+│       └── TaskActions.tsx
+│
+├── services
+│
+│   └── task.service.ts
+│
+├── types
+│
+│   └── TaskType.ts
+│
+└── store
+    │
+    └── taskStore.ts
+
+## Recommended Backend Structure
+
+src
+
+├── routes
+│
+│   └── task.routes.ts
+│
+├── controllers
+│
+│   └── task.controller.ts
+│
+├── services
+│
+│   └── task.service.ts
+│
+├── validators
+│
+│   └── task.validator.ts
+│
+├── middleware
+│
+│   ├── auth.middleware.ts
+│   ├── authorization.middleware.ts
+│   ├── validation.middleware.ts
+│   └── error.middleware.ts
+│
+└── prisma
+    │
+    └── schema.prisma
+
+## Important Recommendation
+
+The specification should be updated before implementing the task board. The previous date-based task table, checkbox completion model, MongoDB references, and the old `In Progress` focus timer status conflict with the new Kanban-based architecture and should be removed from the final product design.
 - Daily focus streaks.
 - Weekly focus streaks.
 
