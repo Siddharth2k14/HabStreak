@@ -1,0 +1,230 @@
+{
+  "TODO": [
+    {
+      "id": "todo-1",
+      "title": "Set up project repository and Git worktrees",
+      "description": "Initialize Git repo, configure branch protection rules, and setup worktrees for feature development.",
+      "priority": "LOW",
+      "dueDate": "2026-09-18T10:00:00.000Z",
+      "status": "TODO",
+      "position": 1,
+      "createdAt": "2026-09-13T18:06:05.000Z",
+      "updatedAt": "2026-09-13T18:06:05.000Z"
+    },
+    {
+      "id": "todo-2",
+      "title": "Design PostgreSQL database schema",
+      "description": "Define relational entities, foreign key constraints, indexes, and write migration scripts.",
+      "priority": "HIGH",
+      "dueDate": "2026-09-19T14:30:00.000Z",
+      "status": "TODO",
+      "position": 2,
+      "createdAt": "2026-09-13T18:10:00.000Z",
+      "updatedAt": "2026-09-13T18:10:00.000Z"
+    },
+    {
+      "id": "todo-3",
+      "title": "Draft API documentation with OpenAPI/Swagger",
+      "description": "Document request and response schemas for all task management endpoints.",
+      "priority": "MEDIUM",
+      "dueDate": "2026-09-20T16:00:00.000Z",
+      "status": "TODO",
+      "position": 3,
+      "createdAt": "2026-09-13T18:15:00.000Z",
+      "updatedAt": "2026-09-13T18:15:00.000Z"
+    },
+    {
+      "id": "todo-4",
+      "title": "Configure ESLint and Prettier pre-commit hooks",
+      "description": "Integrate Husky and lint-staged to enforce clean code formatting across teams.",
+      "priority": "LOW",
+      "dueDate": "2026-09-21T09:00:00.000Z",
+      "status": "TODO",
+      "position": 4,
+      "createdAt": "2026-09-13T18:20:00.000Z",
+      "updatedAt": "2026-09-13T18:20:00.000Z"
+    },
+    {
+      "id": "todo-5",
+      "title": "Implement rate limiting middleware",
+      "description": "Add IP-based token bucket or Redis-backed rate limiting to safeguard sensitive endpoints.",
+      "priority": "HIGH",
+      "dueDate": "2026-09-22T18:00:00.000Z",
+      "status": "TODO",
+      "position": 5,
+      "createdAt": "2026-09-13T18:25:00.000Z",
+      "updatedAt": "2026-09-13T18:25:00.000Z"
+    }
+  ],
+  "DOING": [
+    {
+      "id": "doing-1",
+      "title": "Implement JWT authentication and refresh token rotation",
+      "description": "Construct secure HttpOnly cookie handling, token expiry validations, and user session controls.",
+      "priority": "HIGH",
+      "dueDate": "2026-09-15T12:00:00.000Z",
+      "status": "DOING",
+      "position": 1,
+      "createdAt": "2026-09-12T09:00:00.000Z",
+      "updatedAt": "2026-09-13T17:30:00.000Z"
+    },
+    {
+      "id": "doing-2",
+      "title": "Build Kanban drag-and-drop board UI",
+      "description": "Integrate dnd-kit or @hello-pangea/dnd to support column and card reordering with optimistic updates.",
+      "priority": "HIGH",
+      "dueDate": "2026-09-16T15:00:00.000Z",
+      "status": "DOING",
+      "position": 2,
+      "createdAt": "2026-09-12T11:20:00.000Z",
+      "updatedAt": "2026-09-13T16:45:00.000Z"
+    },
+    {
+      "id": "doing-3",
+      "title": "Develop task filtering and search parameters",
+      "description": "Add multi-attribute query filtering for priority, due date range, and keyword search on the backend.",
+      "priority": "MEDIUM",
+      "dueDate": "2026-09-16T18:30:00.000Z",
+      "status": "DOING",
+      "position": 3,
+      "createdAt": "2026-09-12T14:10:00.000Z",
+      "updatedAt": "2026-09-13T15:10:00.000Z"
+    },
+    {
+      "id": "doing-4",
+      "title": "Set up Dockerized development environment",
+      "description": "Write multi-stage Dockerfiles and compose configuration for local database, cache, and server nodes.",
+      "priority": "LOW",
+      "dueDate": "2026-09-17T11:00:00.000Z",
+      "status": "DOING",
+      "position": 4,
+      "createdAt": "2026-09-13T08:00:00.000Z",
+      "updatedAt": "2026-09-13T14:00:00.000Z"
+    },
+    {
+      "id": "doing-5",
+      "title": "Create reusable native Dialog modal system",
+      "description": "Refactor modals across the application to leverage HTML5 dialogs with useImperativeHandle.",
+      "priority": "MEDIUM",
+      "dueDate": "2026-09-17T17:00:00.000Z",
+      "status": "DOING",
+      "position": 5,
+      "createdAt": "2026-09-13T10:15:00.000Z",
+      "updatedAt": "2026-09-13T16:00:00.000Z"
+    }
+  ],
+  "IN_REVIEW": [
+    {
+      "id": "review-1",
+      "title": "PR #42: Password reset and email dispatch workflow",
+      "description": "Review cryptographic token generation, expiration TTL, and transactional email template integration.",
+      "priority": "HIGH",
+      "dueDate": "2026-09-14T11:00:00.000Z",
+      "status": "IN_REVIEW",
+      "position": 1,
+      "createdAt": "2026-09-11T13:00:00.000Z",
+      "updatedAt": "2026-09-13T12:00:00.000Z"
+    },
+    {
+      "id": "review-2",
+      "title": "PR #45: Redux Toolkit state slice for task management",
+      "description": "Audit async thunks, extraReducers error handling, and normalized state structure.",
+      "priority": "MEDIUM",
+      "dueDate": "2026-09-14T14:00:00.000Z",
+      "status": "IN_REVIEW",
+      "position": 2,
+      "createdAt": "2026-09-11T15:30:00.000Z",
+      "updatedAt": "2026-09-13T11:45:00.000Z"
+    },
+    {
+      "id": "review-3",
+      "title": "PR #47: Task reordering position re-indexing logic",
+      "description": "Inspect fractional indexing algorithm preventing full-column re-write locks during drag actions.",
+      "priority": "HIGH",
+      "dueDate": "2026-09-14T16:00:00.000Z",
+      "status": "IN_REVIEW",
+      "position": 3,
+      "createdAt": "2026-09-12T10:00:00.000Z",
+      "updatedAt": "2026-09-13T13:10:00.000Z"
+    },
+    {
+      "id": "review-4",
+      "title": "PR #48: Dark theme color tokens and Tailwind config",
+      "description": "Check contrast ratios and verify accessibility compliance for Slate dark-mode color palette.",
+      "priority": "LOW",
+      "dueDate": "2026-09-15T09:30:00.000Z",
+      "status": "IN_REVIEW",
+      "position": 4,
+      "createdAt": "2026-09-12T16:00:00.000Z",
+      "updatedAt": "2026-09-13T10:00:00.000Z"
+    },
+    {
+      "id": "review-5",
+      "title": "PR #50: Unit test suite for task validation schemas",
+      "description": "Verify Zod schema edge cases for task name trimming, date ranges, and priority enums.",
+      "priority": "MEDIUM",
+      "dueDate": "2026-09-15T13:00:00.000Z",
+      "status": "IN_REVIEW",
+      "position": 5,
+      "createdAt": "2026-09-13T07:45:00.000Z",
+      "updatedAt": "2026-09-13T12:30:00.000Z"
+    }
+  ],
+  "DONE": [
+    {
+      "id": "done-1",
+      "title": "Project scaffolding with Vite, React, and TypeScript",
+      "description": "Configured base project template with path aliases, strict TypeScript config, and Tailwind CSS.",
+      "priority": "HIGH",
+      "dueDate": "2026-09-10T18:00:00.000Z",
+      "status": "DONE",
+      "position": 1,
+      "createdAt": "2026-09-09T08:00:00.000Z",
+      "updatedAt": "2026-09-10T17:45:00.000Z"
+    },
+    {
+      "id": "done-2",
+      "title": "Configure Express server and health check route",
+      "description": "Initialized Express service with CORS, Helmet, JSON body parser, and `/api/health` endpoint.",
+      "priority": "MEDIUM",
+      "dueDate": "2026-09-11T12:00:00.000Z",
+      "status": "DONE",
+      "position": 2,
+      "createdAt": "2026-09-10T10:00:00.000Z",
+      "updatedAt": "2026-09-11T11:30:00.000Z"
+    },
+    {
+      "id": "done-3",
+      "title": "Integrate Lucide React icon library",
+      "description": "Installed and verified Lucide SVG icon package for sidebar navigation and action buttons.",
+      "priority": "LOW",
+      "dueDate": "2026-09-11T15:00:00.000Z",
+      "status": "DONE",
+      "position": 3,
+      "createdAt": "2026-09-11T09:00:00.000Z",
+      "updatedAt": "2026-09-11T14:15:00.000Z"
+    },
+    {
+      "id": "done-4",
+      "title": "Set up centralized error-handling middleware",
+      "description": "Standardized JSON error response envelope handling 400, 401, 403, 404, and 500 errors consistently.",
+      "priority": "HIGH",
+      "dueDate": "2026-09-12T14:00:00.000Z",
+      "status": "DONE",
+      "position": 4,
+      "createdAt": "2026-09-11T16:00:00.000Z",
+      "updatedAt": "2026-09-12T13:40:00.000Z"
+    },
+    {
+      "id": "done-5",
+      "title": "Deploy staging web service on cloud host",
+      "description": "Configured environment secrets and verified automated deployments from Git main branch pushes.",
+      "priority": "MEDIUM",
+      "dueDate": "2026-09-12T18:00:00.000Z",
+      "status": "DONE",
+      "position": 5,
+      "createdAt": "2026-09-12T11:00:00.000Z",
+      "updatedAt": "2026-09-12T17:50:00.000Z"
+    }
+  ]
+}

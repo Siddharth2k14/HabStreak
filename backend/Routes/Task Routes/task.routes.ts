@@ -1,25 +1,31 @@
 import express from "express";
+
 import authenticateUser from "../../Middlewares/auth.middlewares.ts";
-import validate from "../../Middlewares/validation.middleware.ts";
-import { createTaskSchema, taskIdSchema, updateTaskSchema } from "../../validators/task.validator.ts";
-import authorizeTaskOwner from "../../Middlewares/authorization.middleware.ts";
-import { createTask, deleteTask, updateTask } from "../../Controllers/task.controller.ts";
+
+import {
+    createTask,
+    getTasks,
+    getTaskById,
+    updateTask,
+    updateTaskStatus,
+    moveTask,
+    deleteTask,
+} from "../../Controllers/task.controller.ts";
 
 const router = express.Router();
 
-/**
- * Create Task
- */
-router.post("/", authenticateUser, validate(createTaskSchema), createTask);
+router.post("/", authenticateUser, createTask);
 
-/**
- * Update Task
- */
-router.patch("/:taskId", authenticateUser, authorizeTaskOwner, validate(updateTaskSchema), updateTask);
+router.get("/", authenticateUser, getTasks);
 
-/**
- * Delete Task
- */
-router.delete("/:taskId", authenticateUser, authorizeTaskOwner, validate(taskIdSchema), deleteTask);
+router.get("/:taskId", authenticateUser, getTaskById);
+
+router.patch("/:taskId/status", authenticateUser, updateTaskStatus);
+
+router.patch("/:taskId/move", authenticateUser, moveTask);
+
+router.patch("/:taskId", authenticateUser, updateTask);
+
+router.delete("/:taskId", authenticateUser, deleteTask);
 
 export default router;

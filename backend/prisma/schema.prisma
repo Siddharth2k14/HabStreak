@@ -8,10 +8,10 @@ datasource db {
 }
 
 enum TaskStatus {
-  PENDING
-  IN_PROGRESS
-  COMPLETED
-  ARCHIVED
+  TODO
+  DOING
+  IN_REVIEW
+  DONE
 }
 
 enum TaskPriority {
@@ -40,9 +40,9 @@ model Task {
     id String @id @default(cuid())
     title String
     description String?
-    link String?
-    status TaskStatus @default(PENDING)
+    status TaskStatus @default(TODO)
     priority TaskPriority @default(MEDIUM)
+    position Int
     dueDate DateTime?
     userId String
     user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -59,6 +59,7 @@ model Task {
     @@index([userId])
     @@index([status])
     @@index([priority])
+    @@index([userId, status, position])
 }
 
 model TaskCompletion {
