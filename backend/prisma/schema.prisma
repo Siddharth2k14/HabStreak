@@ -83,8 +83,13 @@ model RefreshToken {
   token String @unique
   userId String
   user User @relation(fields: [userId], references: [id])
+  sessionId String?
+  session Session? @relation(fields: [sessionId], references: [id], onDelete: Cascade)
   expiredAt DateTime
   createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([sessionId])
 }
 
 model Session {
@@ -94,6 +99,7 @@ model Session {
     device String?
     browser String?
     ipAddress String?
+    refreshTokens RefreshToken[]
     createdAt DateTime @default(now())
     expiresAt DateTime
 }
