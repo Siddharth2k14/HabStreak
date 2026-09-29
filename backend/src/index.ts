@@ -1,4 +1,5 @@
 import express from "express"
+import cookieParser from "cookie-parser";
 
 import cors from "cors";
 import loggerMiddleware from "../Middlewares/logger.middleware.ts";
@@ -9,11 +10,13 @@ import userRoutes from "../Routes/User Routes/user.routes.ts";
 import taskRoutes from "../Routes/Task Routes/task.routes.ts";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors({
-    origin: "http://localhost:5173",
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  credentials: true,
 }));
 app.use(loggerMiddleware);
 
