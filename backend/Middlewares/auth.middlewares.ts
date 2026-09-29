@@ -27,73 +27,64 @@ declare global {
  */
 const authenticateUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const authHeader = req.headers.authorization;
+      const authHeader = req.headers.authorization;
 
-        // If the authHeader is missing from the request, then throw the 401 error.
-        if (!authHeader) {
-            throw new ApiError(401, "Authorization token missing.");
-        }
+      const token = req.cookies?.accessToken ?? (authHeader?.startsWith("Bearer") ? authHeader.slice(7) : undefined);
 
-        // Checks whether the authHeader is starting with "Bearer" or not.
-        if (!authHeader.startsWith("Bearer ")) {
-            throw new ApiError(401, "Invalid authorization format.");
-        }
+      if (!token) {
+        throw new ApiError(401, "No token provided.");
+      }
 
-        // Splits the authHeader after the space and starting with index 1.
-        const token = authHeader.split(" ")[1];
-        const decoded = verifyAccessToken(token);
+      const decoded = verifyAccessToken(token);
 
-        const user = await prisma.user.findUnique({
-            where: {
-                id: decoded.userId,
-            },
-            select: {
-                id: true,
-                username: true,
-                email: true,
-                createdAt: true,
-                updatedAt: true,
-                isActive: true,
-                isVerified: true,
-            },
-        });
+      const user = await prisma.user.findUnique({
+        where: {
+          id: decoded.userId,
+        },
+        select: {
+          id: true,
+          username: true,
+          email: true,
+          createdAt: true,
+          updatedAt: true,
+          isActive: true,
+          isVerified: true,
+        },
+      });
 
-        if (!user) {
-            throw new ApiError(401, "User not found.");
-        }
+      if (!user) {
+        throw new ApiError(401, "User not found.");
+      }
 
-        // Is user active or not.
-        if (!user.isActive) {
-            throw new ApiError(403, "Accunt has been disabled.");
-        }
+      if (!user.isActive) {
+        throw new ApiError(403, "Account has been disabled.");
+      }
 
-        // Check Blacklisted Token
-        const blacklisted = await prisma.blacklistedToken.findUnique({
-            where: {
-                token,
-            },
-        });
+      const blackListed = await prisma.blacklistedToken.findUnique({
+        where: {
+          token
+        },
+      });
 
-        if (blacklisted) {
-            throw new ApiError(401, "Token has been revoked.");
-        }
+      if (blackListed) {
+        throw new ApiError(401, "Token has been revoked.");
+      }
 
-        // Check Session
-        const session = await prisma.session.findFirst({
-            where: {
-                userId: decoded.userId,
-                expiresAt: {
-                    gt: new Date(),
-                },
-            },
-        });
+      const session = await prisma.session.findFirst({
+        where: {
+          userId: decoded.userId,
+          expiresAt: {
+            gt: new Date(),
+          },
+        },
+      });
 
-        if (!session) {
-            throw new ApiError(401, "Session expired.");
-        }
+      if (!session) {
+        throw new ApiError(401, "Session expired.");
+      }
 
-        req.user = user;
-        next();
+      req.user = user;
+      next();
     } catch (error) {
         if (error instanceof jwt.TokenExpiredError) {
             throw new ApiError(401, "Token expired");
