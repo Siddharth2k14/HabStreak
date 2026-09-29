@@ -749,3 +749,4 @@ Unique constraint failed on the fields: (`token`)
 [2026-09-29 22:03:45] INFO: POST /api/auth/login | 200 | 123 ms | IP: ::1
 [2026-09-29 22:04:37] INFO: POST /api/auth/login | 200 | 229 ms | IP: ::1
 [2026-09-29 22:04:42] INFO: POST /api/auth/refresh | 200 | 19 ms | IP: ::1
+[2026-09-29 23:31:41] INFO: Server is running on http://localhost:3000
