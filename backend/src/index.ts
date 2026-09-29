@@ -7,13 +7,15 @@ import logger from "../utils/logger.ts";
 import notFoundMiddleware from "../Middlewares/notFound.middleware.ts";
 import userRoutes from "../Routes/User Routes/user.routes.ts";
 import taskRoutes from "../Routes/Task Routes/task.routes.ts";
+import authenticateUser from "../Middlewares/auth.middlewares.ts";
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 app.use(cors({
-    origin: "http://localhost:5173",
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
 }));
 app.use(loggerMiddleware);
 
@@ -22,7 +24,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", userRoutes);
-app.use("/api/tasks", taskRoutes);
+app.use("/api/tasks",authenticateUser ,taskRoutes);
+// app.use("/api/tasks", taskRoutes);
 
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);

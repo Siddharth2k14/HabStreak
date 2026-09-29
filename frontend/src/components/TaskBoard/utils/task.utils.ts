@@ -1,6 +1,6 @@
 import type { Task } from "../types/task.types";
 
-export const convertTaskDates = (task: any): Task => {
+export const convertTaskDates = (task: Task): Task => {
     return {
         ...task,
         dueDate: task.dueDate

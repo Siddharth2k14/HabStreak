@@ -10,6 +10,6 @@ export type Task = {
     dueDate: Date | null;
     status: TaskStatus;
     position: number;
-    createdAt: string;
-    updatedAt: string;
+    createdAt: string | Date;
+    updatedAt: string | Date;
 };

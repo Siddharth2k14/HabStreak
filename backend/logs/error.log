@@ -346,3 +346,700 @@ Please make sure your database server is running at `localhost:5432`.
 [2026-09-04 00:41:38] ERROR: Error: Email is already registered.
     at <anonymous> (F:\Programming\Projects\HabStreak\backend\Controllers\auth.controller.ts:33:19)
     at processTicksAndRejections (native:7:39)
+[2026-09-27 22:52:16] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:103:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 22:52:28] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:103:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 22:54:37] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:103:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 22:56:32] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:103:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 22:56:51] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:103:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 22:56:52] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:103:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 22:57:07] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:103:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:05:52] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:103:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:22:18] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:22:20] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:22:21] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:22:37] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:26:46] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:27:27] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:30:22] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:31:17] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:39] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:39] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:40] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:40] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:41] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:41] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:43] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:43] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:54] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:54] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:54] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:31:54] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:32:03] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:32:04] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:32:05] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:32:32] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:32:33] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:41:13] ERROR: Error: Email is already registered.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:33:15
+[2026-09-27 23:42:42] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:42:43] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:42:44] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:42:45] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:42:45] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:43:07] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:44:12] ERROR: Error: Email is already registered.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:33:15
+[2026-09-27 23:45:13] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:45:14] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:117:3)
+    at handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:295:15
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+[2026-09-27 23:45:52] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:00] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:02] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:02] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:03] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:04] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:05] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:05] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:06] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:06] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:07] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:07] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:08] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:08] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:08] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:08] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:09] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:09] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:09] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:09] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:10] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-09-27 23:46:10] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9

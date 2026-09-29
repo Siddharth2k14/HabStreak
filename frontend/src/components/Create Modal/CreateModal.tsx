@@ -302,6 +302,19 @@ export const CreateModal = forwardRef<
                         />
                     </div>
 
+                    <div>
+                        <label htmlFor="status" className="block text-white text-lg mb-1">Status</label>
+                        <select id="status" value={createTask.status} onChange={(e) => setCreateTask({
+                            ...createTask,
+                            status: e.target.value as TaskStatus,
+                        })} className="w-full px-2 py-2 bg-gray-300 text-black rounded border-0 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            <option value="TODO">TODO</option>
+                            <option value="DOING">DOING</option>
+                            <option value="IN_REVIEW">IN REVIEW</option>
+                            <option value="DONE">DONE</option>
+                        </select>
+                    </div>
+
                     {/* Priority */}
 
                     <div>
