@@ -1570,3 +1570,5 @@ Unique constraint failed on the fields: (`token`)
     at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
 [2026-09-27 23:46:10] INFO: POST /api/tasks/ | 401 | 2 ms | IP: ::1
 [2026-09-29 23:27:19] INFO: Server is running on http://localhost:3000
+[2026-10-04 22:20:33] INFO: Server is running on http://localhost:3000
+[2026-10-04 22:20:33] INFO: Server is running on http://localhost:3000
