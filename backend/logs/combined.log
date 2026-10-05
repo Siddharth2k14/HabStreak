@@ -770,6 +770,7 @@ Unique constraint failed on the fields: (`token`)
 [2026-09-29 23:31:41] INFO: Server is running on http://localhost:3000
 [2026-09-29 23:51:50] INFO: Server is running on http://localhost:3000
 [2026-09-29 22:12:59] INFO: Server is running on http://localhost:3000
+[2026-09-29 22:17:38] INFO: Server is running on http://localhost:3000
     at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
     at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
     at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
