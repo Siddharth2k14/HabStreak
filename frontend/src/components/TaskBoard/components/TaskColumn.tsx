@@ -1,7 +1,5 @@
 import { Box, Typography } from "@mui/material";
 
-import { useDroppable } from "@dnd-kit/core";
-
 import type { Task, TaskStatus } from "../types/task.types";
 
 import TaskCard from "./TaskCard";

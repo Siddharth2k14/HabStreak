@@ -1,6 +1,6 @@
 import AnalyticsFooter from "../Analytics/AnalyticsFooter";
 import { CurrentStreak, LongestStreak } from "../Analytics/AnalyticsHeader";
-import TaskTable from "../Task Table/TaskTable";
+// import TaskTable from "../Task Table/TaskTable";
 
 const Dashboard = () => {
     return (
@@ -16,7 +16,7 @@ const Dashboard = () => {
 
             {/* Middle: Task Table */}
             <div className="flex-1 overflow-hidden min-h-0">
-                <TaskTable />
+                {/*<TaskTable />*/}
             </div>
 
             {/* Bottom: Analytics Footer */}

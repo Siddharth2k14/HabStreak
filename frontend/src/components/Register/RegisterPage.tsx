@@ -1,11 +1,13 @@
 const RegisterPage = ({
     auth,
     setAuth,
-    onRegister
+    onRegister,
+    isSubmitting
 }: {
     auth: any;
     setAuth: any;
     onRegister: (e: React.SubmitEvent<HTMLFormElement>) => void;
+    isSubmitting: boolean;
 }) => {
     return (
         <div
@@ -83,10 +85,11 @@ const RegisterPage = ({
 
                     <button
                         type="submit"
+                        disabled={isSubmitting}
                         className="mt-6 w-full rounded-full px-4 py-3 text-sm font-medium text-white"
                         style={{ backgroundColor: 'rgba(217, 217, 217, 0.17)' }}
                     >
-                        Register
+                        {isSubmitting ? "Creating account..." : "Register"}
                     </button>
                 </form>
                 <p className="mt-4 text-center text-sm text-slate-400">

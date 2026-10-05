@@ -1,10 +1,10 @@
 import React from "react";
-import { CreateModal } from "../Create Modal/CreateModal";
+import { CreateModal, type CreateModalHandle } from "../Create Modal/CreateModal";
 import { SearchModal } from "../Search Modal/SearchModal";
 import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
-    const [createModalOpen, setCreateModalOpen] = React.useState(false);
+    const createModal = React.useRef<CreateModalHandle>(null);
     const [searchModalOpen, setSearchModalOpen] = React.useState(false);
     const navigate = useNavigate();
 
@@ -19,9 +19,7 @@ const SideBar = () => {
                     </li>
 
                     <li>
-                        <button
-                            onClick={() => setCreateModalOpen(!createModalOpen)}
-                        >
+                        <button onClick={() => createModal.current?.open()}>
                             Create Task
                         </button>
                     </li>
@@ -36,7 +34,7 @@ const SideBar = () => {
                 </ul>
             </aside>
 
-            {createModalOpen && <CreateModal onClose={() => setCreateModalOpen(!createModalOpen)} />}
+            <CreateModal ref={createModal} />
             {searchModalOpen && <SearchModal onClose={() => setSearchModalOpen(!searchModalOpen)} />}
         </>
     );

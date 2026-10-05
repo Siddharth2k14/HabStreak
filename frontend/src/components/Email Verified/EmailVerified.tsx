@@ -15,7 +15,7 @@ const EmailVerified = () => {
                     </p>
 
                     <Link
-                        to="/login"
+                        to="/auth/login"
                         className="inline-block mt-6 rounded-lg bg-blue-600 px-5 py-2.5 text-white hover:bg-blue-700"
                     >
                         Go to Login

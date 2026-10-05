@@ -124,9 +124,9 @@ export const loginUser = asyncHandler(
       throw new ApiError(403, "Accunt has been disabled.");
     }
 
-    // if (!user.isVerified) {
-    //     throw new ApiError(403, "Please verify your email first.");
-    // }
+    if (!user.isVerified) {
+        throw new ApiError(403, "Please verify your email first.");
+    }
 
     // Compare password
     const isPasswordValid = await bcrypt.compare(password, user.password);
@@ -136,12 +136,6 @@ export const loginUser = asyncHandler(
     }
 
     // Generate JWT
-    const token = generateAccessToken({
-      userId: user.id,
-      email: user.email,
-      username: user.username,
-    });
-
     const accessToken = generateAccessToken({
       userId: user.id,
       email: user.email,
