@@ -20,14 +20,16 @@ import {
 import { arrayMove } from "@dnd-kit/sortable";
 import TaskCard from "./components/TaskCard";
 
+const typedDummyTaskData = dummyTaskData as unknown as Record<TaskStatus, Task[]>;
+
 export const TaskBoard = () => {
   const [tasksByStatus, setTasksByStatus] = React.useState<
     Record<TaskStatus, Task[]>
   >({
-    TODO: dummyTaskData.TODO.map(convertTaskDates),
-    DOING: dummyTaskData.DOING.map(convertTaskDates),
-    IN_REVIEW: dummyTaskData.IN_REVIEW.map(convertTaskDates),
-    DONE: dummyTaskData.DONE.map(convertTaskDates),
+    TODO: typedDummyTaskData.TODO.map(convertTaskDates),
+    DOING: typedDummyTaskData.DOING.map(convertTaskDates),
+    IN_REVIEW: typedDummyTaskData.IN_REVIEW.map(convertTaskDates),
+    DONE: typedDummyTaskData.DONE.map(convertTaskDates),
   });
 
   const [activeTask, setActiveTask] = React.useState<Task | null>(null);

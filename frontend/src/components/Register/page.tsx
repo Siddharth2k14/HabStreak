@@ -3,18 +3,20 @@ import { useNavigate } from "react-router-dom";
 import RegisterPage from "./RegisterPage";
 import axios from "axios";
 import toast from "react-hot-toast";
+import type { RegisterForm } from "./types";
+import { api } from "../../api/axios";
 
 export const Register = () => {
-    const [auth, setAuth] = React.useState({
+    const [auth, setAuth] = React.useState<RegisterForm>({
         username: "",
         email: "",
         password: "",
         confirmPassword: ""
     })
 
-    const navigate = useNavigate();
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-    const backend_Url = import.meta.env.VITE_BACKEND_URL;
+    const navigate = useNavigate();
 
     const validateForm = (): boolean => {
         if (!auth.username || !auth.email || !auth.password || !auth.confirmPassword) {
@@ -22,8 +24,8 @@ export const Register = () => {
             return false;
         }
 
-        if (auth.username.length < 3 || auth.username.length > 15) {
-            toast.error("Username must be between 3 and 15 characters");
+        if (auth.username.length < 3 || auth.username.length > 30) {
+            toast.error("Username must be between 3 and 30 characters");
             return false;
         }
 
@@ -42,8 +44,8 @@ export const Register = () => {
             return false;
         }
 
-        if (auth.password.length < 6 || auth.password.length > 10) {
-            toast.error("Password must be between 6 and 10 characters");
+        if (auth.password.length < 8 || auth.password.length > 32) {
+            toast.error("Password must be between 8 and 32 characters");
             return false;
         }
 
@@ -62,24 +64,17 @@ export const Register = () => {
         }
         // Handle register logic here
         try {
-            await axios.post(
-                `${backend_Url}/api/auth/register`,
-                {
-                    username: auth.username,
-                    email: auth.email,
-                    password: auth.password,
-                    confirmPassword: auth.confirmPassword,
-                },
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                }
-            );
+            setIsSubmitting(true);
+            await api.post("/api/auth/register", {
+                username: auth.username.trim(),
+                email: auth.email.trim().toLowerCase(),
+                password: auth.password,
+                confirmPassword: auth.confirmPassword,
+            });
 
             // console.log("Registration successful:", data);
             toast.success("Registration successful.");
-            navigate("/auth/login");
+            navigate("/auth/login", { replace: true });
 
         } catch (error: unknown) {
             if (axios.isAxiosError(error)) {
@@ -92,6 +87,8 @@ export const Register = () => {
             } else {
                 console.error("Unknown Error:", error);
             }
+        } finally {
+            setIsSubmitting(false);
         }
     }
 
@@ -100,6 +97,7 @@ export const Register = () => {
             auth={auth}
             setAuth={setAuth}
             onRegister={handleRegister}
+            isSubmitting={isSubmitting}
         />
     );
 };

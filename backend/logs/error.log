@@ -1193,3 +1193,59 @@ Unique constraint failed on the fields: (`token`)
     at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
     at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
     at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-02 17:12:21] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:199:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-04 20:21:23] ERROR: Error: Email is already registered.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:47:13
+[2026-10-04 21:58:43] ERROR: Error: Invalid or expired refresh token.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:202:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-04 21:58:46] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-04 22:01:04] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+[2026-10-04 22:01:09] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+[2026-10-04 22:02:47] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+[2026-10-04 22:03:14] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-04 22:14:08] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-04 22:15:47] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
