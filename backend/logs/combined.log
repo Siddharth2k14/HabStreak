@@ -1571,9 +1571,12 @@ Unique constraint failed on the fields: (`token`)
 [2026-09-27 23:46:10] INFO: POST /api/tasks/ | 401 | 2 ms | IP: ::1
 [2026-09-29 23:27:19] INFO: Server is running on http://localhost:3000
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [2026-10-04 22:20:33] INFO: Server is running on http://localhost:3000
 [2026-10-04 22:20:33] INFO: Server is running on http://localhost:3000
 =======
+=======
+>>>>>>> Stashed changes
 [2026-09-30 00:14:03] INFO: Server is running on http://localhost:3000
 [2026-10-02 17:11:50] INFO: Server is running on http://localhost:3000
 [2026-10-02 17:12:21] ERROR: Error: Refresh token is missing or invalid.
@@ -1696,4 +1699,7 @@ Unique constraint failed on the fields: (`token`)
     at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
 [2026-10-04 22:15:47] INFO: POST /api/auth/refresh | 401 | 11 ms | IP: ::1
 [2026-10-04 22:16:03] INFO: POST /api/auth/register | 201 | 4323 ms | IP: ::1
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
