@@ -1275,3 +1275,45 @@ Unique constraint failed on the fields: (`token`)
     at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
     at processTicksAndRejections (node:internal/process/task_queues:104:5)
     at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-05 22:05:58] ERROR: Error: Refresh token is invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+[2026-10-05 22:06:22] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-05 22:06:39] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-05 22:06:41] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-05 22:06:51] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-05 22:06:53] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
