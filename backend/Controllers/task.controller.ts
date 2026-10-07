@@ -1,13 +1,29 @@
 import type { Request, Response } from "express";
 import ApiError from "../utils/ApiError.ts";
 import asyncHandler from "../utils/AsyncHandler.ts";
-import services from "../services/task.service.ts";
+import * as services from "../services/task.service.ts";
+import { TaskStatus, TaskPriority } from "@prisma/client";
+
+type AuthenticatedRequest = Request & {
+  user?: { id: string };
+};
+
+function getTaskId(req: Request): string {
+  const taskId = req.params.taskId;
+  const normalizedTaskId = Array.isArray(taskId) ? taskId[0] : taskId;
+
+  if (typeof normalizedTaskId !== "string" || !normalizedTaskId) {
+    throw new ApiError(400, "Task ID is required.");
+  }
+
+  return normalizedTaskId;
+}
 
 /**
  * Create Task
  * POST /api/tasks
  */
-export const createTask = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+export const createTask = asyncHandler(async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   if (!req.user) {
     throw new ApiError(401, "Unauthorized.");
   }
@@ -34,7 +50,7 @@ export const createTask = asyncHandler(async (req: Request, res: Response): Prom
  * Get all tasks
  * GET /api/tasks
  */
-export const getTasks = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+export const getTasks = asyncHandler(async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   if (!req.user) {
     throw new ApiError(401, "Unauthorized.");
   }
@@ -53,13 +69,13 @@ export const getTasks = asyncHandler(async (req: Request, res: Response): Promis
  * Get single task
  * GET /api/tasks/:taskId
  */
-export const getTaskById = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+export const getTaskById = asyncHandler(async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   if (!req.user) {
     throw new ApiError(401, "Unauthorized.");
   }
 
   const userId = req.user.id;
-  const taskId = req.params.taskId;
+  const taskId = getTaskId(req);
   const task = await services.getTaskById(userId, taskId);
 
   res.status(200).json({
@@ -73,16 +89,13 @@ export const getTaskById = asyncHandler(async (req: Request, res: Response): Pro
  * Update task details
  * PATCH /api/tasks/:taskId
  */
-export const updateTask = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+export const updateTask = asyncHandler(async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   if (!req.user) {
     throw new ApiError(401, "Unauthorized.");
   }
 
   const userId = req.user.id;
-  const taskId = req.params.taskId;
-  if (!taskId) {
-    throw new ApiError(400, "Task ID is required.");
-  }
+  const taskId = getTaskId(req);
   
   const { title, description, priority, dueDate } = req.body;
   const updatedTask = await services.updateTask(userId, taskId, {
@@ -103,18 +116,14 @@ export const updateTask = asyncHandler(async (req: Request, res: Response): Prom
  * Update task status
  * PATCH /api/tasks/:taskId/status
  */
-export const updateTaskStatus = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+export const updateTaskStatus = asyncHandler(async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   if (!req.user) {
     throw new ApiError(401, "Unauthorized.");
   }
 
   const userId = req.user.id;
-  const { taskId } = req.params;
-  const { status } = req.body;
-
-  if (!taskId) {
-    throw new ApiError(400, "Task ID is required.");
-  }
+  const taskId = getTaskId(req);
+  const { status }:{status: TaskStatus} = req.body;
 
   if (!status) {
     throw new ApiError(400, "Status is required.");
@@ -134,22 +143,21 @@ export const updateTaskStatus = asyncHandler(async (req: Request, res: Response)
  * PATCH /api/tasks/:taskId/move
  */
 export const moveTask = asyncHandler(
-    async (req: Request, res: Response): Promise<void> => {
+    async (req: AuthenticatedRequest, res: Response): Promise<void> => {
         if (!req.user) {
             throw new ApiError(401, "Unauthorized.");
         }
 
         const userId = req.user.id;
-        const { taskId } = req.params;
+        const taskId = getTaskId(req);
 
         const {
             targetStatus,
             targetPosition,
+        }: {
+          targetStatus: TaskStatus;
+          targetPosition: number;
         } = req.body;
-
-        if (!taskId) {
-            throw new ApiError(400, "Task ID is required.");
-        }
 
         if (!targetStatus) {
             throw new ApiError(400, "Target status is required.");
@@ -179,17 +187,13 @@ export const moveTask = asyncHandler(
  * DELETE /api/tasks/:taskId
  */
 export const deleteTask = asyncHandler(
-    async (req: Request, res: Response): Promise<void> => {
+    async (req: AuthenticatedRequest, res: Response): Promise<void> => {
         if (!req.user) {
             throw new ApiError(401, "Unauthorized.");
         }
 
         const userId = req.user.id;
-        const { taskId } = req.params;
-
-        if (!taskId) {
-            throw new ApiError(400, "Task ID is required.");
-        }
+        const taskId = getTaskId(req);
 
         await services.deleteTask(userId, taskId);
 

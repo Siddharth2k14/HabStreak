@@ -1,5 +1,4 @@
 import { z } from "zod";
-
 /**
  * Create Task
  */
@@ -10,25 +9,20 @@ export const createTaskSchema = z.object({
             .trim()
             .min(1, "Title is required.")
             .max(100, "Title must not exceed 100 characters."),
-
         description: z
             .string()
             .trim()
             .max(500, "Description must not exceed 500 characters.")
             .optional(),
-
         priority: z
             .enum(["LOW", "MEDIUM", "HIGH"])
             .optional(),
-
         dueDate: z
             .string()
             .datetime()
             .optional(),
     }),
 });
-
-
 /**
  * Update Task
  *
@@ -43,7 +37,6 @@ export const updateTaskSchema = z.object({
             .string()
             .min(1, "Task ID is required."),
     }),
-
     body: z.object({
         title: z
             .string()
@@ -51,25 +44,20 @@ export const updateTaskSchema = z.object({
             .min(1, "Title cannot be empty.")
             .max(100, "Title must not exceed 100 characters.")
             .optional(),
-
         description: z
             .string()
             .trim()
             .max(500, "Description must not exceed 500 characters.")
             .optional(),
-
         priority: z
             .enum(["LOW", "MEDIUM", "HIGH"])
             .optional(),
-
         dueDate: z
             .string()
             .datetime()
             .optional(),
     }),
 });
-
-
 /**
  * Update Task Status
  *
@@ -81,7 +69,6 @@ export const updateTaskStatusSchema = z.object({
             .string()
             .min(1, "Task ID is required."),
     }),
-
     body: z.object({
         status: z.enum([
             "TODO",
@@ -91,8 +78,6 @@ export const updateTaskStatusSchema = z.object({
         ]),
     }),
 });
-
-
 /**
  * Move Task
  *
@@ -104,7 +89,6 @@ export const moveTaskSchema = z.object({
             .string()
             .min(1, "Task ID is required."),
     }),
-
     body: z.object({
         targetStatus: z.enum([
             "TODO",
@@ -112,15 +96,12 @@ export const moveTaskSchema = z.object({
             "IN_REVIEW",
             "DONE",
         ]),
-
         targetPosition: z
             .number()
             .int("Target position must be an integer.")
             .min(1, "Target position must be at least 1."),
     }),
 });
-
-
 /**
  * Task ID
  *

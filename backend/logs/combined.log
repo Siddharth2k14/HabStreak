@@ -1670,3 +1670,1073 @@ Unique constraint failed on the fields: (`token`)
 [2026-10-05 22:11:43] INFO: Server is running on http://localhost:3000
 [2026-10-05 22:12:45] INFO: Server is running on http://localhost:3000
 [2026-10-05 22:14:25] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:18:59] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:26:50] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:26:54] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:27:11] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:27:14] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:27:15] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:27:17] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:27:36] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:27:43] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:27:44] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:27:51] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:28:17] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:28:33] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:28:35] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:44:30] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:46:03] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:46:59] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:47:02] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:47:08] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:47:24] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:47:30] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:47:33] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:47:37] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:47:46] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:48:00] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:48:05] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:48:41] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:48:51] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:49:09] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:49:48] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:50:39] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:51:49] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:53:36] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:56:30] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:56:41] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:57:05] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:57:06] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:57:09] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:57:11] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:59:22] INFO: Server is running on http://localhost:3000
+[2026-10-05 22:59:26] INFO: Server is running on http://localhost:3000
+[2026-10-05 23:00:51] INFO: Server is running on http://localhost:3000
+[2026-10-05 23:01:14] INFO: Server is running on http://localhost:3000
+[2026-10-05 23:01:29] INFO: Server is running on http://localhost:3000
+[2026-10-05 23:01:48] INFO: Server is running on http://localhost:3000
+[2026-10-05 23:01:57] INFO: Server is running on http://localhost:3000
+[2026-10-05 23:03:12] INFO: Server is running on http://localhost:3000
+[2026-10-05 23:04:34] INFO: Server is running on http://localhost:3000
+[2026-10-06 21:41:27] INFO: Server is running on http://localhost:3000
+[2026-10-06 21:51:31] INFO: Server is running on http://localhost:3000
+[2026-10-06 21:51:37] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 21:51:37] INFO: POST /api/auth/login | 401 | 177 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:51:47] ERROR: Error: Invalid or expired refresh token.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:202:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 21:51:47] INFO: POST /api/auth/refresh | 401 | 17 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:52:02] INFO: POST /api/auth/register | 201 | 5030 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:52:37] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 21:52:37] INFO: POST /api/auth/login | 401 | 4 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:52:41] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 21:52:41] INFO: POST /api/auth/login | 401 | 5 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:52:42] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 21:52:42] INFO: POST /api/auth/login | 401 | 6 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:53:11] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+[2026-10-06 21:53:11] INFO: POST /api/auth/login | 403 | 34 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:54:20] INFO: POST /api/auth/register | 201 | 3781 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:54:28] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+[2026-10-06 21:54:28] INFO: POST /api/auth/login | 403 | 4 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:54:44] INFO: GET /api/auth/verify/d19f7c179fe7965ee2305341edfcad5d218efd755b19f136ab909f37d155c4d8 | 302 | 182 ms | IP: ::1
+[2026-10-06 21:54:55] ERROR: Error: Invalid verification token.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:321:13
+[2026-10-06 21:54:55] INFO: GET /api/auth/verify/d19f7c179fe7965ee2305341edfcad5d218efd755b19f136ab909f37d155c4d8 | 400 | 7 ms | IP: ::1
+[2026-10-06 21:54:55] ERROR: Error: Route '/favicon.ico' not found.
+    at notFoundMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/notFound.middleware.ts:10:9)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 21:54:55] INFO: GET /favicon.ico | 404 | 5 ms | IP: ::1
+[2026-10-06 21:54:56] ERROR: Error: Invalid verification token.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:321:13
+[2026-10-06 21:54:56] INFO: GET /api/auth/verify/d19f7c179fe7965ee2305341edfcad5d218efd755b19f136ab909f37d155c4d8 | 400 | 4 ms | IP: ::1
+[2026-10-06 21:55:55] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 21:55:55] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::1
+[2026-10-06 21:56:03] INFO: POST /api/auth/login | 200 | 173 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:56:47] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 21:56:47] INFO: POST /api/tasks/ | 401 | 44 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:57:08] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 21:57:08] INFO: POST /api/tasks/ | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:57:33] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 21:57:33] INFO: POST /api/tasks/ | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:57:42] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 21:57:42] INFO: POST /api/tasks/ | 401 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:57:43] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 21:57:43] INFO: POST /api/tasks/ | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:57:43] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 21:57:43] INFO: POST /api/tasks/ | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:57:43] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 21:57:43] INFO: POST /api/tasks/ | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:57:48] INFO: POST /api/auth/refresh | 200 | 2161 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 21:58:07] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 21:58:07] INFO: POST /api/tasks/ | 400 | 351 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:17:36] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:17:36] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::1
+[2026-10-06 22:47:30] INFO: Server is running on http://localhost:3000
+[2026-10-06 22:47:45] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-06 22:47:45] INFO: POST /api/tasks/ | 401 | 30 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:47:49] ERROR: Error: Refresh token is invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+[2026-10-06 22:47:49] INFO: POST /api/auth/refresh | 401 | 95 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:47:50] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:47:50] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:47:51] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:47:51] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:03] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:48:03] INFO: POST /api/auth/refresh | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:03] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:48:03] INFO: POST /api/auth/refresh | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:14] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:48:14] INFO: POST /api/auth/login | 401 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:26] ERROR: Error: Route '/api/auth/login' not found.
+    at notFoundMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/notFound.middleware.ts:10:9)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:688:15
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:276:14)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+    at router (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:60:12)
+[2026-10-06 22:48:26] INFO: GET /api/auth/login | 404 | 3 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:27] ERROR: Error: Route '/api/auth/login' not found.
+    at notFoundMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/notFound.middleware.ts:10:9)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:688:15
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:276:14)
+    at router.handle (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:186:3)
+    at router (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:60:12)
+[2026-10-06 22:48:27] INFO: GET /api/auth/login | 404 | 4 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:35] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:48:35] INFO: POST /api/auth/login | 401 | 5 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:41] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:48:41] INFO: POST /api/auth/refresh | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:41] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:48:41] INFO: POST /api/auth/refresh | 401 | 4 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:42] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:48:42] INFO: POST /api/auth/refresh | 401 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:42] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:48:42] INFO: POST /api/auth/refresh | 401 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:42] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:48:42] INFO: POST /api/auth/refresh | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:48:43] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:48:43] INFO: POST /api/auth/refresh | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:05] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:49:05] INFO: POST /api/auth/login | 401 | 3 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:05] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:49:05] INFO: POST /api/auth/login | 401 | 3 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:06] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:49:06] INFO: POST /api/auth/login | 401 | 5 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:06] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:49:06] INFO: POST /api/auth/login | 401 | 3 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:06] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:49:06] INFO: POST /api/auth/login | 401 | 3 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:07] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:49:07] INFO: POST /api/auth/login | 401 | 4 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:07] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:49:07] INFO: POST /api/auth/login | 401 | 7 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:08] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+[2026-10-06 22:49:08] INFO: POST /api/auth/login | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:31] INFO: POST /api/auth/register | 201 | 4455 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:49:37] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+[2026-10-06 22:49:37] INFO: POST /api/auth/login | 403 | 4 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:50:26] INFO: GET /api/auth/verify/eb563188f30caa0a7d939b37012223d81dfa8121199ef4485a9832ded7bee3e5 | 302 | 172 ms | IP: ::1
+[2026-10-06 22:50:26] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:50:26] INFO: POST /api/auth/refresh | 401 | 2 ms | IP: ::1
+[2026-10-06 22:50:32] INFO: POST /api/auth/login | 200 | 155 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:50:46] INFO: POST /api/auth/refresh | 200 | 170 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:51:22] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:51:22] INFO: POST /api/tasks/ | 400 | 245 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:06] INFO: Server is running on http://localhost:3000
+[2026-10-06 22:53:12] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:12] INFO: POST /api/tasks/ | 400 | 228 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:12] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:12] INFO: POST /api/tasks/ | 400 | 17 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:13] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:13] INFO: POST /api/tasks/ | 400 | 15 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:14] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:14] INFO: POST /api/tasks/ | 400 | 12 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:14] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:14] INFO: POST /api/tasks/ | 400 | 12 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:14] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:14] INFO: POST /api/tasks/ | 400 | 14 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:14] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:14] INFO: POST /api/tasks/ | 400 | 15 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:14] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:14] INFO: POST /api/tasks/ | 400 | 16 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:15] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:15] INFO: POST /api/tasks/ | 400 | 12 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:15] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:15] INFO: POST /api/tasks/ | 400 | 22 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:15] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:15] INFO: POST /api/tasks/ | 400 | 16 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:15] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:15] INFO: POST /api/tasks/ | 400 | 21 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:15] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:15] INFO: POST /api/tasks/ | 400 | 17 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:16] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:16] INFO: POST /api/tasks/ | 400 | 14 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:16] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:16] INFO: POST /api/tasks/ | 400 | 15 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:16] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:16] INFO: POST /api/tasks/ | 400 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:16] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:16] INFO: POST /api/tasks/ | 400 | 16 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:16] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:16] INFO: POST /api/tasks/ | 400 | 16 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:17] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:17] INFO: POST /api/tasks/ | 400 | 16 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:17] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:17] INFO: POST /api/tasks/ | 400 | 12 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:17] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:17] INFO: POST /api/tasks/ | 400 | 20 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:17] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:17] INFO: POST /api/tasks/ | 400 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:18] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:18] INFO: POST /api/tasks/ | 400 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:18] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:18] INFO: POST /api/tasks/ | 400 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:18] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:18] INFO: POST /api/tasks/ | 400 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:19] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:19] INFO: POST /api/tasks/ | 400 | 12 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:19] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:19] INFO: POST /api/tasks/ | 400 | 14 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:19] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:19] INFO: POST /api/tasks/ | 400 | 15 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:19] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:19] INFO: POST /api/tasks/ | 400 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:19] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:19] INFO: POST /api/tasks/ | 400 | 21 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:20] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:20] INFO: POST /api/tasks/ | 400 | 18 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:20] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-06 22:53:20] INFO: POST /api/tasks/ | 400 | 16 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:23] INFO: POST /api/auth/login | 200 | 154 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:24] INFO: POST /api/auth/login | 200 | 118 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:25] INFO: POST /api/auth/login | 200 | 97 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:26] INFO: POST /api/auth/login | 200 | 107 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:26] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:26] INFO: POST /api/auth/login | 409 | 126 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:26] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:26] INFO: POST /api/auth/login | 409 | 112 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:27] INFO: POST /api/auth/login | 200 | 106 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:28] INFO: POST /api/auth/login | 200 | 109 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:29] INFO: POST /api/auth/login | 200 | 136 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:29] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:29] INFO: POST /api/auth/login | 409 | 113 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:30] INFO: POST /api/auth/login | 200 | 114 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:30] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:30] INFO: POST /api/auth/login | 409 | 124 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:31] INFO: POST /api/auth/login | 200 | 116 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:31] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:31] INFO: POST /api/auth/login | 409 | 105 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:31] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:31] INFO: POST /api/auth/login | 409 | 105 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:31] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:31] INFO: POST /api/auth/login | 409 | 101 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:32] INFO: POST /api/auth/login | 200 | 103 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:32] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:32] INFO: POST /api/auth/login | 409 | 109 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:32] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:32] INFO: POST /api/auth/login | 409 | 101 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:32] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.create()` invocation:
+
+
+Unique constraint failed on the fields: (`token`)
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:162:5
+[2026-10-06 22:53:32] INFO: POST /api/auth/login | 409 | 92 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:32] INFO: POST /api/auth/login | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:34] INFO: POST /api/auth/login | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:35] INFO: POST /api/auth/login | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:35] INFO: POST /api/auth/login | 429 | 0 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:35] INFO: POST /api/auth/login | 429 | 0 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:35] INFO: POST /api/auth/login | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:36] INFO: POST /api/auth/login | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:39] INFO: POST /api/auth/refresh | 200 | 30 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:39] INFO: POST /api/auth/refresh | 200 | 19 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:39] INFO: POST /api/auth/refresh | 200 | 11 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:40] INFO: POST /api/auth/refresh | 200 | 19 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:40] INFO: POST /api/auth/refresh | 200 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:40] INFO: POST /api/auth/refresh | 200 | 12 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:40] INFO: POST /api/auth/refresh | 200 | 11 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:40] INFO: POST /api/auth/refresh | 200 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:41] INFO: POST /api/auth/refresh | 200 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:41] INFO: POST /api/auth/refresh | 200 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:41] INFO: POST /api/auth/refresh | 200 | 17 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:41] INFO: POST /api/auth/refresh | 200 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:41] INFO: POST /api/auth/refresh | 200 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:42] INFO: POST /api/auth/refresh | 200 | 12 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:42] INFO: POST /api/auth/refresh | 200 | 16 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:42] INFO: POST /api/auth/refresh | 200 | 16 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:42] INFO: POST /api/auth/refresh | 200 | 12 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:43] INFO: POST /api/auth/refresh | 200 | 9 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:43] INFO: POST /api/auth/refresh | 200 | 9 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:43] INFO: POST /api/auth/refresh | 200 | 13 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:43] INFO: POST /api/auth/refresh | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:44] INFO: POST /api/auth/refresh | 429 | 0 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:44] INFO: POST /api/auth/refresh | 429 | 0 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:45] INFO: POST /api/auth/refresh | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:45] INFO: POST /api/auth/refresh | 429 | 0 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:45] INFO: POST /api/auth/refresh | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:45] INFO: POST /api/auth/refresh | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:45] INFO: POST /api/auth/refresh | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:46] INFO: POST /api/auth/refresh | 429 | 1 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:49] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:53:49] INFO: POST /api/auth/logout | 401 | 3 ms | IP: ::ffff:127.0.0.1
+[2026-10-06 22:53:50] ERROR: Error: Invalid token.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:94:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1015:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:835:5
+[2026-10-06 22:53:50] INFO: POST /api/auth/logout | 401 | 2 ms | IP: ::ffff:127.0.0.1
+[2026-10-07 01:48:58] INFO: Server is running on http://localhost:3000
+[2026-10-07 01:50:40] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 01:50:40] INFO: POST /api/tasks/ | 401 | 114 ms | IP: ::1
+[2026-10-07 01:50:46] INFO: POST /api/auth/login | 200 | 1520 ms | IP: ::1
+[2026-10-07 01:51:14] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 01:51:14] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 01:51:14] INFO: POST /api/tasks/ | 401 | 23 ms | IP: ::1
+[2026-10-07 01:51:22] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+
+The column `Task.position` does not exist in the current database.
+    at ei.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:228:13)
+    at ei.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:174:12)
+    at ei.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:143:12)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:833:24)
+    at async Module.createTask (file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:34:22)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:35:16
+[2026-10-07 01:51:22] INFO: POST /api/tasks/ | 400 | 321 ms | IP: ::1
+[2026-10-07 16:02:11] INFO: Server is running on http://localhost:3000
+[2026-10-07 16:15:44] INFO: Server is running on http://localhost:3000
+[2026-10-07 16:15:56] INFO: POST /api/auth/register | 201 | 6034 ms | IP: ::1
+[2026-10-07 16:16:23] INFO: GET /api/auth/verify/ba774f7bf7cfb71fc791fe65fa5eb4e0d745381c057395ae322bf1fe663fd21c | 302 | 149 ms | IP: ::1
+[2026-10-07 16:16:55] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-07 16:16:55] INFO: POST /api/auth/refresh | 401 | 18 ms | IP: ::1
+[2026-10-07 16:17:19] INFO: POST /api/auth/login | 200 | 469 ms | IP: ::1
+[2026-10-07 16:17:41] INFO: POST /api/tasks/ | 201 | 221 ms | IP: ::1
+[2026-10-07 16:22:57] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:22:57] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:22:57] INFO: GET /api/tasks | 401 | 17 ms | IP: ::1
+[2026-10-07 16:23:45] INFO: GET /api/tasks | 200 | 131 ms | IP: ::1
+[2026-10-07 16:25:09] INFO: POST /api/tasks/ | 400 | 138 ms | IP: ::1
+[2026-10-07 16:25:33] ERROR: SyntaxError: Unexpected non-whitespace character after JSON at position 173 (line 6 column 4)
+    at JSON.parse (<anonymous>)
+    at parse (F:\Programming\Projects\HabStreak\backend\node_modules\body-parser\lib\types\json.js:91:21)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\body-parser\lib\read.js:162:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:227:14)
+    at invokeCallback (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:238:16)
+    at done (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:509:28)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1735:12)
+[2026-10-07 16:26:02] ERROR: SyntaxError: Unexpected non-whitespace character after JSON at position 163 (line 6 column 2)
+    at JSON.parse (<anonymous>)
+    at parse (F:\Programming\Projects\HabStreak\backend\node_modules\body-parser\lib\types\json.js:91:21)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\body-parser\lib\read.js:162:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:227:14)
+    at invokeCallback (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:238:16)
+    at done (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:509:28)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1735:12)

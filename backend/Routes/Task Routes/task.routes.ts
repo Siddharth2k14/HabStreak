@@ -1,6 +1,7 @@
 import express from "express";
 
 import authenticateUser from "../../Middlewares/auth.middlewares.ts";
+import validate from "../../Middlewares/validation.middleware.ts";
 
 import {
     createTask,
@@ -12,20 +13,97 @@ import {
     deleteTask,
 } from "../../Controllers/task.controller.ts";
 
+import {
+    createTaskSchema,
+    updateTaskSchema,
+    updateTaskStatusSchema,
+    moveTaskSchema,
+    taskIdSchema,
+} from "../../validators/task.validator.ts";
+
 const router = express.Router();
 
-router.post("/", authenticateUser, createTask);
+/**
+ * Create Task
+ *
+ * POST /tasks
+ */
+router.post(
+    "/",
+    authenticateUser,
+    validate(createTaskSchema),
+    createTask
+);
 
-router.get("/", authenticateUser, getTasks);
+/**
+ * Get all Tasks
+ *
+ * GET /tasks
+ */
+router.get(
+    "/",
+    authenticateUser,
+    getTasks
+);
 
-router.get("/:taskId", authenticateUser, getTaskById);
+/**
+ * Get one Task
+ *
+ * GET /tasks/:taskId
+ */
+router.get(
+    "/:taskId",
+    authenticateUser,
+    validate(taskIdSchema),
+    getTaskById
+);
 
-router.patch("/:taskId/status", authenticateUser, updateTaskStatus);
+/**
+ * Update Task Status
+ *
+ * PATCH /tasks/:taskId/status
+ */
+router.patch(
+    "/:taskId/status",
+    authenticateUser,
+    validate(updateTaskStatusSchema),
+    updateTaskStatus
+);
 
-router.patch("/:taskId/move", authenticateUser, moveTask);
+/**
+ * Move Task
+ *
+ * PATCH /tasks/:taskId/move
+ */
+router.patch(
+    "/:taskId/move",
+    authenticateUser,
+    validate(moveTaskSchema),
+    moveTask
+);
 
-router.patch("/:taskId", authenticateUser, updateTask);
+/**
+ * Update Task
+ *
+ * PATCH /tasks/:taskId
+ */
+router.patch(
+    "/:taskId",
+    authenticateUser,
+    validate(updateTaskSchema),
+    updateTask
+);
 
-router.delete("/:taskId", authenticateUser, deleteTask);
+/**
+ * Delete Task
+ *
+ * DELETE /tasks/:taskId
+ */
+router.delete(
+    "/:taskId",
+    authenticateUser,
+    validate(taskIdSchema),
+    deleteTask
+);
 
 export default router;

@@ -1,34 +1,10 @@
-import { TaskStatus, TaskPriority } from "@prisma/client";
-import prisma from "../config/prisma.ts";
-
-interface CreateTaskData {
-    title: string;
-    description?: string;
-    priority?: TaskPriority;
-    dueDate?: Date | null;
-}
-
-interface UpdateTaskData {
-    title?: string;
-    description?: string;
-    priority?: TaskPriority;
-    dueDate?: Date | null;
-}
-
+import { TaskStatus } from "@prisma/client";
+import { prisma } from "../config/prisma.js";
 /**
  * Create a task.
  */
-export const createTask = async (
-    userId: string,
-    data: CreateTaskData
-) => {
-    const {
-        title,
-        description,
-        priority,
-        dueDate,
-    } = data;
-
+export const createTask = async (userId, data) => {
+    const { title, description, priority, dueDate, } = data;
     // Find the last task in TODO.
     // New tasks are added at the end of TODO.
     const lastTask = await prisma.task.findFirst({
@@ -43,11 +19,9 @@ export const createTask = async (
             position: true,
         },
     });
-
     const position = lastTask
         ? lastTask.position + 1
         : 1;
-
     return prisma.task.create({
         data: {
             title,
@@ -60,14 +34,10 @@ export const createTask = async (
         },
     });
 };
-
-
 /**
  * Get all tasks belonging to a user.
  */
-export const getTasks = async (
-    userId: string
-) => {
+export const getTasks = async (userId) => {
     return prisma.task.findMany({
         where: {
             userId,
@@ -82,15 +52,10 @@ export const getTasks = async (
         ],
     });
 };
-
-
 /**
  * Get one task belonging to a user.
  */
-export const getTaskById = async (
-    userId: string,
-    taskId: string
-) => {
+export const getTaskById = async (userId, taskId) => {
     return prisma.task.findFirst({
         where: {
             id: taskId,
@@ -98,27 +63,19 @@ export const getTaskById = async (
         },
     });
 };
-
-
 /**
  * Update task details.
  */
-export const updateTask = async (
-    userId: string,
-    taskId: string,
-    data: UpdateTaskData
-) => {
+export const updateTask = async (userId, taskId, data) => {
     const task = await prisma.task.findFirst({
         where: {
             id: taskId,
             userId,
         },
     });
-
     if (!task) {
         throw new Error("Task not found.");
     }
-
     return prisma.task.update({
         where: {
             id: taskId,
@@ -126,27 +83,19 @@ export const updateTask = async (
         data,
     });
 };
-
-
 /**
  * Update task status.
  */
-export const updateTaskStatus = async (
-    userId: string,
-    taskId: string,
-    status: TaskStatus
-) => {
+export const updateTaskStatus = async (userId, taskId, status) => {
     const task = await prisma.task.findFirst({
         where: {
             id: taskId,
             userId,
         },
     });
-
     if (!task) {
         throw new Error("Task not found.");
     }
-
     return prisma.task.update({
         where: {
             id: taskId,
@@ -156,27 +105,16 @@ export const updateTaskStatus = async (
         },
     });
 };
-
-
 /**
  * Move and reorder a task.
  *
  * Everything is performed inside a transaction.
  */
-export const moveTask = async (
-    userId: string,
-    taskId: string,
-    targetStatus: TaskStatus,
-    targetPosition: number
-) => {
+export const moveTask = async (userId, taskId, targetStatus, targetPosition) => {
     if (targetPosition < 1) {
-        throw new Error(
-            "Position must be greater than or equal to 1."
-        );
+        throw new Error("Position must be greater than or equal to 1.");
     }
-
     return prisma.$transaction(async (tr) => {
-
         // Find the task and verify ownership.
         const task = await tr.task.findFirst({
             where: {
@@ -189,25 +127,18 @@ export const moveTask = async (
                 position: true,
             },
         });
-
         if (!task) {
             throw new Error("Task not found.");
         }
-
         const sourceStatus = task.status;
         const sourcePosition = task.position;
-
         // No movement required.
-        if (
-            sourceStatus === targetStatus &&
-            sourcePosition === targetPosition
-        ) {
+        if (sourceStatus === targetStatus &&
+            sourcePosition === targetPosition) {
             return task;
         }
-
         // Same column
         if (sourceStatus === targetStatus) {
-
             // Moving up
             if (targetPosition < sourcePosition) {
                 await tr.task.updateMany({
@@ -219,7 +150,6 @@ export const moveTask = async (
                             lt: sourcePosition,
                         },
                     },
-
                     data: {
                         position: {
                             increment: 1,
@@ -227,7 +157,6 @@ export const moveTask = async (
                     },
                 });
             }
-
             // Moving down
             else {
                 await tr.task.updateMany({
@@ -239,7 +168,6 @@ export const moveTask = async (
                             lte: targetPosition,
                         },
                     },
-
                     data: {
                         position: {
                             decrement: 1,
@@ -247,20 +175,16 @@ export const moveTask = async (
                     },
                 });
             }
-
             return tr.task.update({
                 where: {
                     id: taskId,
                 },
-
                 data: {
                     position: Number(targetPosition),
-                } as any,
+                },
             });
         }
-
         // Different column
-
         // Remove the task from the old column.
         // Everything below it moves one position upward.
         await tr.task.updateMany({
@@ -271,14 +195,12 @@ export const moveTask = async (
                     gt: sourcePosition,
                 },
             },
-
             data: {
                 position: {
                     decrement: 1,
                 },
             },
         });
-
         // Make space in the target column.
         // Everything at or after the target position
         // moves one position downward.
@@ -290,20 +212,17 @@ export const moveTask = async (
                     gte: targetPosition,
                 },
             },
-
             data: {
                 position: {
                     increment: 1,
                 },
             },
         });
-
         // Finally move the task.
         const updateData = {
             status: targetStatus,
             position: targetPosition,
         };
-
         return tr.task.update({
             where: {
                 id: taskId,
@@ -312,17 +231,11 @@ export const moveTask = async (
         });
     });
 };
-
-
 /**
  * Delete a task.
  */
-export const deleteTask = async (
-    userId: string,
-    taskId: string
-) => {
+export const deleteTask = async (userId, taskId) => {
     return prisma.$transaction(async (tr) => {
-
         // Verify ownership.
         const task = await tr.task.findFirst({
             where: {
@@ -334,18 +247,15 @@ export const deleteTask = async (
                 position: true,
             },
         });
-
         if (!task) {
             throw new Error("Task not found.");
         }
-
         // Delete task.
         await tr.task.delete({
             where: {
                 id: taskId,
             },
         });
-
         // Close the position gap.
         await tr.task.updateMany({
             where: {
@@ -355,7 +265,6 @@ export const deleteTask = async (
                     gt: task.position,
                 },
             },
-
             data: {
                 position: {
                     decrement: 1,
