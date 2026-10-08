@@ -2740,3 +2740,97 @@ The column `Task.position` does not exist in the current database.
     at IncomingMessage.emit (node:events:509:28)
     at IncomingMessage.emit (node:domain:489:12)
     at endReadableNT (node:internal/streams/readable:1735:12)
+[2026-10-07 16:26:17] INFO: Server is running on http://localhost:3000
+[2026-10-07 16:26:23] ERROR: SyntaxError: Unexpected non-whitespace character after JSON at position 163 (line 6 column 2)
+    at JSON.parse (<anonymous>)
+    at parse (F:\Programming\Projects\HabStreak\backend\node_modules\body-parser\lib\types\json.js:91:21)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\body-parser\lib\read.js:162:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:227:14)
+    at invokeCallback (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:238:16)
+    at done (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:509:28)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1735:12)
+[2026-10-07 16:27:17] INFO: POST /api/tasks/ | 201 | 1049 ms | IP: ::1
+[2026-10-07 16:27:34] INFO: POST /api/tasks/ | 201 | 155 ms | IP: ::1
+[2026-10-07 16:28:02] INFO: POST /api/tasks/ | 201 | 167 ms | IP: ::1
+[2026-10-07 16:28:15] INFO: POST /api/tasks/ | 201 | 176 ms | IP: ::1
+[2026-10-07 16:28:25] INFO: POST /api/tasks/ | 201 | 29 ms | IP: ::1
+[2026-10-07 16:28:33] INFO: POST /api/tasks/ | 201 | 58 ms | IP: ::1
+[2026-10-07 16:28:57] INFO: GET /api/tasks | 200 | 140 ms | IP: ::1
+[2026-10-07 16:30:34] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:30:34] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:30:34] INFO: GET /api/tasks/cmuxzhe190003igqwgztx66bk | 401 | 13 ms | IP: ::1
+[2026-10-07 16:30:54] INFO: GET /api/tasks | 200 | 119 ms | IP: ::1
+[2026-10-07 16:31:11] INFO: GET /api/tasks | 200 | 175 ms | IP: ::1
+[2026-10-07 16:31:13] INFO: GET /api/tasks | 200 | 25 ms | IP: ::1
+[2026-10-07 16:31:14] INFO: GET /api/tasks | 200 | 20 ms | IP: ::1
+[2026-10-07 16:31:30] INFO: GET /api/tasks/cmuxzhe190003igqwgztx66bk | 200 | 134 ms | IP: ::1
+[2026-10-07 16:31:47] INFO: GET /api/tasks/cmuxztqa20000rkqwoohxeihs | 200 | 119 ms | IP: ::1
+[2026-10-07 16:51:08] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:51:08] INFO: PATCH /api/tasks/cmuxzu3dt0001rkqw1xhp52uj | 401 | 7 ms | IP: ::1
+[2026-10-07 16:51:22] INFO: POST /api/auth/refresh | 200 | 191 ms | IP: ::1
+[2026-10-07 16:51:45] INFO: PATCH /api/tasks/cmuxzu3dt0001rkqw1xhp52uj | 200 | 156 ms | IP: ::1
+[2026-10-07 16:52:02] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:52:02] INFO: GET /api/tasks/cmuxzu3dt0001rkqw1xhp52uj | 401 | 3 ms | IP: ::1
+[2026-10-07 16:52:16] INFO: GET /api/tasks/cmuxzu3dt0001rkqw1xhp52uj | 200 | 131 ms | IP: ::1
+[2026-10-07 16:54:39] INFO: PATCH /api/tasks/cmuxzu3dt0001rkqw1xhp52uj/status | 400 | 135 ms | IP: ::1
+[2026-10-07 16:55:04] INFO: PATCH /api/tasks/cmuxzu3dt0001rkqw1xhp52uj/status | 200 | 161 ms | IP: ::1
+[2026-10-07 16:55:14] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:55:14] INFO: GET /api/tasks | 401 | 3 ms | IP: ::1
+[2026-10-07 16:55:18] INFO: GET /api/tasks/cmuxzu3dt0001rkqw1xhp52uj | 200 | 123 ms | IP: ::1
+[2026-10-07 16:57:23] INFO: PATCH /api/tasks/cmuxzu3dt0001rkqw1xhp52uj/move | 200 | 164 ms | IP: ::1
+[2026-10-07 16:58:11] INFO: GET /api/tasks | 200 | 114 ms | IP: ::1
+[2026-10-07 16:59:31] INFO: DELETE /api/tasks/cmuxzup8k0002rkqwjzg7cg8l | 200 | 177 ms | IP: ::1
+[2026-10-07 16:59:44] INFO: GET /api/tasks | 200 | 127 ms | IP: ::1

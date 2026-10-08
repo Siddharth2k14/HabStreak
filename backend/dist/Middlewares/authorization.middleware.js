@@ -1,4 +1,4 @@
-import {prisma} from "../config/prisma.js";
+import prisma from "../config/prisma.js";
 import logger from "../utils/logger.js";
 const authorizeTaskOwner = async (req, res, next) => {
     try {

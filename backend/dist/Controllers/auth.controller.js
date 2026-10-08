@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import {prisma} from "../config/prisma.js";
+import prisma from "../config/prisma.js";
 import { generateAccessToken, generateRefreshToken, verifyRefreshToken, } from "../utils/jwt.js";
 import ApiError from "../utils/ApiError.js";
 import asyncHandler from "../utils/AsyncHandler.js";

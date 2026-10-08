@@ -1,4 +1,4 @@
-import {prisma} from "../config/prisma.js";
+import prisma from "../config/prisma.js";
 import { verifyAccessToken } from "../utils/jwt.js";
 import jwt from "jsonwebtoken";
 import ApiError from "../utils/ApiError.js";

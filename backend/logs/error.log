@@ -2174,3 +2174,69 @@ The column `Task.position` does not exist in the current database.
     at IncomingMessage.emit (node:events:509:28)
     at IncomingMessage.emit (node:domain:489:12)
     at endReadableNT (node:internal/streams/readable:1735:12)
+[2026-10-07 16:26:23] ERROR: SyntaxError: Unexpected non-whitespace character after JSON at position 163 (line 6 column 2)
+    at JSON.parse (<anonymous>)
+    at parse (F:\Programming\Projects\HabStreak\backend\node_modules\body-parser\lib\types\json.js:91:21)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\body-parser\lib\read.js:162:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:227:14)
+    at invokeCallback (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:238:16)
+    at done (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (F:\Programming\Projects\HabStreak\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:509:28)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1735:12)
+[2026-10-07 16:30:34] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:30:34] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:51:08] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:52:02] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-07 16:55:14] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
