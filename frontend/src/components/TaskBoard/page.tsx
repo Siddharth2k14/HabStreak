@@ -33,6 +33,38 @@ export const TaskBoard = () => {
   });
 
   const [activeTask, setActiveTask] = React.useState<Task | null>(null);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    const loadTasks = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+
+        const tasks = await getTasks();
+
+        const groupedTasks = createEmptyTaskColumns();
+
+        for (const task of tasks) {
+          groupedTasks[task.status].push(task);
+        }
+
+        for (const status of TASK_STATUSES) {
+          groupedTasks[status].sort((a, b) => a.position - b.position);
+        }
+
+        setTasksByStatus(groupedTasks);
+      } catch (error) {
+        console.error("Failed to load tasks:", error);
+        setError("Failed to load tasks.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadTasks();
+  }, []);
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
