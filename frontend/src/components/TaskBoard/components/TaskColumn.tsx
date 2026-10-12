@@ -4,14 +4,20 @@ import type { Task, TaskStatus } from "../types/task.types";
 
 import TaskCard from "./TaskCard";
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
+import { useDroppable } from "@dnd-kit/core";
 
 interface TaskColumnProps {
   status: TaskStatus;
-
   tasks: Task[];
+  onEdit: (task: Task) => void;
+  onDelete: (task: Task) => void;
 }
 
-export const TaskColumn = ({ status, tasks }: TaskColumnProps) => {
+export const TaskColumn = ({ status, tasks, onEdit, onDelete }: TaskColumnProps) => {
+  const { setNodeRef, isOver } = useDroppable({
+    id: status,
+  });
+
   const columnTitle = {
     TODO: "TODO",
 
@@ -68,15 +74,17 @@ export const TaskColumn = ({ status, tasks }: TaskColumnProps) => {
         strategy={verticalListSortingStrategy}
       >
         <Box
-          className="
+        ref={setNodeRef}
+          className={`
                         flex
                         flex-col
                         gap-3
                         min-h-[500px]
-                    "
+                        ${isOver ? "bg-slate-900/60": ""}
+                    `}
         >
           {tasks.length > 0 ? (
-            tasks.map((task) => <TaskCard key={task.id} task={task} />)
+            tasks.map((task) => <TaskCard key={task.id} task={task} onEdit={onEdit} onDelete={onDelete} />)
           ) : (
             <Box
               className="

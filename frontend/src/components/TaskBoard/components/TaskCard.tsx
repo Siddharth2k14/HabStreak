@@ -2,15 +2,20 @@ import { useSortable } from "@dnd-kit/sortable";
 import type { Task } from "../types/task.types";
 
 import { CSS } from "@dnd-kit/utilities";
-import { Box } from "@mui/material";
+import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 
-import { Calendar, MoreHorizontal } from "lucide-react";
+import { Calendar, MoreHorizontal, Pencil, Trash2 } from "lucide-react";
+import React from "react";
 
 interface TaskCardProps {
   task: Task;
+  onEdit: (task: Task) => void;
+  onDelete: (task: Task) => void;
 }
 
-const TaskCard = ({ task }: TaskCardProps) => {
+const TaskCard = ({ task, onEdit, onDelete }: TaskCardProps) => {
+  const [menuAnchor, setMenuAnchor] = React.useState<HTMLElement | null>(null);
+
   const { attributes, listeners, setNodeRef, transform, isDragging } =
     useSortable({
       id: task.id,
@@ -21,7 +26,7 @@ const TaskCard = ({ task }: TaskCardProps) => {
   };
 
   const formatDueDate = (date: Date | null) => {
-    if (!date) {
+    if (!date || Number.isNaN(date.getTime())) {
       return "No due date";
     }
 
@@ -37,6 +42,25 @@ const TaskCard = ({ task }: TaskCardProps) => {
     MEDIUM: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
 
     HIGH: "bg-red-500/10 text-red-400 border-red-500/20",
+  };
+
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    setMenuAnchor(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setMenuAnchor(null);
+  };
+
+  const handleEdit = () => {
+    handleMenuClose();
+    onEdit(task);
+  };
+
+  const handleDelete = () => {
+    handleMenuClose();
+    onDelete(task);
   };
 
   return (
@@ -80,18 +104,44 @@ const TaskCard = ({ task }: TaskCardProps) => {
           {task.title}
         </h3>
 
-        <button
-          type="button"
-          onClick={(e) => e.stopPropagation()}
-          className="
-                        text-slate-400
-                        hover:text-white
-                        transition
-                        shrink-0
-                    "
+        <IconButton
+          size="small"
+          aria-label={`Actions for ${task.title}`}
+          aria-haspopup="true"
+          aria-expanded={Boolean(menuAnchor)}
+          onPointerDown={(event) => event.stopPropagation()}
+          onKeyDown={(event) => event.stopPropagation()}
+          onClick={handleMenuOpen}
+          className="shrink-0"
+          sx={{ color: "#94a3b8" }}
         >
-          <MoreHorizontal size={18} />
-        </button>
+          <MoreHorizontal size={10} />
+        </IconButton>
+
+        <Menu
+          anchorEl={menuAnchor}
+          open={Boolean(menuAnchor)}
+          onClose={handleMenuClose}
+          onClick={(event) => event.stopPropagation()}
+          slotProps={{
+            list: {
+              onPointerDown: (event: React.PointerEvent<HTMLElement>) =>
+                event.stopPropagation(),
+              onKeyDown: (event: React.KeyboardEvent<HTMLElement>) =>
+                event.stopPropagation(),
+            },
+          }}
+        >
+          <MenuItem onClick={handleEdit}>
+            <Pencil size={16} className="mr-2" />
+            Edit Task
+          </MenuItem>
+
+          <MenuItem onClick={handleDelete} sx={{ color: "error.main" }}>
+            <Trash2 size={16} className="mr-2" />
+            Delete task
+          </MenuItem>
+        </Menu>
       </div>
 
       {/* DESCRIPTION */}

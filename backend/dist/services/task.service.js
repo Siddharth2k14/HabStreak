@@ -130,6 +130,17 @@ export const moveTask = async (userId, taskId, targetStatus, targetPosition) => 
         if (!task) {
             throw new Error("Task not found.");
         }
+
+        const destinationCount = await tr.task.count({
+            where: {
+                userId,
+                status: targetStatus,
+            },
+        });
+
+        const maxPosition = sourceStatus === targetStatus ? destinationCount : destinationCount+1;
+        const safeTargetPosition = Math.min(Math.max(1, Math.trunc(targetPosition)), Math.max(1, maxPosition));
+
         const sourceStatus = task.status;
         const sourcePosition = task.position;
         // No movement required.

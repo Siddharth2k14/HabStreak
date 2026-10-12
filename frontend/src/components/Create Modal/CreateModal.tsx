@@ -1,16 +1,17 @@
+
 import React, {
     forwardRef,
     useImperativeHandle,
     useRef,
     useState,
 } from "react";
-import axios from "axios";
 import toast from "react-hot-toast";
 
 import type {
+    Task,
     TaskPriority,
-    TaskStatus,
 } from "../TaskBoard/types/task.types.ts";
+import { createTask as createTaskApi } from "../TaskBoard/services/task.service.ts";
 
 export interface CreateModalHandle {
     open: () => void;
@@ -18,7 +19,7 @@ export interface CreateModalHandle {
 }
 
 interface CreateModalProps {
-    onSuccess?: () => void;
+    onSuccess?: (task: Task) => void;
 }
 
 type CreateTaskForm = {
@@ -26,7 +27,13 @@ type CreateTaskForm = {
     description: string;
     priority: TaskPriority;
     dueDate: Date | null;
-    status: TaskStatus;
+};
+
+const initialForm: CreateTaskForm = {
+    title: "",
+    description: "",
+    priority: "LOW",
+    dueDate: null,
 };
 
 export const CreateModal = forwardRef<
@@ -35,15 +42,7 @@ export const CreateModal = forwardRef<
 >(({ onSuccess }, ref) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
-    const [createTask, setCreateTask] =
-        useState<CreateTaskForm>({
-            title: "",
-            description: "",
-            priority: "LOW",
-            dueDate: null,
-            status: "TODO",
-        });
-
+    const [form, setForm] = useState<CreateTaskForm>(initialForm);
     const [loading, setLoading] = useState(false);
 
     useImperativeHandle(ref, () => ({
@@ -52,33 +51,28 @@ export const CreateModal = forwardRef<
     }));
 
     const handleClose = () => {
+        if (loading) return;
         dialogRef.current?.close();
     };
 
     const handleBackdropClick = (
-        e: React.MouseEvent<HTMLDialogElement>
+        event: React.MouseEvent<HTMLDialogElement>
     ) => {
-        if (e.target === dialogRef.current) {
+        if (event.target === dialogRef.current) {
             handleClose();
         }
     };
 
     const resetForm = () => {
-        setCreateTask({
-            title: "",
-            description: "",
-            priority: "LOW",
-            dueDate: null,
-            status: "TODO",
-        });
+        setForm({ ...initialForm });
     };
 
     const handleSubmit = async (
-        e: React.FormEvent<HTMLFormElement>
+        event: React.FormEvent<HTMLFormElement>
     ) => {
-        e.preventDefault();
+        event.preventDefault();
 
-        if (!createTask.title.trim()) {
+        if (!form.title.trim()) {
             toast.error("Task title is required.");
             return;
         }
@@ -86,60 +80,36 @@ export const CreateModal = forwardRef<
         setLoading(true);
 
         try {
-            const token = localStorage.getItem("token");
+            const task = await createTaskApi({
+                title: form.title.trim(),
+                description: form.description.trim(),
+                priority: form.priority,
+                dueDate: form.dueDate,
+            });
 
-            if (!token) {
-                toast.error(
-                    "You must be logged in to create a task."
-                );
-                return;
-            }
-
-            const backendUrl =
-                import.meta.env.VITE_BACKEND_URL ||
-                "http://localhost:3000";
-
-            const payload = {
-                title: createTask.title.trim(),
-                description: createTask.description.trim(),
-                priority: createTask.priority,
-                dueDate: createTask.dueDate
-                    ? createTask.dueDate.toISOString()
-                    : null,
-                status: createTask.status,
-            };
-
-            await axios.post(
-                `${backendUrl}/api/tasks`,
-                payload,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
-            );
+            // Notify the parent only after the API succeeds.
+            onSuccess?.(task);
 
             toast.success("Task created successfully!");
-
             resetForm();
-            handleClose();
-
-            onSuccess?.();
-
+            dialogRef.current?.close();
         } catch (error: unknown) {
-            console.error(
-                "Error creating task:",
-                error
-            );
+            console.error("Error creating task:", error);
 
-            const errMsg = axios.isAxiosError(error)
-                ? error.response?.data?.message ||
-                  "Failed to create task."
-                : "Failed to create task.";
+            const message =
+                typeof error === "object" &&
+                error !== null &&
+                "response" in error
+                    ? (
+                        error as {
+                            response?: {
+                                data?: { message?: string };
+                            };
+                        }
+                    ).response?.data?.message
+                    : undefined;
 
-            toast.error(errMsg);
-
+            toast.error(message || "Failed to create task.");
         } finally {
             setLoading(false);
         }
@@ -150,298 +120,156 @@ export const CreateModal = forwardRef<
             ref={dialogRef}
             onClick={handleBackdropClick}
             className="
-                p-0
-                bg-transparent
-                border-0
-                rounded-lg
-                shadow-none
-                backdrop:bg-black/60
-                backdrop:backdrop-blur-sm
-                max-w-2xl
-                w-full
-                m-auto
-                open:flex
-                open:items-center
-                open:justify-center
+                p-0 bg-transparent border-0 rounded-lg shadow-none
+                backdrop:bg-black/60 backdrop:backdrop-blur-sm
+                max-w-2xl w-full m-auto
+                open:flex open:items-center open:justify-center
             "
         >
             <div
                 className="
-                    border-3
-                    border-slate-600
-                    rounded-lg
-                    w-full
-                    max-h-[90vh]
-                    p-8
-                    bg-slate-900/95
-                    relative
-                    overflow-y-auto
-                    scrollbar-none
+                    border-3 border-slate-600 rounded-lg w-full
+                    max-h-[90vh] p-8 bg-slate-900/95 relative
+                    overflow-y-auto scrollbar-none
                 "
             >
-                {/* Close Button */}
-
                 <button
                     type="button"
                     onClick={handleClose}
+                    disabled={loading}
+                    aria-label="Close create task dialog"
                     className="
-                        absolute
-                        top-4
-                        right-4
-                        text-white
-                        text-3xl
-                        hover:text-gray-300
-                        transition
+                        absolute top-4 right-4 text-white text-3xl
+                        hover:text-gray-300 transition
+                        disabled:opacity-50
                     "
                 >
                     ×
                 </button>
 
-                <h1
-                    className="
-                        text-4xl
-                        font-bold
-                        text-white
-                        mb-6
-                        text-center
-                    "
-                >
+                <h1 className="text-4xl font-bold text-white mb-6 text-center">
                     Create Task
                 </h1>
 
-                <form
-                    onSubmit={handleSubmit}
-                    className="space-y-8"
-                >
-
-                    {/* Title */}
-
+                <form onSubmit={handleSubmit} className="space-y-8">
                     <div>
-                        <label
-                            htmlFor="title"
-                            className="
-                                block
-                                text-white
-                                text-lg
-                                mb-1
-                            "
-                        >
+                        <label htmlFor="title" className="block text-white text-lg mb-1">
                             Task Title
                         </label>
-
                         <input
                             type="text"
                             id="title"
-                            value={createTask.title}
-                            onChange={(e) =>
-                                setCreateTask({
-                                    ...createTask,
-                                    title: e.target.value,
-                                })
+                            maxLength={100}
+                            required
+                            value={form.title}
+                            onChange={(event) =>
+                                setForm((previous) => ({
+                                    ...previous,
+                                    title: event.target.value,
+                                }))
                             }
                             className="
-                                w-full
-                                px-2
-                                py-2
-                                bg-gray-300
-                                text-black
-                                rounded
-                                border-0
-                                focus:outline-none
-                                focus:ring-2
+                                w-full px-2 py-2 bg-gray-300 text-black
+                                rounded focus:outline-none focus:ring-2
                                 focus:ring-blue-400
                             "
                         />
                     </div>
 
-                    {/* Due Date */}
-
                     <div>
-                        <label
-                            htmlFor="dueDate"
-                            className="
-                                block
-                                text-white
-                                text-lg
-                                mb-1
-                            "
-                        >
+                        <label htmlFor="dueDate" className="block text-white text-lg mb-1">
                             Due Date
                         </label>
-
                         <input
                             type="date"
                             id="dueDate"
                             value={
-                                createTask.dueDate
-                                    ? createTask.dueDate
-                                        .toISOString()
-                                        .slice(0, 10)
+                                form.dueDate
+                                    ? [
+                                        form.dueDate.getFullYear(),
+                                        String(form.dueDate.getMonth() + 1).padStart(2, "0"),
+                                        String(form.dueDate.getDate()).padStart(2, "0"),
+                                    ].join("-")
                                     : ""
                             }
-                            onChange={(e) =>
-                                setCreateTask({
-                                    ...createTask,
-                                    dueDate: e.target.value
-                                        ? new Date(e.target.value)
+                            onChange={(event) =>
+                                setForm((previous) => ({
+                                    ...previous,
+                                    dueDate: event.target.value
+                                        ? new Date(`${event.target.value}T00:00:00`)
                                         : null,
-                                })
+                                }))
                             }
                             className="
-                                w-full
-                                px-2
-                                py-2
-                                bg-gray-300
-                                text-black
-                                rounded
-                                border-0
-                                focus:outline-none
-                                focus:ring-2
+                                w-full px-2 py-2 bg-gray-300 text-black
+                                rounded focus:outline-none focus:ring-2
                                 focus:ring-blue-400
                             "
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="status" className="block text-white text-lg mb-1">Status</label>
-                        <select id="status" value={createTask.status} onChange={(e) => setCreateTask({
-                            ...createTask,
-                            status: e.target.value as TaskStatus,
-                        })} className="w-full px-2 py-2 bg-gray-300 text-black rounded border-0 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                            <option value="TODO">TODO</option>
-                            <option value="DOING">DOING</option>
-                            <option value="IN_REVIEW">IN REVIEW</option>
-                            <option value="DONE">DONE</option>
-                        </select>
-                    </div>
-
-                    {/* Priority */}
-
-                    <div>
-                        <label
-                            htmlFor="priority"
-                            className="
-                                block
-                                text-white
-                                text-lg
-                                mb-1
-                            "
-                        >
+                        <label htmlFor="priority" className="block text-white text-lg mb-1">
                             Priority
                         </label>
-
                         <select
                             id="priority"
-                            value={createTask.priority}
-                            onChange={(e) =>
-                                setCreateTask({
-                                    ...createTask,
-                                    priority:
-                                        e.target
-                                            .value as TaskPriority,
-                                })
+                            value={form.priority}
+                            onChange={(event) =>
+                                setForm((previous) => ({
+                                    ...previous,
+                                    priority: event.target.value as TaskPriority,
+                                }))
                             }
                             className="
-                                w-full
-                                px-2
-                                py-2
-                                bg-gray-300
-                                text-black
-                                rounded
-                                border-0
-                                focus:outline-none
-                                focus:ring-2
+                                w-full px-2 py-2 bg-gray-300 text-black
+                                rounded focus:outline-none focus:ring-2
                                 focus:ring-blue-400
                             "
                         >
-                            <option value="LOW">
-                                Low
-                            </option>
-
-                            <option value="MEDIUM">
-                                Medium
-                            </option>
-
-                            <option value="HIGH">
-                                High
-                            </option>
+                            <option value="LOW">Low</option>
+                            <option value="MEDIUM">Medium</option>
+                            <option value="HIGH">High</option>
                         </select>
                     </div>
 
-                    {/* Description */}
-
                     <div>
-                        <label
-                            htmlFor="description"
-                            className="
-                                block
-                                text-white
-                                text-lg
-                                mb-1
-                            "
-                        >
+                        <label htmlFor="description" className="block text-white text-lg mb-1">
                             Description
                         </label>
-
                         <textarea
                             id="description"
                             rows={3}
-                            value={createTask.description}
-                            onChange={(e) =>
-                                setCreateTask({
-                                    ...createTask,
-                                    description:
-                                        e.target.value,
-                                })
+                            maxLength={500}
+                            value={form.description}
+                            onChange={(event) =>
+                                setForm((previous) => ({
+                                    ...previous,
+                                    description: event.target.value,
+                                }))
                             }
                             className="
-                                w-full
-                                bg-gray-300
-                                text-black
-                                rounded
-                                border-0
-                                focus:outline-none
-                                focus:ring-2
-                                focus:ring-blue-400
-                                resize-none
-                                p-2
+                                w-full bg-gray-300 text-black rounded
+                                focus:outline-none focus:ring-2
+                                focus:ring-blue-400 resize-none p-2
                             "
                         />
                     </div>
 
-                    {/* Create Button */}
-
-                    <div
-                        className="
-                            flex
-                            justify-end
-                            pt-1
-                        "
-                    >
+                    <div className="flex justify-end pt-1">
                         <button
                             type="submit"
                             disabled={loading}
                             className="
-                                px-12
-                                py-3
-                                bg-gray-400
-                                text-black
-                                text-lg
-                                font-semibold
-                                rounded-full
-                                hover:bg-gray-500
-                                transition
-                                duration-200
-                                disabled:opacity-50
-                                cursor-pointer
+                                px-12 py-3 bg-gray-400 text-black text-lg
+                                font-semibold rounded-full hover:bg-gray-500
+                                transition duration-200 disabled:opacity-50
+                                disabled:cursor-not-allowed
                             "
                         >
-                            {loading
-                                ? "Creating..."
-                                : "Create Task"}
+                            {loading ? "Creating..." : "Create Task"}
                         </button>
                     </div>
-
                 </form>
             </div>
         </dialog>

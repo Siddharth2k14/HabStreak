@@ -4,13 +4,13 @@ import HomePage from "./pages/Home Page/page.tsx";
 import { Toaster } from "react-hot-toast";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.tsx";
 import EmailVerified from "./components/Email Verified/EmailVerified.tsx";
-// import Dashboard from "./components/Dashboard/Dashboard.tsx";
+import Dashboard from "./components/Dashboard/Dashboard.tsx";
+// import { TaskBoard } from "./components/TaskBoard/page";
 // import ProfilePage from "./components/Profile Page/page.tsx";
 // import Settings from "./components/Settings/Settings.tsx";
 // import ChangePassword from "./components/Change Password/ChangePassword.tsx";
 // import ChangeBackground from "./components/Change Background/ChangeBackground.tsx";
 
-// import { TaskBoard } from "./components/TaskBoard/page";
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
 
         <Route element={<ProtectedRoute />}>
           <Route path="/home-page" element={<HomePage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
 
         {/* Email Verification Success Page */}
@@ -34,7 +35,6 @@ function App() {
 
         {/*<Route path="/home-page" element={<Dashboard />} />*/}
 
-        {/*<Route path="/dashboard" element={<Dashboard />} />*/}
 
         {/*<Route path="/profile-page" element={<ProfilePage />} />*/}
 

@@ -2240,3 +2240,135 @@ The column `Task.position` does not exist in the current database.
     at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
     at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
     at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-09 19:29:42] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-09 19:31:27] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-09 19:36:00] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-09 19:36:50] ERROR: Error: No token provided.
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:35:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-09 19:36:50] ERROR: Error: Invalid or expired token
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:98:15)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-09 19:36:50] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.refreshToken.delete()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+    at vn.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:238:13)
+    at vn.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:184:12)
+    at vn.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:153:12)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:1014:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:268:7
+    at async Proxy._transactionWithCallback (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:861:18)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:267:5
+[2026-10-11 15:36:16] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:36:16] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:36:33] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:36:33] ERROR: Error: User not found.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:120:13
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:37:41] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:37:59] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:04] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:04] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:05] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:05] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:05] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:06] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:06] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:06] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:06] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:38:06] ERROR: Error: Please verify your email first.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:128:15
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-11 15:39:33] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:193:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-12 01:01:30] ERROR: Error: Token expired
+    at authenticateUser (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/auth.middlewares.ts:90:19)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+    at processParams (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:582:12)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:291:5)
+    at loggerMiddleware (file:///F:/Programming/Projects/HabStreak/backend/Middlewares/logger.middleware.ts:19:5)
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
+    at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9

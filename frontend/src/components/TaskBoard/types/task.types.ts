@@ -5,11 +5,11 @@ export const TASK_STATUSES = ["TODO" , "DOING" , "IN_REVIEW" , "DONE"] as const;
 export type Task = {
     id: string;
     title: string;
-    description: string;
+    description: string | null;
     priority: TaskPriority;
     dueDate: Date | null;
     status: TaskStatus;
     position: number;
-    createdAt: string | Date;
-    updatedAt: string | Date;
+    createdAt: Date;
+    updatedAt: Date;
 };

@@ -1,4 +1,4 @@
-import type { Task } from "../types/task.types";
+import type { Task } from "../types/task.types.ts";
 
 export const convertTaskDates = (task: Task): Task => {
     return {
