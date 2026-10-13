@@ -18,3 +18,9 @@ export const loginSchema = z.object({
         password: z.string().min(8).max(32),
     }),
 });
+
+export const resendVerificationSchema = z.object({
+    body: z.object({
+        email: z.string().email("Invalid email address."),
+    }),
+});

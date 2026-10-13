@@ -11,6 +11,12 @@ const JWT_REFRESH_TOKEN = process.env.JWT_REFRESH_TOKEN as string;
 const JWT_ACCESS_TOKEN_EXPIRES: jwt.SignOptions["expiresIn"] = process.env.JWT_ACCESS_TOKEN_EXPIRES || "15m" as any;
 const JWT_REFRESH_TOKEN_EXPIRES: jwt.SignOptions["expiresIn"] = process.env.JWT_REFRESH_TOKEN_EXPIRES || "30d" as any;
 
+if (!JWT_ACCESS_TOKEN || !JWT_REFRESH_TOKEN) {
+    throw new Error(
+        "JWT_ACCESS_TOKEN and JWT_REFRESH_TOKEN must be configured."
+    );
+}
+
 export interface JwtPayload {
     userId: string;
     username: string;

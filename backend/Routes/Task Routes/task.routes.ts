@@ -1,25 +1,109 @@
 import express from "express";
+
 import authenticateUser from "../../Middlewares/auth.middlewares.ts";
 import validate from "../../Middlewares/validation.middleware.ts";
-import { createTaskSchema, taskIdSchema, updateTaskSchema } from "../../validators/task.validator.ts";
-import authorizeTaskOwner from "../../Middlewares/authorization.middleware.ts";
-import { createTask, deleteTask, updateTask } from "../../Controllers/task.controller.ts";
+
+import {
+    createTask,
+    getTasks,
+    getTaskById,
+    updateTask,
+    updateTaskStatus,
+    moveTask,
+    deleteTask,
+} from "../../Controllers/task.controller.ts";
+
+import {
+    createTaskSchema,
+    updateTaskSchema,
+    updateTaskStatusSchema,
+    moveTaskSchema,
+    taskIdSchema,
+} from "../../validators/task.validator.ts";
 
 const router = express.Router();
 
 /**
  * Create Task
+ *
+ * POST /tasks
  */
-router.post("/tasks", authenticateUser, validate(createTaskSchema), createTask);
+router.post(
+    "/",
+    authenticateUser,
+    validate(createTaskSchema),
+    createTask
+);
+
+/**
+ * Get all Tasks
+ *
+ * GET /tasks
+ */
+router.get(
+    "/",
+    authenticateUser,
+    getTasks
+);
+
+/**
+ * Get one Task
+ *
+ * GET /tasks/:taskId
+ */
+router.get(
+    "/:taskId",
+    authenticateUser,
+    validate(taskIdSchema),
+    getTaskById
+);
+
+/**
+ * Update Task Status
+ *
+ * PATCH /tasks/:taskId/status
+ */
+router.patch(
+    "/:taskId/status",
+    authenticateUser,
+    validate(updateTaskStatusSchema),
+    updateTaskStatus
+);
+
+/**
+ * Move Task
+ *
+ * PATCH /tasks/:taskId/move
+ */
+router.patch(
+    "/:taskId/move",
+    authenticateUser,
+    validate(moveTaskSchema),
+    moveTask
+);
 
 /**
  * Update Task
+ *
+ * PATCH /tasks/:taskId
  */
-router.patch("/tasks/:taskId", authenticateUser, authorizeTaskOwner, validate(updateTaskSchema), updateTask);
+router.patch(
+    "/:taskId",
+    authenticateUser,
+    validate(updateTaskSchema),
+    updateTask
+);
 
 /**
  * Delete Task
+ *
+ * DELETE /tasks/:taskId
  */
-router.delete("/tasks/:taskId", authenticateUser, authorizeTaskOwner, validate(taskIdSchema), deleteTask);
+router.delete(
+    "/:taskId",
+    authenticateUser,
+    validate(taskIdSchema),
+    deleteTask
+);
 
 export default router;

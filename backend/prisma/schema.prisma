@@ -4,14 +4,13 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
 }
 
 enum TaskStatus {
-  PENDING
-  IN_PROGRESS
-  COMPLETED
-  ARCHIVED
+  TODO
+  DOING
+  IN_REVIEW
+  DONE
 }
 
 enum TaskPriority {
@@ -40,8 +39,9 @@ model Task {
     id String @id @default(cuid())
     title String
     description String?
-    status TaskStatus @default(PENDING)
+    status TaskStatus @default(TODO)
     priority TaskPriority @default(MEDIUM)
+    position Int
     dueDate DateTime?
     userId String
     user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -58,6 +58,7 @@ model Task {
     @@index([userId])
     @@index([status])
     @@index([priority])
+    @@index([userId, status, position])
 }
 
 model TaskCompletion {
@@ -82,8 +83,13 @@ model RefreshToken {
   token String @unique
   userId String
   user User @relation(fields: [userId], references: [id])
+  sessionId String?
+  session Session? @relation(fields: [sessionId], references: [id], onDelete: Cascade)
   expiredAt DateTime
   createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([sessionId])
 }
 
 model Session {
@@ -93,6 +99,7 @@ model Session {
     device String?
     browser String?
     ipAddress String?
+    refreshTokens RefreshToken[]
     createdAt DateTime @default(now())
     expiresAt DateTime
 }
