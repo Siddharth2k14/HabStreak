@@ -4005,3 +4005,4 @@ An operation failed because it depends on one or more records that were required
 [2026-10-13 22:15:07] INFO: GET /api/tasks | 304 | 22 ms | IP: ::1
 [2026-10-13 22:15:10] INFO: GET /api/auth/me | 304 | 11 ms | IP: ::1
 [2026-10-13 22:15:10] INFO: GET /api/tasks | 304 | 20 ms | IP: ::1
+[2026-10-13 22:18:50] INFO: Server is running on http://localhost:3000
