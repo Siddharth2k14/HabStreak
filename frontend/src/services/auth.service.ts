@@ -1,6 +1,7 @@
 import { api, refreshClient } from "../api/axios";
 import type {
   AuthResponse,
+  AuthUser,
   LoginCredentials,
   ResendVerificationResponse,
 } from "../interfaces/auth.interface";
@@ -31,4 +32,12 @@ export const resendVerficationRequest = async (
   });
 
   return response.data;
+};
+
+export const getUser = async (): Promise<AuthUser> => {
+  const response = await api.get<{ success: boolean; user: AuthUser }>(
+    "/api/auth/me",
+  );
+
+  return response.data.user;
 };

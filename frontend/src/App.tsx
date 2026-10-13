@@ -4,7 +4,8 @@ import HomePage from "./pages/Home Page/page.tsx";
 import { Toaster } from "react-hot-toast";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.tsx";
 import EmailVerified from "./components/Email Verified/EmailVerified.tsx";
-import Dashboard from "./components/Dashboard/Dashboard.tsx";
+import TaskBoard from "./components/TaskDash/Dashboard.tsx";
+import Dashboard from "./components/DashBoard/Dashboard.tsx";
 // import { TaskBoard } from "./components/TaskBoard/page";
 // import ProfilePage from "./components/Profile Page/page.tsx";
 // import Settings from "./components/Settings/Settings.tsx";
@@ -23,8 +24,17 @@ function App() {
         <Route path="/auth/*" element={<Authentication />} />
 
         <Route element={<ProtectedRoute />}>
-          <Route path="/home-page" element={<HomePage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/home-page" element={<HomePage />}>
+            <Route index element={<TaskBoard />} />
+            <Route path="task-board" element={<TaskBoard />} />
+            <Route path="dashboard" element={<Dashboard />}/>
+            <Route path="all-tasks" element={<h1>Coming Soon</h1>}/>
+            <Route path="analytics" element={<h1>Coming Soon</h1>}/>
+          </Route>
+          <Route
+            path="/task-board"
+            element={<Navigate to="/home-page/task-board" replace />}
+          />
         </Route>
 
         {/* Email Verification Success Page */}

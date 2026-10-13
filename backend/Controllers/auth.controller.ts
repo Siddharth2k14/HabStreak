@@ -185,6 +185,23 @@ export const loginUser = asyncHandler(
   },
 );
 
+export const getCurrentUser = asyncHandler(
+  async (req: Request, res: Response): Promise<void> => {
+    if (!req.user) {
+      throw new ApiError(401, "User is not authenticated.");
+    }
+
+    res.status(200).json({
+      success: true,
+      user: {
+        id: req.user.id,
+        username: req.user.username,
+        email: req.user.email,
+      },
+    });
+  },
+);
+
 export const refreshAccessToken = asyncHandler(
   async (req: Request, res: Response) => {
     const refreshToken = req.cookies?.refreshToken;

@@ -32,13 +32,16 @@ export const TaskColumn = ({ status, tasks, onEdit, onDelete }: TaskColumnProps)
     <Box
       className="
                 flex
+                flex-1
                 flex-col
-                min-w-75
-                w-full
-                bg-slate-950
+                justify-around
+                min-w-56
+                shrink-0
+                bg-navbar
                 rounded-xl
                 p-4
-                h-fit
+                h-[500px]
+                overflow-hidden
             "
     >
       {/* COLUMN HEADER */}
@@ -48,6 +51,7 @@ export const TaskColumn = ({ status, tasks, onEdit, onDelete }: TaskColumnProps)
                     flex
                     justify-between
                     items-center
+                    shrink-0
                     mb-4
                 "
       >
@@ -77,9 +81,11 @@ export const TaskColumn = ({ status, tasks, onEdit, onDelete }: TaskColumnProps)
         ref={setNodeRef}
           className={`
                         flex
+                        flex-1
                         flex-col
                         gap-3
-                        min-h-[500px]
+                        min-h-0
+                        overflow-y-auto
                         ${isOver ? "bg-slate-900/60": ""}
                     `}
         >
@@ -88,6 +94,7 @@ export const TaskColumn = ({ status, tasks, onEdit, onDelete }: TaskColumnProps)
           ) : (
             <Box
               className="
+                                flex-1
                                 min-h-[150px]
                                 border
                                 border-dashed

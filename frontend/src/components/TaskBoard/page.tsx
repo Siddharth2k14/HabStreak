@@ -468,7 +468,6 @@ export const TaskBoard = () => {
       onDragEnd={handleDragEnd}
     >
       <Box className="flex flex-col gap-2">
-        <TaskBoardHeader onTaskCreated={handleTaskCreated} />
         {error && (
           <Box
             role="alert"
@@ -620,6 +619,7 @@ export const TaskBoard = () => {
           </DialogActions>
         </Dialog>
       </Box>
+        <TaskBoardHeader onTaskCreated={handleTaskCreated} />
 
       <DragOverlay>
         {activeTask ? (

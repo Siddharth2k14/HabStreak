@@ -74,7 +74,7 @@ const TaskCard = ({ task, onEdit, onDelete }: TaskCardProps) => {
                 rounded-xl
                 border
                 border-slate-700
-                bg-slate-900
+                bg-navbar
                 p-4
                 shadow-sm
                 transition
