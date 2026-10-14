@@ -1,0 +1,232 @@
+name: Production CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop, testing, 'feature/**']
+  pull_request:
+    branches: [main, develop, testing, 'feature/**']
+
+permissions:
+  contents: read
+  pull-requests: read
+
+env:
+  NODE_VERSION: latest
+
+jobs:
+  # Job 1 -> Test Frontend
+  test-frontend:
+    name: Test Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun ci
+        working-directory: ./frontend
+
+      - name: Run Frontend Tests
+        run: bun run test
+        working-directory: ./frontend
+
+  # Job 2 -> Test Backend
+  test-backend:
+    name: Test Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun ci
+        working-directory: ./backend
+
+      - name: Run Backend Tests
+        run: bun run test
+        working-directory: ./backend
+
+  # Job 3 -> Build Frontend
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    needs: test-frontend
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun ci
+        working-directory: ./frontend
+
+      - name: Build Application
+        run: bun run build
+        working-directory: ./frontend
+        env:
+          CI: true
+
+      - name: Check Build Size
+        run: |
+          echo "Build Size:"
+          if [ -d dist ]; then
+            du -sh dist
+            size=$(du -sm dist | cut -f1)
+            echo "Total: ${size}MB"
+          else
+            echo "Error: dist folder not found"
+            exit 1
+          fi
+        working-directory: ./frontend
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: vite-build-${{ github.sha }}
+          path: frontend/dist/
+          retention-days: 7
+
+  # Job 4 -> Build Backend
+  build-backend:
+    name: Build Backend
+    runs-on: ubuntu-latest
+    needs: test-backend
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun ci
+        working-directory: ./backend
+
+      - name: Build Application
+        run: bun run build
+        working-directory: ./backend
+
+      - name: Upload Backend Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-build-${{ github.sha }}
+          path: |
+            backend/dist/
+            backend/package.json
+            backend/bun.lock
+          retention-days: 7
+          if-no-files-found: warn
+
+  # Job 5 -> Frontend Security Audit
+  security-frontend:
+    name: Frontend Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun ci
+        working-directory: ./frontend
+
+      - name: Run Bun Audit
+        run: bun audit
+        working-directory: ./frontend
+        continue-on-error: true
+
+  # Job 6 -> Backend Security Audit
+  security-backend:
+    name: Backend Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun ci
+        working-directory: ./backend
+
+      - name: Run Bun Audit
+        run: bun audit
+        working-directory: ./backend
+        continue-on-error: true
+
+  # Job 7 -> Dependency Review
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Review Dependencies
+        uses: actions/dependency-review-action@v4
+        continue-on-error: true
+
+  # Job 8 -> CI Success Gate
+  ci-success:
+    name: CI Success Gate
+    runs-on: ubuntu-latest
+    needs:
+      - test-frontend
+      - test-backend
+      - build-frontend
+      - build-backend
+    if: always()
+
+    steps:
+      - name: Verify Required Jobs
+        env:
+          FRONTEND_TEST: ${{ needs.test-frontend.result }}
+          BACKEND_TEST: ${{ needs.test-backend.result }}
+          FRONTEND_BUILD: ${{ needs.build-frontend.result }}
+          BACKEND_BUILD: ${{ needs.build-backend.result }}
+        run: |
+          echo "Frontend tests: $FRONTEND_TEST"
+          echo "Backend tests: $BACKEND_TEST"
+          echo "Frontend build: $FRONTEND_BUILD"
+          echo "Backend build: $BACKEND_BUILD"
+
+          if [[ "$FRONTEND_TEST" != "success" ||
+                "$BACKEND_TEST" != "success" ||
+                "$FRONTEND_BUILD" != "success" ||
+                "$BACKEND_BUILD" != "success" ]]; then
+            echo "CI pipeline failed."
+            exit 1
+          fi
+
+          echo "All required CI checks passed."
