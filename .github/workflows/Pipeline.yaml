@@ -11,7 +11,7 @@ permissions:
   pull-requests: read
 
 env:
-  NODE_VERSION: latest
+  NODE_VERSION: 24
 
 jobs:
   # Job 1 -> Test Frontend
