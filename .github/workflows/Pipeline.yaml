@@ -26,7 +26,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: 1.4.3
 
       - name: Install Dependencies
         run: bun install
@@ -48,7 +48,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: 1.4.3
 
       - name: Install Dependencies
         run: bun install
@@ -56,6 +56,21 @@ jobs:
 
       - name: Run Backend Tests
         run: bun run test
+        working-directory: ./backend
+
+      - name: Debug Backend Test Discovery
+        run: |
+          echo "Working directory:"
+          pwd
+
+          echo "Test files:"
+          find . -type f \
+            \( -name '*.test.ts' -o -name '*.spec.ts' \
+            -o -name '*.test.tsx' -o -name '*.spec.tsx' \) \
+            -not -path '*/node_modules/*'
+
+          echo "Package test script:"
+          bun run
         working-directory: ./backend
 
   # Job 3 -> Build Frontend
@@ -71,7 +86,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: 1.4.3
 
       - name: Install Dependencies
         run: bun install
@@ -116,7 +131,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: 1.4.3
 
       - name: Install Dependencies
         run: bun install
@@ -149,7 +164,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: 1.4.3
 
       - name: Install Dependencies
         run: bun install
@@ -172,7 +187,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: 1.4.3
 
       - name: Install Dependencies
         run: bun install
