@@ -5,12 +5,20 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Register } from './page';
 import RegisterPage from './RegisterPage';
 
-const { mockNavigate, mockToastError, mockToastSuccess, mockedAxiosPost, mockedAxiosIsAxiosError } = vi.hoisted(() => ({
+const { mockNavigate, mockToastError, mockToastSuccess, mockedAxiosPost, mockedAxiosIsAxiosError, mockedAxiosCreate } = vi.hoisted(() => ({
   mockNavigate: vi.fn(),
   mockToastError: vi.fn(),
   mockToastSuccess: vi.fn(),
   mockedAxiosPost: vi.fn(),
   mockedAxiosIsAxiosError: vi.fn(),
+  mockedAxiosCreate: vi.fn(() => ({
+    post: mockedAxiosPost,
+    get: vi.fn(),
+    interceptors: {
+      request: { use: vi.fn() },
+      response: { use: vi.fn() },
+    },
+  })),
 }));
 
 vi.mock('react-router-dom', () => ({
@@ -26,6 +34,7 @@ vi.mock('react-hot-toast', () => ({
 
 vi.mock('axios', () => ({
   default: {
+    create: mockedAxiosCreate,
     post: mockedAxiosPost,
     isAxiosError: mockedAxiosIsAxiosError,
   },
@@ -61,6 +70,7 @@ describe('RegisterPage', () => {
         auth={{ username: '', email: '', password: '', confirmPassword: '' }}
         setAuth={setAuth}
         onRegister={onRegister}
+        isSubmitting={false}
       />,
     );
 
@@ -82,6 +92,7 @@ describe('RegisterPage', () => {
         auth={{ username: '', email: '', password: '', confirmPassword: '' }}
         setAuth={setAuth}
         onRegister={onRegister}
+        isSubmitting={false}
       />,
     );
 
@@ -108,6 +119,7 @@ describe('RegisterPage', () => {
         auth={{ username: 'jane', email: 'jane@example.com', password: '654321', confirmPassword: '654321' }}
         setAuth={setAuth}
         onRegister={onRegister}
+        isSubmitting={false}
       />,
     );
 
@@ -127,6 +139,7 @@ describe('RegisterPage', () => {
         auth={{ username: '', email: '', password: '', confirmPassword: '' }}
         setAuth={setAuth}
         onRegister={onRegister}
+        isSubmitting={false}
       />,
     );
 
@@ -144,6 +157,7 @@ describe('RegisterPage', () => {
         auth={{ username: '', email: '', password: '', confirmPassword: '' }}
         setAuth={setAuth}
         onRegister={onRegister}
+        isSubmitting={false}
       />,
     );
 
@@ -165,8 +179,6 @@ describe('Register', () => {
   });
 
   it('shows a validation error when required fields are empty', async () => {
-    const user = userEvent.setup();
-
     render(<Register />);
 
     const form = screen.getByRole('button', { name: /register/i }).closest('form');
@@ -193,7 +205,7 @@ describe('Register', () => {
       fireEvent.submit(form);
     }
 
-    expect(mockToastError).toHaveBeenCalledWith('Username must be between 3 and 15 characters');
+    expect(mockToastError).toHaveBeenCalledWith('Username must be between 3 and 30 characters');
     expect(mockedAxios.post).not.toHaveBeenCalled();
   });
 
@@ -204,8 +216,8 @@ describe('Register', () => {
 
     await user.type(screen.getByLabelText(/username/i), 'john_doe');
     await user.type(screen.getByLabelText(/email/i), 'test@example.com');
-    await user.type(screen.getByLabelText(/^password$/i), '123456');
-    await user.type(screen.getByLabelText(/^confirm password$/i), '123456');
+    await user.type(screen.getByLabelText(/^password$/i), '12345678');
+    await user.type(screen.getByLabelText(/^confirm password$/i), '12345678');
 
     const form = screen.getByRole('button', { name: /register/i }).closest('form');
     if (form) {
@@ -261,8 +273,8 @@ describe('Register', () => {
 
     await user.type(screen.getByLabelText(/username/i), 'johndoe');
     await user.type(screen.getByLabelText(/email/i), 'test@example.com');
-    await user.type(screen.getByLabelText(/^password$/i), '123456');
-    await user.type(screen.getByLabelText(/^confirm password$/i), '123457');
+    await user.type(screen.getByLabelText(/^password$/i), '12345678');
+    await user.type(screen.getByLabelText(/^confirm password$/i), '12345679');
 
     const form = screen.getByRole('button', { name: /register/i }).closest('form');
     if (form) {
@@ -281,8 +293,8 @@ describe('Register', () => {
 
     await user.type(screen.getByLabelText(/username/i), 'johndoe');
     await user.type(screen.getByLabelText(/email/i), 'test@example.com');
-    await user.type(screen.getByLabelText(/^password$/i), '123456');
-    await user.type(screen.getByLabelText(/^confirm password$/i), '123456');
+    await user.type(screen.getByLabelText(/^password$/i), '12345678');
+    await user.type(screen.getByLabelText(/^confirm password$/i), '12345678');
 
     const form = screen.getByRole('button', { name: /register/i }).closest('form');
     if (form) {
@@ -291,24 +303,19 @@ describe('Register', () => {
 
     await waitFor(() => {
       expect(mockedAxiosPost).toHaveBeenCalledWith(
-        'http://localhost:5000/api/auth/register',
+        '/api/auth/register',
         {
           username: 'johndoe',
           email: 'test@example.com',
-          password: '123456',
-          confirmPassword: '123456',
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          password: '12345678',
+          confirmPassword: '12345678',
         },
       );
     });
 
     await waitFor(() => {
       expect(mockToastSuccess).toHaveBeenCalledWith('Registration successful.');
-      expect(mockNavigate).toHaveBeenCalledWith('/auth/login');
+      expect(mockNavigate).toHaveBeenCalledWith('/auth/login', { replace: true });
     });
   });
 });

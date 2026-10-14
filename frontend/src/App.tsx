@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.tsx";
 import EmailVerified from "./components/Email Verified/EmailVerified.tsx";
 import TaskBoard from "./components/TaskDash/Dashboard.tsx";
-import Dashboard from "./components/DashBoard/Dashboard.tsx";
+import Dashboard from "./components/Dashboard/Dashboard.tsx";
 // import { TaskBoard } from "./components/TaskBoard/page";
 // import ProfilePage from "./components/Profile Page/page.tsx";
 // import Settings from "./components/Settings/Settings.tsx";

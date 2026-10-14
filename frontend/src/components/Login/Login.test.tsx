@@ -5,16 +5,29 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Login } from './page';
 import LoginPage from './LoginPage';
 
-const { mockNavigate, mockToastError, mockToastSuccess, mockedAxiosPost, mockedAxiosIsAxiosError } = vi.hoisted(() => ({
+const { mockNavigate, mockToastError, mockToastSuccess, mockedAxiosPost, mockedAxiosIsAxiosError, mockedAxiosCreate, mockedLogin } = vi.hoisted(() => ({
   mockNavigate: vi.fn(),
   mockToastError: vi.fn(),
   mockToastSuccess: vi.fn(),
   mockedAxiosPost: vi.fn(),
   mockedAxiosIsAxiosError: vi.fn(),
+  mockedLogin: vi.fn(),
+  mockedAxiosCreate: vi.fn(() => ({
+    post: mockedAxiosPost,
+    get: vi.fn(),
+    interceptors: {
+      request: { use: vi.fn() },
+      response: { use: vi.fn() },
+    },
+  })),
 }));
 
 vi.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
+}));
+
+vi.mock('../../context/AuthContext', () => ({
+  useAuth: () => ({ login: mockedLogin }),
 }));
 
 vi.mock('react-hot-toast', () => ({
@@ -26,6 +39,7 @@ vi.mock('react-hot-toast', () => ({
 
 vi.mock('axios', () => ({
   default: {
+    create: mockedAxiosCreate,
     post: mockedAxiosPost,
     isAxiosError: mockedAxiosIsAxiosError,
   },
@@ -61,6 +75,10 @@ describe('LoginPage', () => {
         auth={{ email: '', password: '' }}
         setAuth={setAuth}
         onLogin={onLogin}
+        isSubmitting={false}
+        showResendVerification={false}
+        onResendVerification={vi.fn()}
+        isResending={false}
       />,
     );
 
@@ -72,7 +90,6 @@ describe('LoginPage', () => {
   });
 
   it('updates the auth state when the email and password fields change', async () => {
-    const user = userEvent.setup();
     const setAuth = vi.fn();
     const onLogin = vi.fn();
 
@@ -81,6 +98,10 @@ describe('LoginPage', () => {
         auth={{ email: '', password: '' }}
         setAuth={setAuth}
         onLogin={onLogin}
+        isSubmitting={false}
+        showResendVerification={false}
+        onResendVerification={vi.fn()}
+        isResending={false}
       />,
     );
 
@@ -103,6 +124,10 @@ describe('LoginPage', () => {
         auth={{ email: 'demo@example.com', password: 'abcdef' }}
         setAuth={setAuth}
         onLogin={onLogin}
+        isSubmitting={false}
+        showResendVerification={false}
+        onResendVerification={vi.fn()}
+        isResending={false}
       />,
     );
 
@@ -120,6 +145,10 @@ describe('LoginPage', () => {
         auth={{ email: '', password: '' }}
         setAuth={setAuth}
         onLogin={onLogin}
+        isSubmitting={false}
+        showResendVerification={false}
+        onResendVerification={vi.fn()}
+        isResending={false}
       />,
     );
 
@@ -137,6 +166,10 @@ describe('LoginPage', () => {
         auth={{ email: '', password: '' }}
         setAuth={setAuth}
         onLogin={onLogin}
+        isSubmitting={false}
+        showResendVerification={false}
+        onResendVerification={vi.fn()}
+        isResending={false}
       />,
     );
 
@@ -156,8 +189,6 @@ describe('Login', () => {
   });
 
   it('shows a validation error when fields are empty', async () => {
-    const user = userEvent.setup();
-
     render(<Login />);
 
     const form = screen.getByRole('button', { name: /log in/i }).closest('form');
@@ -199,18 +230,18 @@ describe('Login', () => {
       fireEvent.submit(form);
     }
 
-    expect(mockToastError).toHaveBeenCalledWith('Password must be between 6 and 10 characters');
-    expect(mockedAxios.post).not.toHaveBeenCalled();
+    expect(mockToastError).toHaveBeenCalledWith('Password must be between 8 and 32 characters');
+    expect(mockedLogin).not.toHaveBeenCalled();
   });
 
   it('submits valid credentials and navigates after a successful login', async () => {
     const user = userEvent.setup();
-    mockedAxiosPost.mockResolvedValueOnce({ status: 200 });
+    mockedLogin.mockResolvedValueOnce(undefined);
 
     render(<Login />);
 
     await user.type(screen.getByLabelText(/email/i), 'test@example.com');
-    await user.type(screen.getByLabelText(/password/i), '123456');
+    await user.type(screen.getByLabelText(/password/i), '12345678');
 
     const form = screen.getByRole('button', { name: /log in/i }).closest('form');
     if (form) {
@@ -218,20 +249,15 @@ describe('Login', () => {
     }
 
     await waitFor(() => {
-      expect(mockedAxiosPost).toHaveBeenCalledWith(
-        'http://localhost:5000/api/auth/login',
-        { email: 'test@example.com', password: '123456' },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
-      );
+      expect(mockedLogin).toHaveBeenCalledWith({
+        email: 'test@example.com',
+        password: '12345678',
+      });
     });
 
     await waitFor(() => {
       expect(mockToastSuccess).toHaveBeenCalledWith('Login successful');
-      expect(mockNavigate).toHaveBeenCalledWith('/home-page');
+      expect(mockNavigate).toHaveBeenCalledWith('/home-page', { replace: true });
     });
   });
 });
