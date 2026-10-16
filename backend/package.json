@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "generate": "prisma generate",
     "test": "vitest run",
     "dev": "nodemon src/bootstrap.ts",
     "build": "rimraf dist && tsc -p ./tsconfig.json",

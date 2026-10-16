@@ -53,7 +53,13 @@ jobs:
       - name: Install Dependencies
         run: bun install
         working-directory: ./backend
-        
+
+      - name: Generate Prisma Client
+        run: bun run generate
+        working-directory: ./backend
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/habstreak_test
+
       - name: Debug Backend Test Discovery
         run: |
           echo "Working directory:"
@@ -137,6 +143,12 @@ jobs:
       - name: Install Dependencies
         run: bun install
         working-directory: ./backend
+
+      - name: Generate Prisma Client
+        run: bun run generate
+        working-directory: ./backend
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/habstreak_test
 
       - name: Build Application
         run: bun run build
