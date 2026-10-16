@@ -53,11 +53,7 @@ jobs:
       - name: Install Dependencies
         run: bun install
         working-directory: ./backend
-
-      - name: Run Backend Tests
-        run: bun run test
-        working-directory: ./backend
-
+        
       - name: Debug Backend Test Discovery
         run: |
           echo "Working directory:"
@@ -72,6 +68,11 @@ jobs:
           echo "Package test script:"
           bun run
         working-directory: ./backend
+
+      - name: Run Backend Tests
+        run: bun run test
+        working-directory: ./backend
+
 
   # Job 3 -> Build Frontend
   build-frontend:
