@@ -9,5 +9,5 @@ Tasks.md
 HabStreak-Branching-Plan.md
 Define the Specs Before coding, cle.md
 docs/
-*.test.tsx
-*.test.ts
+# *.test.tsx
+# *.test.ts
