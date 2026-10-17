@@ -7,19 +7,20 @@ import {
   generateRefreshToken,
   verifyRefreshToken,
 } from "../utils/jwt.ts";
-import type {JwtPayload} from "../utils/jwt.ts";
+import type { JwtPayload } from "../utils/jwt.ts";
 import ApiError from "../utils/ApiError.ts";
 import asyncHandler from "../utils/AsyncHandler.ts";
 import {
   generateVerificationToken,
   hashVerificationToken,
 } from "../utils/token.utils.ts";
-import { sendVerificationEmail } from "../services/email.service.ts";
+// import { sendVerificationEmail } from "../services/email.service.ts";
 import {
   clearRefreshTokenCookie,
   setRefreshTokenCookie,
 } from "../utils/authCookie.ts";
 import { serialize } from "v8";
+import { enqueueVerificationEmail } from "../queues/email.queue.ts";
 
 type AuthRequest = Request & {
   user?: {
@@ -55,39 +56,42 @@ export const registerUser = asyncHandler(
     const verificationExpires = new Date(Date.now() + 15 * 60 * 1000);
 
     // Creating the user
-    const user = await prisma.user.create({
-      data: {
-        username,
-        email,
-        password: hashPassword,
-        isActive: true,
-        isVerified: false,
-        verificationToken: hashedVerificationToken,
-        verificationExpires,
-      },
-      select: {
-        id: true,
-        username: true,
-        email: true,
-        createdAt: true,
-        updatedAt: true,
-      },
-    });
 
-    try {
-      await sendVerificationEmail({
-        email: user.email,
-        name: user.username,
-        token: verificationToken,
+    const { user, outboxEventId } = await prisma.$transaction(async (tr) => {
+      const createdUser = await tr.user.create({
+        data: {
+          username,
+          email,
+          password: hashPassword,
+          isActive: true,
+          isVerified: false,
+        },
+        select: {
+          id: true,
+          username: true,
+          email: true,
+          createdAt: true,
+          updatedAt: true,
+        },
       });
-    } catch (error) {
-      console.error("Verification email failed:", error);
 
-      throw new ApiError(
-        500,
-        "Account created but verification email could not be sent.",
-      );
-    }
+      const outboxEvent = await tr.outboxEvent.create({
+        data: {
+          eventType: "AUTH_VERIFICATION_EMAIL_REQUESTED",
+          payload: {
+            userId: createdUser.id,
+          },
+        },
+        select: {
+          id: true,
+        },
+      });
+
+      return {
+        user: createdUser,
+        outboxEventId: outboxEvent.id,
+      };
+    });
 
     // Generating the JWT Token
     const token = generateAccessToken({
@@ -125,7 +129,7 @@ export const loginUser = asyncHandler(
     }
 
     if (!user.isVerified) {
-        throw new ApiError(403, "Please verify your email first.");
+      throw new ApiError(403, "Please verify your email first.");
     }
 
     // Compare password
@@ -403,8 +407,8 @@ export const resendVerificationEmail = asyncHandler(
     });
 
     try {
-      await sendVerificationEmail({
-        email: user.email,
+      await enqueueVerificationEmail({
+        to: user.email,
         name: user.username,
         token: verificationToken,
       });

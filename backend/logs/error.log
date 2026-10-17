@@ -2372,3 +2372,6 @@ An operation failed because it depends on one or more records that were required
     at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
     at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
     at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-18 00:17:29] ERROR: Error: Email is already registered.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:48:13
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
