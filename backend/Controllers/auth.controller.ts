@@ -22,6 +22,8 @@ import {
 import { serialize } from "v8";
 import { enqueueVerificationEmail } from "../queues/email.queue.ts";
 
+const BATCH_SIZE = 20;
+
 type AuthRequest = Request & {
   user?: {
     id: string;
@@ -406,12 +408,24 @@ export const resendVerificationEmail = asyncHandler(
       },
     });
 
+    const events = await prisma.outboxEvent.findMany({
+      where: {
+        status: 'PENDING',
+        availableAt: { lte: new Date() },
+      },
+      orderBy: {
+        createdAt: "asc"
+      },
+      take: BATCH_SIZE,
+    });
+
     try {
-      await enqueueVerificationEmail({
-        to: user.email,
-        name: user.username,
-        token: verificationToken,
-      });
+      for (const event of events) {
+        await enqueueVerificationEmail({
+          outboxEventId: event.id,
+          userId: user.id
+        });
+      }
     } catch (error) {
       console.error("Verification email resend failed:", error);
 

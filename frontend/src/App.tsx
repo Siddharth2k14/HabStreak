@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.tsx";
 import EmailVerified from "./components/Email Verified/EmailVerified.tsx";
 import TaskBoard from "./components/TaskDash/Dashboard.tsx";
 import Dashboard from "./components/Dashboard/Dashboard.tsx";
+import AllTasks from "./components/All Tasks/page.tsx";
 // import { TaskBoard } from "./components/TaskBoard/page";
 // import ProfilePage from "./components/Profile Page/page.tsx";
 // import Settings from "./components/Settings/Settings.tsx";
@@ -28,7 +29,7 @@ function App() {
             <Route index element={<TaskBoard />} />
             <Route path="task-board" element={<TaskBoard />} />
             <Route path="dashboard" element={<Dashboard />}/>
-            <Route path="all-tasks" element={<h1>Coming Soon</h1>}/>
+            <Route path="all-tasks" element={<AllTasks />}/>
             <Route path="analytics" element={<h1>Coming Soon</h1>}/>
           </Route>
           <Route

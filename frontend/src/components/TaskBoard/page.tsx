@@ -5,8 +5,6 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  MenuItem,
-  TextField,
   Typography,
 } from "@mui/material";
 import { TaskColumn } from "./components/TaskColumn";
@@ -33,6 +31,7 @@ import {
 
 import TaskCard from "./components/TaskCard";
 import { arrayMove } from "@dnd-kit/sortable";
+import { EditTaskModal } from "../Edit Task Modal/EditTaskModal.tsx";
 
 const createEmptyTaskColumns = (): Record<TaskStatus, Task[]> => ({
   TODO: [],
@@ -139,26 +138,43 @@ export const TaskBoard = () => {
     setDeletingTask(task);
   };
 
-  const handleSaveTask = async () => {
-    if (!editingTask) return;
+  const handleSaveTask = async (editedTask: Task) => {
+    const currentTask = findTask(editedTask.id);
+    if (!currentTask) {
+      setError("Unable to find the task to update. Please refresh the board.");
+      return;
+    }
 
     try {
       setIsSaving(true);
       setError(null);
 
-      await updateTask(editingTask.id, {
-        title: editingTask.title,
-        description: editingTask.description ?? "",
-        priority: editingTask.priority,
-        dueDate: editingTask.dueDate,
+      await updateTask(editedTask.id, {
+        title: editedTask.title,
+        description: editedTask.description ?? "",
+        priority: editedTask.priority,
+        dueDate: editedTask.dueDate,
       });
 
-      const loadedTask = await loadTasks();
-      setTasksByStatus(loadedTask);
+      if (editedTask.status !== currentTask.status) {
+        await moveTask(editedTask.id, {
+          targetStatus: editedTask.status,
+          targetPosition: tasksByStatus[editedTask.status].length + 1,
+        });
+      }
+
+      setTasksByStatus(await loadTasks());
       setEditingTask(null);
     } catch (err) {
       console.error("Failed to update task:", err);
       setError("Unable to update the task. Please try again.");
+
+      try {
+        setTasksByStatus(await loadTasks());
+      } catch (reloadError) {
+        console.error("Failed to refresh tasks after update:", reloadError);
+        setError("Unable to update or refresh the task board.");
+      }
     } finally {
       setIsSaving(false);
     }
@@ -488,104 +504,15 @@ export const TaskBoard = () => {
             />
           ))}
         </Box>
-        <Dialog
-          open={Boolean(editingTask)}
-          onClose={() => {
-            if (!isSaving) setEditingTask(null);
-          }}
-          fullWidth
-          maxWidth="sm"
-        >
-          <DialogTitle>Edit task</DialogTitle>
-
-          <DialogContent className="flex flex-col gap-4 pt-4">
-            <TextField
-              label="Title"
-              fullWidth
-              required
-              value={editingTask?.title ?? ""}
-              onChange={(event) => {
-                const title = event.target.value;
-                setEditingTask((previous) =>
-                  previous ? { ...previous, title } : null,
-                );
-              }}
-            />
-
-            <TextField
-              label="Description"
-              fullWidth
-              multiline
-              minRows={3}
-              value={editingTask?.description ?? ""}
-              onChange={(event) => {
-                const description = event.target.value;
-                setEditingTask((previous) =>
-                  previous ? { ...previous, description } : null,
-                );
-              }}
-            />
-
-            <TextField
-              select
-              label="Priority"
-              fullWidth
-              value={editingTask?.priority ?? "MEDIUM"}
-              onChange={(event) => {
-                const priority = event.target.value as Task["priority"];
-                setEditingTask((previous) =>
-                  previous ? { ...previous, priority } : null,
-                );
-              }}
-            >
-              <MenuItem value="LOW">Low</MenuItem>
-              <MenuItem value="MEDIUM">Medium</MenuItem>
-              <MenuItem value="HIGH">High</MenuItem>
-            </TextField>
-
-            <TextField
-              label="Due date"
-              type="date"
-              fullWidth
-              slotProps={{ inputLabel: { shrink: true } }}
-              value={
-                editingTask?.dueDate &&
-                !Number.isNaN(editingTask.dueDate.getTime())
-                  ? [
-                      editingTask.dueDate.getFullYear(),
-                      String(editingTask.dueDate.getMonth() + 1).padStart(
-                        2,
-                        "0",
-                      ),
-                      String(editingTask.dueDate.getDate()).padStart(2, "0"),
-                    ].join("-")
-                  : ""
-              }
-              onChange={(event) => {
-                const value = event.target.value;
-                const dueDate = value ? new Date(`${value}T12:00:00`) : null;
-
-                setEditingTask((previous) =>
-                  previous ? { ...previous, dueDate } : null,
-                );
-              }}
-            />
-          </DialogContent>
-
-          <DialogActions>
-            <Button onClick={() => setEditingTask(null)} disabled={isSaving}>
-              Cancel
-            </Button>
-
-            <Button
-              variant="contained"
-              onClick={handleSaveTask}
-              disabled={isSaving || !editingTask?.title.trim()}
-            >
-              {isSaving ? "Saving..." : "Save changes"}
-            </Button>
-          </DialogActions>
-        </Dialog>
+        
+        <EditTaskModal
+          key={editingTask?.id ?? "closed"}
+          task={editingTask}
+          isSaving={isSaving}
+          error={error}
+          onClose={() => setEditingTask(null)}
+          onSave={handleSaveTask}
+        />
 
         <Dialog
           open={Boolean(deletingTask)}
