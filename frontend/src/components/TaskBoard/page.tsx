@@ -1,10 +1,5 @@
 import {
   Box,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   Typography,
 } from "@mui/material";
 import { TaskColumn } from "./components/TaskColumn";
@@ -32,6 +27,7 @@ import {
 import TaskCard from "./components/TaskCard";
 import { arrayMove } from "@dnd-kit/sortable";
 import { EditTaskModal } from "../Edit Task Modal/EditTaskModal.tsx";
+import DeleteTaskModal from "../Delete Task Modal/DeleteTaskModal.tsx";
 
 const createEmptyTaskColumns = (): Record<TaskStatus, Task[]> => ({
   TODO: [],
@@ -514,37 +510,13 @@ export const TaskBoard = () => {
           onSave={handleSaveTask}
         />
 
-        <Dialog
-          open={Boolean(deletingTask)}
-          onClose={() => {
-            if (!isSaving) setDeletingTask(null);
-          }}
-          fullWidth
-          maxWidth="xs"
-        >
-          <DialogTitle>Delete task?</DialogTitle>
-
-          <DialogContent>
-            Are you sure you want to delete{" "}
-            <strong>{deletingTask?.title}</strong>? This action cannot be
-            undone.
-          </DialogContent>
-
-          <DialogActions>
-            <Button onClick={() => setDeletingTask(null)} disabled={isSaving}>
-              Cancel
-            </Button>
-
-            <Button
-              color="error"
-              variant="contained"
-              onClick={handleConfirmDelete}
-              disabled={isSaving}
-            >
-              {isSaving ? "Deleting..." : "Delete"}
-            </Button>
-          </DialogActions>
-        </Dialog>
+        <DeleteTaskModal
+          task={deletingTask}
+          isSaving={isSaving}
+          error={error}
+          onClose={() => setDeletingTask(null)}
+          onSave={handleConfirmDelete}
+        />
       </Box>
         <TaskBoardHeader onTaskCreated={handleTaskCreated} />
 

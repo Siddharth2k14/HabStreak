@@ -1,32 +1,26 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  IconButton,
-  Menu,
-  MenuItem,
-  Select,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import type { Task } from "../TaskBoard/types/task.types.ts";
 import {
   getTasks,
   moveTask,
   updateTask,
+  deleteTask,
 } from "../TaskBoard/services/task.service.ts";
-import { MoreHorizontal, Pencil, Plus, Trash2 } from "lucide-react";
 import {
   CreateModal,
   type CreateModalHandle,
 } from "../Create Modal/CreateModal.tsx";
 import {
-  sortOptions,
   type PriorityFilter,
   type SortOption,
   type StatusFilter,
 } from "./types/allTasks.types.ts";
 import { EditTaskModal } from "../Edit Task Modal/EditTaskModal.tsx";
+import DeleteTaskModal from "../Delete Task Modal/DeleteTaskModal.tsx";
+import VisibleTasks from "./visibleTask.tsx";
+import { Plus } from "lucide-react";
+import FilterSearch from "./FilterSearch.tsx";
 
 const AllTasks = () => {
   const [tasks, setTasks] = React.useState<Task[]>([]);
@@ -37,6 +31,7 @@ const AllTasks = () => {
   const [sortBy, setSortBy] = React.useState<SortOption>("NEWEST");
   const [searchQuery, setSearchQuery] = React.useState("");
   const [editTask, setEditTask] = React.useState<Task | null>(null);
+  const [deletingTask, setDeletingTask] = React.useState<Task | null>(null);
   const [isSaving, setIsSaving] = React.useState(false);
   const [menuAnchor, setMenuAnchor] = React.useState<HTMLElement | null>(null);
   const [menuTaskId, setMenuTaskId] = React.useState<string | null>(null);
@@ -46,10 +41,7 @@ const AllTasks = () => {
     createModal.current?.open();
   };
 
-  const handleMenuOpen = (
-    event: React.MouseEvent<HTMLElement>,
-    task: Task,
-  ) => {
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, task: Task) => {
     event.stopPropagation();
     setMenuAnchor(event.currentTarget);
     setMenuTaskId(task.id);
@@ -63,6 +55,12 @@ const AllTasks = () => {
   const handleEdit = (task: Task) => {
     handleMenuClose();
     setEditTask(task);
+  };
+
+  const handleDelete = (task: Task) => {
+    handleMenuClose();
+    setError(null);
+    setDeletingTask(task);
   };
 
   const fetchTasks = React.useCallback(async () => {
@@ -195,6 +193,24 @@ const AllTasks = () => {
     }
   };
 
+  const handleConfirmDelete = async () => {
+    if (!deletingTask || isSaving) return;
+
+    try {
+      setIsSaving(true);
+      setError(null);
+
+      await deleteTask(deletingTask.id);
+      setTasks(await fetchTasks());
+      setDeletingTask(null);
+    } catch (err) {
+      console.error("Failed to delete task:", err);
+      setError("Unable to delete the task. Please try again.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   return (
     <Box className="flex h-full w-full flex-col px-4 py-3 text-white">
       <Box className="mb-4 flex items-center justify-between gap-4">
@@ -212,148 +228,16 @@ const AllTasks = () => {
         <CreateModal ref={createModal} onSuccess={fetchTasks} />
       </Box>
 
-      <Box className="mb-4 flex flex-col gap-3">
-        <Box
-          sx={{
-            backgroundColor: "rgba(15, 23, 42, 0.45)",
-            border: "1px solid rgba(148, 163, 184, 0.8)",
-            borderRadius: "10px",
-            px: 2,
-            py: 1.25,
-            width: "100%",
-            maxWidth: "100%",
-          }}
-        >
-          <input
-            placeholder="Search Tasks..."
-            aria-label="Search tasks"
-            value={searchQuery}
-            onChange={(event) => setSearchQuery(event.target.value)}
-            style={{
-              width: "100%",
-              background: "transparent",
-              border: "none",
-              outline: "none",
-              color: "#e2e8f0",
-              fontSize: "1rem",
-            }}
-          />
-        </Box>
-
-        <Box className="flex flex-wrap gap-3">
-          <FormControl size="small" sx={{ minWidth: 145 }}>
-            <Select
-              value={statusFilter}
-              onChange={(event) =>
-                setStatusFilter(event.target.value as StatusFilter)
-              }
-              displayEmpty
-              inputProps={{ "aria-label": "Filter by status" }}
-              sx={{
-                borderRadius: 999,
-                color: "#e2e8f0",
-                backgroundColor: "rgba(15, 23, 42, 0.2)",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(148, 163, 184, 0.7)",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#cbd5e1",
-                },
-                "& .MuiSvgIcon-root": { color: "#e2e8f0" },
-              }}
-              MenuProps={{
-                slotProps: {
-                  paper: {
-                    sx: {
-                      bgcolor: "#0f172a",
-                      color: "#e2e8f0",
-                      "& .MuiMenuItem-root:hover": {
-                        bgcolor: "rgba(148, 163, 184, 0.15)",
-                      },
-                    },
-                  },
-                },
-              }}
-            >
-              <MenuItem value="ALL">All Status</MenuItem>
-              <MenuItem value="TODO">To Do</MenuItem>
-              <MenuItem value="DOING">Doing</MenuItem>
-              <MenuItem value="IN_REVIEW">In Review</MenuItem>
-              <MenuItem value="DONE">Done</MenuItem>
-            </Select>
-          </FormControl>
-          <FormControl size="small" sx={{ minWidth: 145 }}>
-            <Select
-              value={priorityFilter}
-              onChange={(event) =>
-                setPriorityFilter(event.target.value as PriorityFilter)
-              }
-              displayEmpty
-              inputProps={{ "aria-label": "Filter by priority" }}
-              sx={{
-                borderRadius: 999,
-                color: "#e2e8f0",
-                backgroundColor: "rgba(15, 23, 42, 0.2)",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(148, 163, 184, 0.7)",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#cbd5e1",
-                },
-                "& .MuiSvgIcon-root": { color: "#e2e8f0" },
-              }}
-              MenuProps={{
-                slotProps: {
-                  paper: {
-                    sx: {
-                      bgcolor: "#0f172a",
-                      color: "#e2e8f0",
-                      "& .MuiMenuItem-root:hover": {
-                        bgcolor: "rgba(148, 163, 184, 0.15)",
-                      },
-                    },
-                  },
-                },
-              }}
-            >
-              <MenuItem value="ALL">All Priority</MenuItem>
-              <MenuItem value="HIGH">High</MenuItem>
-              <MenuItem value="MEDIUM">Medium</MenuItem>
-              <MenuItem value="LOW">Low</MenuItem>
-            </Select>
-          </FormControl>
-
-          <FormControl size="small" sx={{ minWidth: 180 }}>
-            <Select
-              value={sortBy}
-              onChange={(event) => setSortBy(event.target.value as SortOption)}
-              inputProps={{ "aria-label": "Sort tasks" }}
-              sx={{
-                borderRadius: 999,
-                color: "#e2e8f0",
-                backgroundColor: "rgba(15, 23, 42, 0.2)",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(148, 163, 184, 0.7)",
-                },
-                "& .MuiSvgIcon-root": { color: "#e2e8f0" },
-              }}
-              MenuProps={{
-                slotProps: {
-                  paper: {
-                    sx: { bgcolor: "#0f172a", color: "#e2e8f0" },
-                  },
-                },
-              }}
-            >
-              {sortOptions.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Box>
-      </Box>
+      <FilterSearch
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        statusFilter={statusFilter}
+        setStatusFilter={setStatusFilter}
+        priorityFilter={priorityFilter}
+        setPriorityFilter={setPriorityFilter}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+      />
 
       <Box
         sx={{
@@ -384,88 +268,16 @@ const AllTasks = () => {
         </Box>
 
         {visibleTasks.map((task) => (
-          <Box
+          <VisibleTasks
             key={task.id}
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              px: 2,
-              py: 1.5,
-              borderBottom: "1px solid rgba(148, 163, 184, 0.55)",
-              color: "rgba(226, 232, 240, 0.8)",
-            }}
-          >
-            <Box sx={{ flex: 1 }}>
-              <Box className="flex flex-row gap-5">
-                <Typography sx={{ fontSize: "1rem", color: "#e2e8f0" }}>
-                  {task.title}
-                </Typography>
-                <IconButton
-                  size="small"
-                  aria-label={`Actions for ${task.title}`}
-                  aria-haspopup="true"
-                  aria-expanded={menuTaskId === task.id}
-                  onPointerDown={(event) => event.stopPropagation()}
-                  onKeyDown={(event) => event.stopPropagation()}
-                  onClick={(event) => handleMenuOpen(event, task)}
-                  className="shrink-0"
-                  sx={{ color: "#94a3b8" }}
-                >
-                  <MoreHorizontal size={20} />
-                </IconButton>
-
-                <Menu
-                  anchorEl={menuAnchor}
-                  open={menuTaskId === task.id}
-                  onClose={handleMenuClose}
-                  onClick={(event) => event.stopPropagation()}
-                  slotProps={{
-                    list: {
-                      onPointerDown: (event: React.PointerEvent<HTMLElement>) =>
-                        event.stopPropagation(),
-                      onKeyDown: (event: React.KeyboardEvent<HTMLElement>) =>
-                        event.stopPropagation(),
-                    },
-                  }}
-                >
-                  <MenuItem onClick={() => handleEdit(task)}>
-                    <Pencil size={16} className="mr-2" />
-                    Edit Task
-                  </MenuItem>
-
-                  <MenuItem
-                    onClick={handleMenuClose}
-                    sx={{ color: "error.main" }}
-                  >
-                    <Trash2 size={16} className="mr-2" />
-                    Delete task
-                  </MenuItem>
-                </Menu>
-              </Box>
-
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: 3,
-                  mt: 0.4,
-                  color: "rgba(148, 163, 184, 0.9)",
-                }}
-              >
-                <Typography sx={{ fontSize: "0.84rem" }}>
-                  {task.dueDate
-                    ? task.dueDate.toLocaleDateString()
-                    : "No due date"}
-                </Typography>
-                <Typography sx={{ fontSize: "0.84rem" }}>
-                  {task.status}
-                </Typography>
-              </Box>
-            </Box>
-            <Typography sx={{ fontSize: "1rem", color: "#e2e8f0" }}>
-              {task.priority}
-            </Typography>
-          </Box>
+            task={task}
+            handleMenuOpen={handleMenuOpen}
+            handleMenuClose={handleMenuClose}
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
+            menuTaskId={menuTaskId}
+            menuAnchor={menuAnchor}
+          />
         ))}
 
         <EditTaskModal
@@ -475,6 +287,14 @@ const AllTasks = () => {
           error={error}
           onClose={() => setEditTask(null)}
           onSave={handleSaveTask}
+        />
+
+        <DeleteTaskModal
+          task={deletingTask}
+          isSaving={isSaving}
+          error={error}
+          onClose={() => setDeletingTask(null)}
+          onSave={handleConfirmDelete}
         />
 
         {visibleTasks.length === 0 && (
