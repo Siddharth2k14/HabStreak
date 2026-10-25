@@ -153,6 +153,9 @@ export const updateTaskStatus = async (
         },
         data: {
             status,
+            completedAt: status === TaskStatus.DONE
+                ? task.completedAt ?? new Date()
+                : null,
         },
     });
 };
@@ -187,6 +190,7 @@ export const moveTask = async (
                 id: true,
                 status: true,
                 position: true,
+                completedAt: true,
             },
         });
 
@@ -302,6 +306,9 @@ export const moveTask = async (
         const updateData = {
             status: targetStatus,
             position: targetPosition,
+            completedAt: targetStatus === TaskStatus.DONE
+                ? task.completedAt ?? new Date()
+                : null,
         };
 
         return tr.task.update({

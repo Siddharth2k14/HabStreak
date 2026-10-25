@@ -75,6 +75,7 @@ model Task {
     totalFocusTime Int @default(0)
     completeSessions Int @default(0)
     averageSessionTime Int @default(0)
+    completedAt DateTime?
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     completions TaskCompletion[]

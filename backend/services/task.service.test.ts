@@ -67,12 +67,51 @@ describe("task service", () => {
     await expect(moveTask("user-1", "missing", "DONE", 1)).rejects.toThrow("Task not found.");
   });
 
+  it("sets and clears the completion timestamp when task status changes", async () => {
+    const existingTask = {
+      id: "task-1",
+      status: "TODO",
+      position: 1,
+      completedAt: null,
+    };
+    findFirst.mockResolvedValue(existingTask);
+    update.mockImplementation(async ({ data }) => ({ ...existingTask, ...data }));
+
+    await updateTaskStatus("user-1", "task-1", "DONE");
+
+    expect(update).toHaveBeenCalledWith({
+      where: { id: "task-1" },
+      data: {
+        status: "DONE",
+        completedAt: expect.any(Date),
+      },
+    });
+
+    const completionDate = new Date("2026-10-01T10:00:00.000Z");
+    findFirst.mockResolvedValue({
+      ...existingTask,
+      status: "DONE",
+      completedAt: completionDate,
+    });
+    await updateTaskStatus("user-1", "task-1", "TODO");
+
+    expect(update).toHaveBeenLastCalledWith({
+      where: { id: "task-1" },
+      data: { status: "TODO", completedAt: null },
+    });
+  });
+
   it("rejects invalid positions and moves valid tasks transactionally", async () => {
     await expect(moveTask("user-1", "task-1", "DONE", 0)).rejects.toThrow(
       "Position must be greater than or equal to 1.",
     );
 
-    findFirst.mockResolvedValue({ id: "task-1", status: "TODO", position: 1 });
+    findFirst.mockResolvedValue({
+      id: "task-1",
+      status: "TODO",
+      position: 1,
+      completedAt: null,
+    });
     update.mockResolvedValue({ id: "task-1", status: "DONE", position: 2 });
     transaction.mockImplementation(async (callback) => callback({
       task: { findFirst, update, updateMany },
@@ -81,6 +120,14 @@ describe("task service", () => {
     await expect(moveTask("user-1", "task-1", "DONE", 2)).resolves.toMatchObject({
       status: "DONE",
       position: 2,
+    });
+    expect(update).toHaveBeenLastCalledWith({
+      where: { id: "task-1" },
+      data: {
+        status: "DONE",
+        position: 2,
+        completedAt: expect.any(Date),
+      },
     });
     expect(updateMany).toHaveBeenCalledTimes(2);
   });
