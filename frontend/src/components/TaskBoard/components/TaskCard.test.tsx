@@ -10,6 +10,7 @@ const task: Task = {
   description: "Read for twenty minutes",
   priority: "HIGH",
   dueDate: null,
+  completedAt: null,
   status: "TODO",
   position: 1,
   createdAt: new Date("2026-01-01T00:00:00Z"),
