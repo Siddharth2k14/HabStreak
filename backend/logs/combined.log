@@ -4449,3 +4449,266 @@ An operation failed because it depends on one or more records that were required
 [2026-10-25 17:23:16] INFO: GET /api/tasks | 304 | 15 ms | IP: ::1
 [2026-10-25 17:23:17] INFO: GET /api/tasks | 304 | 15 ms | IP: ::1
 [2026-10-25 17:24:59] INFO: Server is running on http://localhost:3000
+[2026-10-25 19:52:49] INFO: POST /api/auth/refresh | 200 | 1639 ms | IP: ::1
+[2026-10-25 19:52:49] INFO: GET /api/tasks | 304 | 99 ms | IP: ::1
+[2026-10-25 19:53:17] INFO: POST /api/auth/login | 200 | 368 ms | IP: ::1
+[2026-10-25 19:53:17] INFO: GET /api/tasks | 304 | 48 ms | IP: ::1
+[2026-10-25 19:53:17] INFO: GET /api/auth/me | 304 | 119 ms | IP: ::1
+[2026-10-25 19:53:31] INFO: GET /api/tasks | 304 | 144 ms | IP: ::1
+[2026-10-25 19:53:32] INFO: GET /api/tasks | 304 | 24 ms | IP: ::1
+[2026-10-25 20:00:06] INFO: POST /api/auth/refresh | 200 | 160 ms | IP: ::1
+[2026-10-25 20:00:06] INFO: GET /api/tasks | 304 | 45 ms | IP: ::1
+[2026-10-25 20:00:23] INFO: POST /api/auth/refresh | 200 | 153 ms | IP: ::1
+[2026-10-25 20:00:23] INFO: GET /api/tasks | 304 | 40 ms | IP: ::1
+[2026-10-25 20:00:26] INFO: POST /api/auth/refresh | 200 | 39 ms | IP: ::1
+[2026-10-25 20:00:26] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 20:00:31] INFO: POST /api/auth/refresh | 200 | 41 ms | IP: ::1
+[2026-10-25 20:00:31] INFO: GET /api/tasks | 304 | 27 ms | IP: ::1
+[2026-10-25 20:00:34] INFO: POST /api/auth/refresh | 200 | 26 ms | IP: ::1
+[2026-10-25 20:00:34] INFO: GET /api/tasks | 304 | 23 ms | IP: ::1
+[2026-10-25 20:00:37] INFO: POST /api/auth/refresh | 200 | 25 ms | IP: ::1
+[2026-10-25 20:00:38] INFO: POST /api/auth/refresh | 200 | 24 ms | IP: ::1
+[2026-10-25 20:00:39] INFO: GET /api/tasks | 304 | 24 ms | IP: ::1
+[2026-10-25 20:00:42] INFO: POST /api/auth/refresh | 200 | 26 ms | IP: ::1
+[2026-10-25 20:00:43] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 20:00:46] INFO: POST /api/auth/refresh | 200 | 257 ms | IP: ::1
+[2026-10-25 20:00:46] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 20:00:50] INFO: POST /api/auth/refresh | 200 | 22 ms | IP: ::1
+[2026-10-25 20:00:50] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 20:00:52] INFO: POST /api/auth/refresh | 200 | 24 ms | IP: ::1
+[2026-10-25 20:00:53] INFO: GET /api/tasks | 304 | 51 ms | IP: ::1
+[2026-10-25 20:00:56] INFO: POST /api/auth/refresh | 200 | 34 ms | IP: ::1
+[2026-10-25 20:01:00] ERROR: Error: Refresh token is invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:239:13
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-25 20:01:00] INFO: POST /api/auth/refresh | 401 | 51 ms | IP: ::1
+[2026-10-25 20:02:05] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:05] INFO: POST /api/auth/refresh | 401 | 185 ms | IP: ::1
+[2026-10-25 20:02:23] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:23] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::1
+[2026-10-25 20:02:30] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:30] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::1
+[2026-10-25 20:02:34] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:34] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::1
+[2026-10-25 20:02:39] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:39] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::1
+[2026-10-25 20:02:41] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:41] INFO: POST /api/auth/refresh | 401 | 3 ms | IP: ::1
+[2026-10-25 20:02:44] INFO: POST /api/auth/refresh | 429 | 2 ms | IP: ::1
+[2026-10-25 20:02:46] INFO: POST /api/auth/refresh | 429 | 1 ms | IP: ::1
+[2026-10-25 20:02:49] INFO: POST /api/auth/refresh | 429 | 2 ms | IP: ::1
+[2026-10-25 20:02:51] INFO: POST /api/auth/refresh | 429 | 2 ms | IP: ::1
+[2026-10-25 20:02:54] INFO: POST /api/auth/refresh | 429 | 2 ms | IP: ::1
+[2026-10-25 20:03:00] INFO: POST /api/auth/refresh | 429 | 2 ms | IP: ::1
+[2026-10-25 20:03:03] INFO: POST /api/auth/refresh | 429 | 2 ms | IP: ::1
+[2026-10-25 20:03:09] INFO: POST /api/auth/refresh | 429 | 1 ms | IP: ::1
+[2026-10-25 20:03:11] INFO: POST /api/auth/refresh | 429 | 2 ms | IP: ::1
+[2026-10-25 21:23:52] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 21:23:52] INFO: POST /api/auth/refresh | 401 | 82 ms | IP: ::1
+[2026-10-25 21:24:06] INFO: POST /api/auth/login | 200 | 684 ms | IP: ::1
+[2026-10-25 21:24:06] INFO: GET /api/tasks | 304 | 73 ms | IP: ::1
+[2026-10-25 21:24:06] INFO: GET /api/auth/me | 304 | 123 ms | IP: ::1
+[2026-10-25 21:24:11] INFO: GET /api/tasks | 304 | 36 ms | IP: ::1
+[2026-10-25 21:24:12] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 21:24:15] INFO: GET /api/tasks | 304 | 16 ms | IP: ::1
+[2026-10-25 21:24:18] INFO: GET /api/tasks | 304 | 20 ms | IP: ::1
+[2026-10-25 21:24:19] INFO: GET /api/tasks | 304 | 32 ms | IP: ::1
+[2026-10-25 21:25:13] INFO: GET /api/tasks | 304 | 122 ms | IP: ::1
+[2026-10-25 21:25:16] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 21:25:17] INFO: GET /api/tasks | 304 | 20 ms | IP: ::1
+[2026-10-25 21:25:19] INFO: GET /api/tasks | 304 | 25 ms | IP: ::1
+[2026-10-25 21:25:19] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 21:25:20] INFO: GET /api/tasks | 304 | 27 ms | IP: ::1
+[2026-10-25 21:25:25] INFO: GET /api/tasks | 304 | 15 ms | IP: ::1
+[2026-10-25 21:25:53] INFO: GET /api/tasks | 304 | 129 ms | IP: ::1
+[2026-10-25 21:25:57] INFO: GET /api/tasks | 304 | 49 ms | IP: ::1
+[2026-10-25 21:25:58] INFO: GET /api/tasks | 304 | 17 ms | IP: ::1
+[2026-10-25 21:25:59] INFO: GET /api/tasks | 304 | 28 ms | IP: ::1
+[2026-10-25 21:26:01] INFO: GET /api/tasks | 304 | 18 ms | IP: ::1
+[2026-10-25 21:26:01] INFO: GET /api/tasks | 304 | 84 ms | IP: ::1
+[2026-10-25 21:26:02] INFO: GET /api/tasks | 304 | 18 ms | IP: ::1
+[2026-10-25 21:26:03] INFO: GET /api/tasks | 304 | 22 ms | IP: ::1
+[2026-10-25 21:26:05] INFO: GET /api/tasks | 304 | 20 ms | IP: ::1
+[2026-10-25 21:26:06] INFO: GET /api/tasks | 304 | 18 ms | IP: ::1
+[2026-10-25 21:26:10] INFO: GET /api/tasks | 304 | 25 ms | IP: ::1
+[2026-10-25 21:26:11] INFO: GET /api/tasks | 304 | 19 ms | IP: ::1
+[2026-10-25 21:26:12] INFO: GET /api/tasks | 304 | 30 ms | IP: ::1
+[2026-10-25 21:26:13] INFO: GET /api/tasks | 304 | 23 ms | IP: ::1
+[2026-10-25 21:26:18] INFO: GET /api/tasks | 304 | 19 ms | IP: ::1
+[2026-10-25 21:26:22] INFO: GET /api/tasks | 304 | 19 ms | IP: ::1
+[2026-10-25 21:26:28] INFO: GET /api/tasks | 304 | 20 ms | IP: ::1
+[2026-10-25 21:26:29] INFO: GET /api/tasks | 304 | 19 ms | IP: ::1
+[2026-10-25 21:26:30] INFO: GET /api/tasks | 304 | 17 ms | IP: ::1
+[2026-10-25 21:26:32] INFO: GET /api/tasks | 304 | 20 ms | IP: ::1
+[2026-10-25 21:26:33] INFO: GET /api/tasks | 304 | 19 ms | IP: ::1
+[2026-10-25 21:26:35] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 21:26:35] INFO: GET /api/tasks | 304 | 20 ms | IP: ::1
+[2026-10-25 21:26:39] INFO: GET /api/tasks | 304 | 25 ms | IP: ::1
+[2026-10-25 21:26:49] INFO: GET /api/tasks | 304 | 20 ms | IP: ::1
+[2026-10-25 21:27:08] INFO: GET /api/tasks | 304 | 133 ms | IP: ::1
+[2026-10-25 21:27:50] INFO: GET /api/tasks | 304 | 125 ms | IP: ::1
+[2026-10-25 21:28:03] INFO: GET /api/tasks | 304 | 136 ms | IP: ::1
+[2026-10-25 21:30:08] INFO: GET /api/tasks | 304 | 142 ms | IP: ::1
+[2026-10-25 21:31:14] INFO: GET /api/tasks | 304 | 125 ms | IP: ::1
+[2026-10-25 22:18:10] INFO: POST /api/auth/refresh | 200 | 287 ms | IP: ::1
+[2026-10-25 22:18:10] INFO: GET /api/tasks | 304 | 53 ms | IP: ::1
+[2026-10-25 22:18:17] INFO: POST /api/auth/refresh | 200 | 29 ms | IP: ::1
+[2026-10-25 22:18:30] INFO: POST /api/auth/login | 200 | 310 ms | IP: ::1
+[2026-10-25 22:18:30] INFO: GET /api/tasks | 304 | 39 ms | IP: ::1
+[2026-10-25 22:18:30] INFO: GET /api/auth/me | 304 | 118 ms | IP: ::1
+[2026-10-25 22:18:33] INFO: GET /api/tasks | 304 | 32 ms | IP: ::1
+[2026-10-25 22:18:38] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 22:18:41] INFO: GET /api/tasks | 304 | 27 ms | IP: ::1
+[2026-10-25 22:18:45] ERROR: PrismaClientValidationError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+{
+  where: {
+    id: "cmvnop00n000anwqwucmm19w7",
+    userId: "cmvdu746a00016kqw7gieqkcp"
+  },
+  select: {
+    id: true,
+    status: true,
+    position: true,
+    completedAt: true,
+    ~~~~~~~~~~~
+?   title?: true,
+?   description?: true,
+?   priority?: true,
+?   dueDate?: true,
+?   userId?: true,
+?   currentStreak?: true,
+?   longestStreak?: true,
+?   completionRate?: true,
+?   totalFocusTime?: true,
+?   completeSessions?: true,
+?   averageSessionTime?: true,
+?   createdAt?: true,
+?   updatedAt?: true,
+?   user?: true,
+?   completions?: true,
+?   _count?: true
+  }
+}
+
+Unknown field `completedAt` for select statement on model `Task`. Available options are marked with ?.
+    at throwValidationException (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\core\errorRendering\throwValidationException.ts:46:9)
+    at vn.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:212:7)
+    at vn.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:184:12)
+    at vn.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:153:12)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:1014:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:184:22
+    at async Proxy._transactionWithCallback (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:861:18)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:170:29
+[2026-10-25 22:18:45] INFO: PATCH /api/tasks/cmvnop00n000anwqwucmm19w7/move | 400 | 1224 ms | IP: ::1
+[2026-10-25 22:18:45] INFO: GET /api/tasks | 304 | 25 ms | IP: ::1
+[2026-10-25 22:18:50] ERROR: PrismaClientValidationError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+{
+  where: {
+    id: "cmvnop00n000anwqwucmm19w7",
+    userId: "cmvdu746a00016kqw7gieqkcp"
+  },
+  select: {
+    id: true,
+    status: true,
+    position: true,
+    completedAt: true,
+    ~~~~~~~~~~~
+?   title?: true,
+?   description?: true,
+?   priority?: true,
+?   dueDate?: true,
+?   userId?: true,
+?   currentStreak?: true,
+?   longestStreak?: true,
+?   completionRate?: true,
+?   totalFocusTime?: true,
+?   completeSessions?: true,
+?   averageSessionTime?: true,
+?   createdAt?: true,
+?   updatedAt?: true,
+?   user?: true,
+?   completions?: true,
+?   _count?: true
+  }
+}
+
+Unknown field `completedAt` for select statement on model `Task`. Available options are marked with ?.
+    at throwValidationException (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\core\errorRendering\throwValidationException.ts:46:9)
+    at vn.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:212:7)
+    at vn.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:184:12)
+    at vn.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:153:12)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:1014:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:184:22
+    at async Proxy._transactionWithCallback (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:861:18)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:170:29
+[2026-10-25 22:18:50] INFO: PATCH /api/tasks/cmvnop00n000anwqwucmm19w7/move | 400 | 29 ms | IP: ::1
+[2026-10-25 22:18:50] INFO: GET /api/tasks | 304 | 21 ms | IP: ::1
+[2026-10-25 22:20:33] INFO: Server is running on http://localhost:3000
+[2026-10-25 22:20:46] INFO: POST /api/auth/login | 200 | 1022 ms | IP: ::1
+[2026-10-25 22:20:47] INFO: GET /api/tasks | 200 | 99 ms | IP: ::1
+[2026-10-25 22:20:47] INFO: GET /api/auth/me | 304 | 142 ms | IP: ::1
+[2026-10-25 22:20:48] INFO: GET /api/tasks | 304 | 36 ms | IP: ::1
+[2026-10-25 22:20:50] INFO: PATCH /api/tasks/cmvnop00n000anwqwucmm19w7/move | 200 | 95 ms | IP: ::1
+[2026-10-25 22:20:50] INFO: GET /api/tasks | 200 | 33 ms | IP: ::1
+[2026-10-25 22:20:53] INFO: PATCH /api/tasks/cmvdu8qkv00046kqwuj06cd5x/move | 200 | 53 ms | IP: ::1
+[2026-10-25 22:20:53] INFO: GET /api/tasks | 200 | 26 ms | IP: ::1
+[2026-10-25 22:20:55] INFO: PATCH /api/tasks/cmvnood1w0008nwqwtxo2048x/move | 200 | 56 ms | IP: ::1
+[2026-10-25 22:20:55] INFO: GET /api/tasks | 200 | 28 ms | IP: ::1
+[2026-10-25 22:20:57] INFO: PATCH /api/tasks/cmvnomj9l0006nwqwptiyuvz4/move | 200 | 48 ms | IP: ::1
+[2026-10-25 22:20:57] INFO: GET /api/tasks | 200 | 20 ms | IP: ::1
+[2026-10-25 22:20:58] INFO: GET /api/tasks | 304 | 19 ms | IP: ::1

@@ -2513,3 +2513,148 @@ An operation failed because it depends on one or more records that were required
     at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
     at trimPrefix (F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:342:13)
     at F:\Programming\Projects\HabStreak\backend\node_modules\router\index.js:297:9
+[2026-10-25 20:01:00] ERROR: Error: Refresh token is invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:239:13
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-10-25 20:02:05] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:23] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:30] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:34] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:39] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 20:02:41] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 21:23:52] ERROR: Error: Refresh token is missing or invalid.
+    at file:///F:/Programming/Projects/HabStreak/backend/Controllers/auth.controller.ts:216:13
+    at file:///F:/Programming/Projects/HabStreak/backend/utils/AsyncHandler.ts:3:104
+    at Layer.handleRequest (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\layer.js:152:17)
+    at next (F:\Programming\Projects\HabStreak\backend\node_modules\router\lib\route.js:157:13)
+    at file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:1020:7
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///F:/Programming/Projects/HabStreak/backend/node_modules/express-rate-limit/dist/index.mjs:836:5
+[2026-10-25 22:18:45] ERROR: PrismaClientValidationError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+{
+  where: {
+    id: "cmvnop00n000anwqwucmm19w7",
+    userId: "cmvdu746a00016kqw7gieqkcp"
+  },
+  select: {
+    id: true,
+    status: true,
+    position: true,
+    completedAt: true,
+    ~~~~~~~~~~~
+?   title?: true,
+?   description?: true,
+?   priority?: true,
+?   dueDate?: true,
+?   userId?: true,
+?   currentStreak?: true,
+?   longestStreak?: true,
+?   completionRate?: true,
+?   totalFocusTime?: true,
+?   completeSessions?: true,
+?   averageSessionTime?: true,
+?   createdAt?: true,
+?   updatedAt?: true,
+?   user?: true,
+?   completions?: true,
+?   _count?: true
+  }
+}
+
+Unknown field `completedAt` for select statement on model `Task`. Available options are marked with ?.
+    at throwValidationException (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\core\errorRendering\throwValidationException.ts:46:9)
+    at vn.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:212:7)
+    at vn.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:184:12)
+    at vn.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:153:12)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:1014:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:184:22
+    at async Proxy._transactionWithCallback (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:861:18)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:170:29
+[2026-10-25 22:18:50] ERROR: PrismaClientValidationError: 
+Invalid `prisma.task.findFirst()` invocation:
+
+{
+  where: {
+    id: "cmvnop00n000anwqwucmm19w7",
+    userId: "cmvdu746a00016kqw7gieqkcp"
+  },
+  select: {
+    id: true,
+    status: true,
+    position: true,
+    completedAt: true,
+    ~~~~~~~~~~~
+?   title?: true,
+?   description?: true,
+?   priority?: true,
+?   dueDate?: true,
+?   userId?: true,
+?   currentStreak?: true,
+?   longestStreak?: true,
+?   completionRate?: true,
+?   totalFocusTime?: true,
+?   completeSessions?: true,
+?   averageSessionTime?: true,
+?   createdAt?: true,
+?   updatedAt?: true,
+?   user?: true,
+?   completions?: true,
+?   _count?: true
+  }
+}
+
+Unknown field `completedAt` for select statement on model `Task`. Available options are marked with ?.
+    at throwValidationException (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\core\errorRendering\throwValidationException.ts:46:9)
+    at vn.handleRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:212:7)
+    at vn.handleAndLogRequestError (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:184:12)
+    at vn.request (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:153:12)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async a (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:1014:24)
+    at async file:///F:/Programming/Projects/HabStreak/backend/services/task.service.ts:184:22
+    at async Proxy._transactionWithCallback (F:\Programming\Projects\HabStreak\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:861:18)
+    at async file:///F:/Programming/Projects/HabStreak/backend/Controllers/task.controller.ts:170:29
