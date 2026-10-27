@@ -3,3 +3,7 @@ node_modules
 ./logs
 combined.log
 combined.log
+src/test-rate-limiter.test.ts
+src/test-rate-limiter.ts
+Middlewares/customRateLimitMiddleware.ts
+rate-limiter

@@ -11,3 +11,4 @@ Define the Specs Before coding, cle.md
 docs/
 # *.test.tsx
 # *.test.ts
+.env

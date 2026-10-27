@@ -9,6 +9,7 @@ import notFoundMiddleware from "../Middlewares/notFound.middleware.ts";
 import userRoutes from "../Routes/User Routes/user.routes.ts";
 import taskRoutes from "../Routes/Task Routes/task.routes.ts";
 import authenticateUser from "../Middlewares/auth.middlewares.ts";
+// import { apiRateLimiter } from "../rate-limiter/customRateLimiter.ts";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -24,6 +25,13 @@ app.use(loggerMiddleware);
 app.get("/", (req, res) => {
     res.send("Hello from server");
 });
+
+// app.get("/api/test", apiRateLimiter, (_req, res) => {
+//     res.status(200).json({
+//         success: true,
+//         message: "Request allowed"
+//     })
+// })
 
 app.use("/api/auth", userRoutes);
 app.use("/api/tasks",authenticateUser ,taskRoutes);
