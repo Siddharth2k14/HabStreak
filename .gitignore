@@ -12,3 +12,4 @@ docs/
 # *.test.tsx
 # *.test.ts
 .env
+Requirements.md

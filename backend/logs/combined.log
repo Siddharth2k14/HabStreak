@@ -5185,3 +5185,285 @@ The table `public.User` does not exist in the current database.
 [2026-10-27 18:45:48] INFO: GET /api/tasks | 304 | 25 ms | IP: ::ffff:172.21.0.1
 [2026-10-27 18:45:48] INFO: GET /api/auth/me | 304 | 24 ms | IP: ::ffff:172.21.0.1
 [2026-10-27 18:45:55] INFO: GET /api/tasks | 304 | 19 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 12:06:25] INFO: Server is running on http://localhost:3000
+[2026-10-29 13:50:19] INFO: Server is running on http://localhost:3000
+[2026-10-29 14:01:49] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:01:49] INFO: POST /api/auth/register | 409 | 623 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:02:17] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:02:17] INFO: POST /api/auth/register | 409 | 25 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:03:11] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:03:11] INFO: POST /api/auth/register | 409 | 25 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:04:16] INFO: Server is running on http://localhost:3000
+[2026-10-29 14:04:54] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:04:54] INFO: POST /api/auth/register | 409 | 287 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:04:55] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:04:55] INFO: POST /api/auth/register | 409 | 7 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:04:56] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:04:56] INFO: POST /api/auth/register | 409 | 6 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:05:02] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:05:02] INFO: POST /api/auth/register | 409 | 6 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:05:02] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:05:02] INFO: POST /api/auth/register | 409 | 5 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:05:29] ERROR: Error: Refresh token is invalid.
+    at <anonymous> (/app/Controllers/auth.controller.ts:239:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:05:29] INFO: POST /api/auth/refresh | 401 | 49 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:05:40] INFO: POST /api/auth/login | 200 | 136 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:05:40] INFO: GET /api/tasks | 200 | 59 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:05:40] INFO: GET /api/auth/me | 200 | 64 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:14:25] INFO: Server is running on http://localhost:3000
+[2026-10-29 14:14:29] ERROR: PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+/app/Controllers/auth.controller.ts:43:44
+
+  40 }
+  41 
+  42 // Check whether the email exists or not.
+→ 43 const existingUser = await prisma.user.findUnique(
+The table `public.User` does not exist in the current database.
+    at handleRequestError (/app/node_modules/@prisma/client/runtime/client.js:65:8649)
+    at handleAndLogRequestError (/app/node_modules/@prisma/client/runtime/client.js:65:7932)
+    at request (/app/node_modules/@prisma/client/runtime/client.js:65:7639)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 14:14:29] INFO: POST /api/auth/register | 400 | 317 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 14:18:45] INFO: Server is running on http://localhost:3000
+[2026-10-29 14:22:51] INFO: Server is running on http://localhost:3000
+[2026-10-29 18:49:37] INFO: Server is running on http://localhost:3000
+[2026-10-29 18:56:44] ERROR: PrismaClientKnownRequestError: 
+Invalid `tr.user.create()` invocation in
+/app/Controllers/auth.controller.ts:63:41
+
+  60 // Creating the user
+  61 
+  62 const { user, outboxEventId } = await prisma.$transaction(async (tr) => {
+→ 63   const createdUser = await tr.user.create(
+Unique constraint failed on the constraint: `User_email_key`
+    at handleRequestError (/app/node_modules/@prisma/client/runtime/client.js:65:8649)
+    at handleAndLogRequestError (/app/node_modules/@prisma/client/runtime/client.js:65:7932)
+    at request (/app/node_modules/@prisma/client/runtime/client.js:65:7639)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 18:56:44] INFO: POST /api/auth/register | 409 | 151 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 18:56:46] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 18:56:46] INFO: POST /api/auth/register | 409 | 15 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 18:56:48] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 18:56:48] INFO: POST /api/auth/register | 409 | 7 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:17:27] ERROR: Error: Refresh token is invalid.
+    at <anonymous> (/app/Controllers/auth.controller.ts:239:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:17:27] INFO: POST /api/auth/refresh | 401 | 1093 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:18:04] ERROR: Error: Please verify your email first.
+    at <anonymous> (/app/Controllers/auth.controller.ts:134:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:18:04] INFO: POST /api/auth/login | 403 | 33 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:19:22] ERROR: Error: Verification token has expired.
+    at <anonymous> (/app/Controllers/auth.controller.ts:352:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:19:22] INFO: GET /api/auth/verify/faf65a66bb133795c0f7ccd244b62bee2bc07318af7206f7f2146ef9b0ed08f3 | 400 | 50 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:19:22] ERROR: Error: Route '/favicon.ico' not found.
+    at notFoundMiddleware (/app/Middlewares/notFound.middleware.ts:10:13)
+    at handleRequest (/app/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/app/node_modules/router/index.js:342:13)
+    at <anonymous> (/app/node_modules/router/index.js:297:9)
+    at next (/app/node_modules/router/index.js:291:5)
+    at loggerMiddleware (/app/Middlewares/logger.middleware.ts:19:5)
+    at handleRequest (/app/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/app/node_modules/router/index.js:342:13)
+    at <anonymous> (/app/node_modules/router/index.js:297:9)
+    at next (/app/node_modules/router/index.js:291:5)
+[2026-10-29 19:19:22] INFO: GET /favicon.ico | 404 | 5 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:19:33] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:19:33] INFO: POST /api/auth/register | 409 | 20 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:19:48] ERROR: Error: Verification token has expired.
+    at <anonymous> (/app/Controllers/auth.controller.ts:352:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:19:48] INFO: GET /api/auth/verify/faf65a66bb133795c0f7ccd244b62bee2bc07318af7206f7f2146ef9b0ed08f3 | 400 | 23 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:19:48] ERROR: Error: Verification token has expired.
+    at <anonymous> (/app/Controllers/auth.controller.ts:352:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:19:48] INFO: GET /api/auth/verify/faf65a66bb133795c0f7ccd244b62bee2bc07318af7206f7f2146ef9b0ed08f3 | 400 | 5 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:20:24] INFO: POST /api/auth/register | 201 | 382 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:20:49] INFO: GET /api/auth/verify/e27c81622239169272bab6d08547371fe4ac743dc45769213af9195c7bd2fea0 | 302 | 100 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:20:50] ERROR: Error: Refresh token is invalid.
+    at <anonymous> (/app/Controllers/auth.controller.ts:239:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:20:50] INFO: POST /api/auth/refresh | 401 | 11 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:21:12] INFO: POST /api/auth/login | 200 | 163 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:21:13] INFO: GET /api/auth/me | 200 | 48 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:21:13] INFO: GET /api/tasks | 200 | 72 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:29:29] INFO: POST /api/auth/register | 201 | 129 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:29:33] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:29:33] INFO: POST /api/auth/register | 409 | 6 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:30:27] INFO: GET /api/auth/verify/f12f9c4aa34928779cd15237329a222e8c6da107151013b2423f1521762d424c | 302 | 74 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:30:38] ERROR: Error: Refresh token is missing or invalid.
+    at <anonymous> (/app/Controllers/auth.controller.ts:216:17)
+    at <anonymous> (/app/utils/AsyncHandler.ts:3:104)
+    at handleRequest (/app/node_modules/router/lib/layer.js:152:17)
+    at next (/app/node_modules/router/lib/route.js:157:13)
+    at <anonymous> (/app/node_modules/express-rate-limit/dist/index.mjs:1020:7)
+[2026-10-29 19:30:38] INFO: POST /api/auth/refresh | 401 | 37 ms | IP: ::ffff:172.21.0.1
+[2026-10-29 19:41:12] INFO: Server is running on http://localhost:3000
+[2026-10-29 19:41:24] ERROR: Error: Email is already registered.
+    at <anonymous> (/app/Controllers/auth.controller.ts:50:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-29 19:41:24] INFO: POST /api/auth/register | 409 | 264 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:11:33] INFO: Server is running on http://localhost:3000
+[2026-10-30 11:20:57] ERROR: Error: Refresh token is invalid.
+    at <anonymous> (/app/Controllers/auth.controller.ts:239:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-30 11:20:57] INFO: POST /api/auth/refresh | 401 | 855 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:21:06] ERROR: Error: Refresh token is missing or invalid.
+    at <anonymous> (/app/Controllers/auth.controller.ts:216:17)
+    at <anonymous> (/app/utils/AsyncHandler.ts:3:104)
+    at handleRequest (/app/node_modules/router/lib/layer.js:152:17)
+    at next (/app/node_modules/router/lib/route.js:157:13)
+    at <anonymous> (/app/node_modules/express-rate-limit/dist/index.mjs:1020:7)
+[2026-10-30 11:21:06] INFO: POST /api/auth/refresh | 401 | 5 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:21:54] INFO: POST /api/auth/register | 201 | 159 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:23:03] INFO: GET /api/auth/verify/f50b35ae1aaa72bbfa301124cefe3065b14ca348a343f81337e15ae45ffabe5d | 302 | 41 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:23:03] ERROR: Error: Refresh token is missing or invalid.
+    at <anonymous> (/app/Controllers/auth.controller.ts:216:17)
+    at <anonymous> (/app/utils/AsyncHandler.ts:3:104)
+    at handleRequest (/app/node_modules/router/lib/layer.js:152:17)
+    at next (/app/node_modules/router/lib/route.js:157:13)
+    at <anonymous> (/app/node_modules/express-rate-limit/dist/index.mjs:1020:7)
+[2026-10-30 11:23:03] INFO: POST /api/auth/refresh | 401 | 6 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:23:36] INFO: POST /api/auth/login | 200 | 157 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:23:37] INFO: GET /api/tasks | 200 | 52 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:23:37] INFO: GET /api/auth/me | 200 | 39 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:23:41] INFO: GET /api/tasks | 304 | 21 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:24:16] INFO: POST /api/tasks | 201 | 95 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:24:49] INFO: PATCH /api/tasks/cmvuvx0rd000301qqggoz7a6j/move | 200 | 81 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:24:49] INFO: GET /api/tasks | 200 | 18 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:24:55] INFO: PATCH /api/tasks/cmvuvx0rd000301qqggoz7a6j/move | 200 | 36 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:24:55] INFO: GET /api/tasks | 200 | 17 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:25:11] INFO: PATCH /api/tasks/cmvuvx0rd000301qqggoz7a6j | 200 | 59 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:25:11] INFO: GET /api/tasks | 200 | 24 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:47:08] INFO: POST /api/auth/refresh | 200 | 48 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:47:08] INFO: GET /api/tasks | 200 | 32 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:47:41] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy003/move | 200 | 50 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:47:41] INFO: GET /api/tasks | 200 | 16 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:50:43] INFO: POST /api/auth/refresh | 200 | 45 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:50:43] INFO: GET /api/tasks | 200 | 33 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:51:12] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy029/move | 200 | 60 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:51:12] INFO: GET /api/tasks | 200 | 22 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:51:17] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy029/move | 200 | 41 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:51:17] INFO: GET /api/tasks | 200 | 16 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:51:26] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy028/move | 200 | 30 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:51:26] INFO: GET /api/tasks | 200 | 11 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:51:36] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy027/move | 200 | 53 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:51:36] INFO: GET /api/tasks | 200 | 15 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:52:04] INFO: POST /api/auth/refresh | 200 | 36 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:52:04] INFO: GET /api/tasks | 304 | 24 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:52:11] INFO: GET /api/tasks | 304 | 16 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:52:11] INFO: GET /api/auth/me | 304 | 32 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:52:24] INFO: GET /api/tasks | 304 | 37 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:52:53] INFO: GET /api/tasks | 304 | 39 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:53:13] INFO: GET /api/tasks | 304 | 27 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:53:15] INFO: GET /api/tasks | 304 | 16 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 11:53:47] INFO: GET /api/tasks | 304 | 26 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:24] INFO: Server is running on http://localhost:3000
+[2026-10-30 16:42:32] ERROR: Error: User not found.
+    at <anonymous> (/app/Controllers/auth.controller.ts:126:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-30 16:42:32] INFO: POST /api/auth/login | 401 | 665 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:32] INFO: POST /api/auth/refresh | 200 | 44 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:32] ERROR: Error: User not found.
+    at <anonymous> (/app/Controllers/auth.controller.ts:126:17)
+    at processTicksAndRejections (native:7:39)
+[2026-10-30 16:42:32] INFO: POST /api/auth/login | 401 | 3 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:45] INFO: POST /api/auth/login | 200 | 100 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:45] INFO: GET /api/tasks | 304 | 37 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:45] INFO: GET /api/auth/me | 304 | 24 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:50] INFO: GET /api/tasks | 304 | 22 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:54] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy001/move | 200 | 33 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:54] INFO: GET /api/tasks | 200 | 13 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:56] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy003/move | 200 | 20 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:56] INFO: GET /api/tasks | 200 | 10 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:58] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy003/move | 200 | 23 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:42:58] INFO: GET /api/tasks | 200 | 10 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:01] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy004/move | 200 | 26 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:01] INFO: GET /api/tasks | 200 | 10 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:09] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy007/move | 200 | 22 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:09] INFO: GET /api/tasks | 200 | 10 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:11] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy007/move | 200 | 18 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:11] INFO: GET /api/tasks | 200 | 11 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:13] INFO: PATCH /api/tasks/cmvuvx0rd000301qqggoz7a6j/move | 200 | 25 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:13] INFO: GET /api/tasks | 200 | 17 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:18] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy011/move | 200 | 23 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:18] INFO: GET /api/tasks | 200 | 12 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:23] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy012/move | 200 | 19 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:23] INFO: GET /api/tasks | 200 | 9 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:29] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy012/move | 200 | 17 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:29] INFO: GET /api/tasks | 200 | 13 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:42] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy005/move | 200 | 30 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:42] INFO: GET /api/tasks | 200 | 10 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:53] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy006/move | 200 | 25 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:43:53] INFO: GET /api/tasks | 200 | 10 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:12] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy007/move | 200 | 23 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:12] INFO: GET /api/tasks | 200 | 11 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:17] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy008/move | 200 | 22 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:17] INFO: GET /api/tasks | 200 | 6 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:31] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy008/move | 200 | 24 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:31] INFO: GET /api/tasks | 200 | 9 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:38] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy013/move | 200 | 26 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:38] INFO: GET /api/tasks | 200 | 10 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:50] INFO: DELETE /api/tasks/cmvw01a1a000001qqantsy010 | 200 | 39 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:50] INFO: GET /api/tasks | 200 | 12 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:44:58] INFO: GET /api/tasks | 304 | 8 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:33] INFO: Server is running on http://localhost:3000
+[2026-10-30 16:46:42] INFO: POST /api/auth/refresh | 200 | 398 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:42] INFO: GET /api/tasks | 304 | 38 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:44] INFO: GET /api/tasks | 304 | 15 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:47] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy031/move | 200 | 43 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:47] INFO: GET /api/tasks | 200 | 16 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:52] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy008/move | 200 | 37 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:52] INFO: GET /api/tasks | 200 | 13 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:56] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy008/move | 200 | 29 ms | IP: ::ffff:172.21.0.1
+[2026-10-30 16:46:56] INFO: GET /api/tasks | 200 | 13 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 15:58:11] INFO: Server is running on http://localhost:3000
+[2026-10-31 16:10:36] INFO: Server is running on http://localhost:3000
+[2026-10-31 16:10:50] INFO: POST /api/auth/refresh | 200 | 721 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:11:12] INFO: POST /api/auth/refresh | 200 | 62 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:11:34] INFO: POST /api/auth/login | 200 | 136 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:11:34] INFO: GET /api/auth/me | 304 | 48 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:11:34] INFO: GET /api/tasks | 304 | 87 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:11:46] INFO: GET /api/tasks | 304 | 49 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:12:07] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy014/move | 200 | 62 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:12:07] INFO: GET /api/tasks | 200 | 17 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:12:18] INFO: POST /api/auth/refresh | 200 | 45 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:12:18] INFO: GET /api/tasks | 304 | 25 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:12:40] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy007/move | 200 | 44 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:12:40] INFO: GET /api/tasks | 200 | 14 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:17:56] INFO: Server is running on http://localhost:3000
+[2026-10-31 16:17:58] INFO: POST /api/auth/refresh | 200 | 348 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:17:58] INFO: GET /api/tasks | 304 | 67 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:18:40] INFO: PATCH /api/tasks/cmvw01a1a000001qqantsy032/move | 200 | 106 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:18:40] INFO: GET /api/tasks | 200 | 24 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:18:50] INFO: GET /api/tasks | 304 | 31 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:18:53] INFO: GET /api/tasks | 304 | 18 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:18:57] INFO: GET /api/tasks | 304 | 25 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 16:18:57] INFO: GET /api/auth/me | 304 | 31 ms | IP: ::ffff:172.21.0.1
