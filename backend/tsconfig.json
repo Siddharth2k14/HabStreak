@@ -23,7 +23,7 @@
 
     "include": [
         "**/*.ts"
-    ],
+,         "scripts/rabbitmq-node-test.mjs"    ],
 
     "exclude": [
         "node_modules",

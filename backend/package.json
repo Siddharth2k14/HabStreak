@@ -8,7 +8,8 @@
     "test": "vitest run",
     "dev": "nodemon src/bootstrap.ts",
     "build": "rimraf dist && tsc -p ./tsconfig.json",
-    "type-check": "tsc -p ./tsconfig.json --noEmit"
+    "type-check": "tsc -p ./tsconfig.json --noEmit",
+    "publish": "node config/rabbitmq.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +18,8 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "^7.10.0",
+    "amqplib": "^2.2.0",
     "bcrypt": "^6.0.0",
-    "bullmq": "^6.3.15",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
@@ -37,6 +38,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.10.8",
     "@types/bcrypt": "^6.0.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",

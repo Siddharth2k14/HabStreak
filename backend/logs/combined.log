@@ -5467,3 +5467,6 @@ Unique constraint failed on the constraint: `User_email_key`
 [2026-10-31 16:18:53] INFO: GET /api/tasks | 304 | 18 ms | IP: ::ffff:172.21.0.1
 [2026-10-31 16:18:57] INFO: GET /api/tasks | 304 | 25 ms | IP: ::ffff:172.21.0.1
 [2026-10-31 16:18:57] INFO: GET /api/auth/me | 304 | 31 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 17:35:34] INFO: POST /api/auth/refresh | 200 | 240 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 17:35:35] INFO: GET /api/tasks | 304 | 130 ms | IP: ::ffff:172.21.0.1
+[2026-10-31 17:35:35] INFO: GET /api/auth/me | 304 | 118 ms | IP: ::ffff:172.21.0.1
