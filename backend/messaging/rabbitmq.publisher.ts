@@ -13,6 +13,10 @@ export const publishMessage = async <T>(
     message: T,
     metadata: PublishMetadata
 ): Promise<void> => {
+    if (!metadata.messageId || !metadata.eventType) {
+        throw new Error("RabbitMQ message metadata is incomplete");
+    }
+
     const payload = Buffer.from(
         JSON.stringify(message),
         "utf-8"
@@ -26,12 +30,13 @@ export const publishMessage = async <T>(
                 returnedMessage = returned;
             }
         };
+        
+        channel.on("return", handleReturn);
 
         const cleanup = () => {
             channel.removeListener("return", handleReturn);
         };
 
-        channel.on("return", handleReturn);
 
         try {
             channel.publish(

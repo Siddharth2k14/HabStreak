@@ -5,7 +5,7 @@ export const getRabbitMQConfig = () => {
     const password = process.env.RABBITMQ_PASSWORD;
     const vhost = process.env.RABBITMQ_VHOST?.trim() || "/";
 
-    if (!host || !user || !password) {
+    if (!host || !user || !password?.trim() || !port ) {
         throw new Error(
             "RabbitMQ environment variables are missing."
         );
@@ -22,5 +22,7 @@ export const getRabbitMQConfig = () => {
         username: user,
         password,
         vhost,
+
+        heartbeat: 30,
     };
 };

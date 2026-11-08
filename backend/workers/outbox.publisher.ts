@@ -13,11 +13,11 @@ import {
     ROUTING_KEYS,
 } from "../messaging/queues.ts";
 
-const BATCH_SIZE = 20;
+const BATCH_SIZE = 5;
 const MAX_ATTEMPTS = 5;
 
 const POLL_INTERVAL = 2000;
-const LEASE_DURATION_MS = 2 * 60 * 1000;
+const LEASE_DURATION_MS = 5 * 60 * 1000;
 
 interface ClaimedOutboxEvent {
     id: string;
@@ -39,12 +39,36 @@ const claimOutboxEvents = async (): Promise<ClaimedOutboxEvent[]> => {
     const staleBefore = new Date(now.getTime() - LEASE_DURATION_MS);
 
     return prisma.$transaction(async (tx) => {
-        // Recover expired claims. Count a crashed processing attempt.
+        // Recover stale events that have exhausted their attempts.
         await tx.outboxEvent.updateMany({
             where: {
                 status: "PROCESSING",
                 lockedAt: {
                     lt: staleBefore,
+                },
+                attempts: {
+                    gte: MAX_ATTEMPTS - 1,
+                },
+            },
+            data: {
+                status: "FAILED",
+                lockedAt: null,
+                attempts: {
+                    increment: 1,
+                },
+                lastError: "Processing lease expired. Maximum attempts exhausted.",
+            }
+        })
+
+        // Recover stale events that can still be retrived.
+        await tx.outboxEvent.updateMany({
+            where: {
+                status: "PROCESSING",
+                lockedAt: {
+                    lt: staleBefore,
+                },
+                attempts: {
+                    gte: MAX_ATTEMPTS - 1,
                 },
             },
             data: {
@@ -185,11 +209,16 @@ export const publishOutboxEvents = async (): Promise<void> => {
                     );
                 }
 
-                const payload = event.payload as {
-                    userId?: unknown;
-                };
+                const payload: unknown = event.payload;
 
-                if (typeof payload.userId !== "string") {
+                if (
+                    typeof payload !== "object" ||
+                    payload === null ||
+                    Array.isArray(payload) ||
+                    !("userId" in payload) ||
+                    typeof payload.userId !== "string" ||
+                    !payload.userId
+                ) {
                     throw new Error(
                         `Invalid payload for outbox event ${event.id}`
                     );

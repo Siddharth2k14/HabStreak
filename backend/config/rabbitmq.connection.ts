@@ -1,3 +1,4 @@
+
 import amqp, {
     type Channel,
     type ConfirmChannel,
@@ -8,8 +9,19 @@ import { getRabbitMQConfig } from "./rabbitmq.config.ts";
 
 let connection: ChannelModel | null = null;
 let connectionPromise: Promise<ChannelModel> | null = null;
+let closing = false;
+
+const resetConnection = (target: ChannelModel): void => {
+    if (connection !== target) return;
+
+    connection = null;
+    connectionPromise = null;
+};
 
 export const connectRabbitMQ = async (): Promise<ChannelModel> => {
+    if (closing) {
+        throw new Error("RabbitMQ connection is shutting down.");
+    }
 
     if (connection) {
         return connection;
@@ -22,7 +34,6 @@ export const connectRabbitMQ = async (): Promise<ChannelModel> => {
     connectionPromise = amqp
         .connect(getRabbitMQConfig())
         .then((rabbitConnection) => {
-
             connection = rabbitConnection;
 
             console.log("RabbitMQ connected successfully!");
@@ -33,9 +44,7 @@ export const connectRabbitMQ = async (): Promise<ChannelModel> => {
 
             rabbitConnection.once("close", () => {
                 console.warn("RabbitMQ connection closed.");
-
-                connection = null;
-                connectionPromise = null;
+                resetConnection(rabbitConnection);
             });
 
             return rabbitConnection;
@@ -45,7 +54,6 @@ export const connectRabbitMQ = async (): Promise<ChannelModel> => {
             connectionPromise = null;
 
             console.error("RabbitMQ connection failed:", error);
-
             throw error;
         });
 
@@ -54,24 +62,40 @@ export const connectRabbitMQ = async (): Promise<ChannelModel> => {
 
 export const createRabbitChannel = async (): Promise<Channel> => {
     const rabbitConnection = await connectRabbitMQ();
-
     return rabbitConnection.createChannel();
 };
 
 export const createConfirmChannel = async (): Promise<ConfirmChannel> => {
     const rabbitConnection = await connectRabbitMQ();
-
     return rabbitConnection.createConfirmChannel();
 };
 
 export const closeRabbitMQ = async (): Promise<void> => {
-    const currentConnection = connection;
+    if (closing) return;
 
-    connection = null;
-    connectionPromise = null;
+    closing = true;
 
-    if (currentConnection) {
-        await currentConnection.close();
-        console.log("RabbitMQ connection closed gracefully.");
+    const pendingConnection = connectionPromise;
+
+    try {
+        // Wait for an ongoing connection attempt to settle.
+        if (!connection && pendingConnection) {
+            try {
+                await pendingConnection;
+            } catch {
+                // Connection was never established.
+            }
+        }
+
+        const currentConnection = connection;
+
+        if (currentConnection) {
+            await currentConnection.close();
+            console.log("RabbitMQ connection closed gracefully.");
+        }
+    } finally {
+        connection = null;
+        connectionPromise = null;
+        closing = false;
     }
 };

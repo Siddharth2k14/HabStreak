@@ -3,7 +3,7 @@ import prisma from "../config/prisma.ts";
 import { createConfirmChannel, closeRabbitMQ } from "../config/rabbitmq.connection.ts";
 import { EXCHANGES } from "../messaging/exchanges.ts";
 import { initializeQueues, QUEUES, ROUTING_KEYS } from "../messaging/queues.ts";
-import type { VerificationEmailJob } from "../queues/email.queue.ts";
+import type { enqueueVerificationEmail } from "../queues/email.queue.ts";
 import { sendVerificationEmail } from "../services/email.service.ts";
 import { generateVerificationToken, hashVerificationToken } from "../utils/token.utils.ts";
 
@@ -12,78 +12,79 @@ const MAX_RETRIES = 3;
 let channel: ConfirmChannel | null = null;
 let consumerTag: string | null = null;
 let shuttingDown = false;
+const activeTasks = new Set<Promise<void>>();
 
-const parseMessage = ( message: ConsumeMessage ): VerificationEmailJob => {
-  const payload: unknown = JSON.parse(message.content.toString("utf-8"));
+const parseMessage = (message: ConsumeMessage): enqueueVerificationEmail => {
+    const payload: unknown = JSON.parse(message.content.toString("utf-8"));
 
-  if ( typeof payload !== "object" || payload === null || !("outboxEventId" in payload) || !("userId" in payload) || typeof payload.outboxEventId !== "string" || typeof payload.userId !== "string" || !payload.outboxEventId || !payload.userId ) {
-    throw new Error("Invalid verification email message");
-  }
+    if (typeof payload !== "object" || payload === null || !("outboxEventId" in payload) || !("userId" in payload) || typeof payload.outboxEventId !== "string" || typeof payload.userId !== "string" || !payload.outboxEventId || !payload.userId) {
+        throw new Error("Invalid verification email message");
+    }
 
-  return payload as VerificationEmailJob;
+    return payload as enqueueVerificationEmail;
 };
 
 const getRetryCount = (message: ConsumeMessage): number => {
-  const retryCount = message.properties.headers?.["x-retry-count"];
+    const retryCount = message.properties.headers?.["x-retry-count"];
 
-  if (typeof retryCount === "number" && Number.isInteger(retryCount) && retryCount >= 0) {
-    return retryCount;
-  }
+    if (typeof retryCount === "number" && Number.isInteger(retryCount) && retryCount >= 0) {
+        return retryCount;
+    }
 
-  return 0;
+    return 0;
 };
 
-const processVerificationEmail = async (job: VerificationEmailJob): Promise<void> => {
-  const { userId } = job;
+const processVerificationEmail = async (job: enqueueVerificationEmail): Promise<void> => {
+    const { userId } = job;
 
-  const user = await prisma.user.findUnique({
-    where: {
-      id: userId
-    },
-    select: {
-      id: true,
-      email: true,
-      username: true,
-      isActive: true,
-      isVerified: true,
-    },
-  });
+    const user = await prisma.user.findUnique({
+        where: {
+            id: userId
+        },
+        select: {
+            id: true,
+            email: true,
+            username: true,
+            isActive: true,
+            isVerified: true,
+        },
+    });
 
-  if (!user) {
-    throw new Error(`User ${userId} was not found.`);
-  }
+    if (!user) {
+        throw new Error(`User ${userId} was not found.`);
+    }
 
-  if (user.isVerified) {
-    console.log(`User ${userId} is already verified. Skipping email`);
-    return;
-  }
+    if (user.isVerified) {
+        console.log(`User ${userId} is already verified. Skipping email`);
+        return;
+    }
 
-  if (!user.isActive) {
-    console.log(`User ${userId} is inactive. Skipping email`);
-    return;
-  }
+    if (!user.isActive) {
+        console.log(`User ${userId} is inactive. Skipping email`);
+        return;
+    }
 
-  const token = generateVerificationToken();
-  const hashedToken = hashVerificationToken(token);
+    const token = generateVerificationToken();
+    const hashedToken = hashVerificationToken(token);
 
-  const expiresAt = new Date(Date.now()+15*60*1000);
-  await prisma.user.update({
-    where: {
-      id: userId
-    },
-    data: {
-      verificationToken: hashedToken,
-      verificationExpires: expiresAt,
-    },
-  });
+    const expiresAt = new Date(Date.now() + 15 * 60 * 1000);
+    await prisma.user.update({
+        where: {
+            id: userId
+        },
+        data: {
+            verificationToken: hashedToken,
+            verificationExpires: expiresAt,
+        },
+    });
 
-  await sendVerificationEmail({
-    email: user.email,
-    name: user.username,
-    token,
-  });
+    await sendVerificationEmail({
+        email: user.email,
+        name: user.username,
+        token,
+    });
 
-  console.log(`Verification email sent for user ${userId}`);
+    console.log(`Verification email sent for user ${userId}`);
 };
 
 /**
@@ -96,9 +97,12 @@ const publishRetry = async (
     currentChannel: ConfirmChannel,
     message: ConsumeMessage,
     retryCount: number,
-    job: VerificationEmailJob
+    job: enqueueVerificationEmail
 ): Promise<void> => {
     const messageId = message.properties.messageId;
+    if (!messageId) {
+        throw new Error("Cannot retry message without a messageId.");
+    }
 
     const payload = Buffer.from(
         JSON.stringify(job),
@@ -178,7 +182,7 @@ const handleMessage = async (
     currentChannel: ConfirmChannel,
     message: ConsumeMessage
 ): Promise<void> => {
-    let job: VerificationEmailJob | null = null;
+    let job: enqueueVerificationEmail | null = null;
 
     try {
         job = parseMessage(message);
@@ -263,15 +267,15 @@ export const startEmailWorker = async (): Promise<void> => {
                 return;
             }
 
-            void handleMessage(channel, message).catch((error) => {
-                console.error(
-                    "Unexpected email worker error:",
-                    error
-                );
-            });
-        },
-        {
-            noAck: false,
+            const task = handleMessage(channel, message)
+                .catch((error) => {
+                    console.error("Unexpected email worker error:", error);
+                })
+                .finally(() => {
+                    activeTasks.delete(task);
+                });
+
+            activeTasks.add(task);
         }
     );
 
@@ -297,13 +301,15 @@ const shutdown = async (): Promise<void> => {
             await channel.cancel(consumerTag);
         }
 
+        // Wait for already-delivered messages to finish.
+        await Promise.allSettled([...activeTasks]);
+
         if (channel) {
             await channel.close();
             channel = null;
         }
 
         await closeRabbitMQ();
-
         await prisma.$disconnect();
 
         console.log("Email worker stopped gracefully.");
